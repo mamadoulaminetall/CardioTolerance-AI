@@ -308,3 +308,53 @@ Protocole de comparaison, **mêmes patients, mêmes splits, même métrique** :
 Pipelines conteneurisés (Snakemake/Nextflow) ; graines fixées ; données et modèles
 versionnés (DVC/git-annex) ; **rapport selon TRIPOD+AI** ; risque de biais **PROBAST** ;
 code publié ; plan d'analyse figé avant l'accès aux données de validation externe.
+
+---
+
+# Section 12 — Stratégie de validation biologique
+
+**Principe** : aucune signature n'est présentée comme résultat tant qu'elle n'a pas de
+**lecture biologique** et une **confirmation sur échantillon indépendant**. L'IA produit
+des hypothèses, pas des conclusions.
+
+## 12.1 Annotation mécanistique de chaque signature retenue
+
+Pour tout panel sélectionné (transcrits, scores cellulaires, métriques TCR/BCR, score de
+mismatch) :
+- **Gènes** : fonction, appartenance à des modules connus (quiescence, co-stimulation,
+  épuisement, régulation B, réponse interféron, fibrose) ; recoupement avec les
+  transcrits associés au rejet (MMDx RATs [R24]) — la tolérance doit s'en **distinguer**,
+  pas juste être « moins de rejet ».
+- **Voies** : enrichissement (GSEA / ORA, FDR contrôlé) ; réseaux de régulation.
+- **Types cellulaires** : déconvolution (CIBERSORTx / BisqueRNA) sur le bulk ;
+  confirmation sur single-cell/snRNA-seq quand disponible ; localisation (spatial, si
+  accès via ex. l'équipe de Lyon).
+- **Clones T/B** : diversité, clonalité, expansion/contraction, partage inter-patients ;
+  recherche de motifs CDR3 publics ; lien avec le mismatch HLA.
+- **Protéines** : correspondance transcrit→protéine (si sérothèque / Olink accessible).
+
+## 12.2 Confirmation expérimentale (avec le centre partenaire — Scénario B/C)
+
+| Signal à confirmer | Technique | Échantillon |
+|---|---|---|
+| Sur-/sous-expression de transcrits clés | **qPCR** ciblée / NanoString | biopsie ou sang appariés, cohorte de confirmation |
+| Proportions de sous-populations (Treg, Breg, NK, T épuisés) | **cytométrie de flux / spectrale**, CyTOF | sang (± digestat de biopsie) |
+| Localisation intra-greffon | **IHC / immunofluorescence multiplex** | blocs FFPE de biopsie |
+| Hétérogénéité cellulaire fine | **scRNA-seq / snRNA-seq** ciblé | sous-échantillon prospectif |
+| Répertoire immun | **séquençage TCR/BCR** (MiXCR/Immcantation) | sang ± tissu |
+| Fonction régulatrice | **essais de suppression Treg**, réponse allogénique in vitro (MLR) | PBMC, si pertinent et faisable |
+
+## 12.3 Critères de succès de la validation
+1. **Réplication** du sens de l'effet sur une **cohorte de confirmation indépendante**
+   (interne au centre ou 2ᵉ centre).
+2. **Cohérence multimodale** : le signal transcriptomique correspond à un signal
+   cellulaire/protéique plausible.
+3. **Association clinique** : la signature (ou son évolution) est associée aux outcomes
+   (temps jusqu'au rejet, DSA de novo, CAV) après ajustement.
+4. **Spécificité** : la signature n'est pas un simple reflet de l'exposition
+   médicamenteuse ou de la fonction rénale (analyses de confusion, Section 11).
+
+## 12.4 Garde-fou clinique
+Une signature validée **n'autorise aucune modification thérapeutique**. Elle ne peut
+servir qu'à **concevoir une étude prospective** de minimisation contrôlée et supervisée,
+avec comité de surveillance indépendant — hors du périmètre de ce projet.

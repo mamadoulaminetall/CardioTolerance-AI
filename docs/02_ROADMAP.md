@@ -39,9 +39,9 @@ Légende : ☐ à faire · ◐ en cours · ☑ fait
 
 - ◐ Recherche systématique repositories (liste brief §4) avec requêtes tracées — *1er balayage GEO/ImmPort fait*
 - ◐ `data/datasets_registry.csv` : v0 = 5 entrées seed (GSE124897, GSE2445, GSE2596, CTOT-03, JHLT-2022-EMB), champ `access` renseigné, colonnes marquées « à confirmer » là où non vérifié
+- ☑ Section 6 rédigée → `docs/section_06_datasets.md` (classification par accès + « faisable dès aujourd'hui » Scénario A)
 - ☐ Vérification manuelle de CHAQUE lien + publication associée (GEO/ImmPort/EGA)
 - ☐ Élargir : SRA, ArrayExpress, dbGaP, EGA, BioStudies, Zenodo, Figshare + single-cell / TCR-BCR / DSA
-- ☐ Section 6 rédigée + synthèse « ce qu'on peut faire dès aujourd'hui vs sous collaboration »
 
 ## Phase 4 — Paysage français & scoring  ◐ (v1 — cible n°1 arrêtée 2026-09-03)
 
@@ -62,11 +62,20 @@ Légende : ☐ à faire · ◐ en cours · ☑ fait
 - ☐ Relecture clinicien/immunologiste de la définition du phénotype « stabilité profonde »
 - ☐ Section 12 (validation biologique par signature) — à rédiger
 
-## Phase 6 — Faisabilité, impact, publications  ☐
+## Phase 6 — Faisabilité, impact, publications  ☑ (v1 rédigée 2026-09-03)
 
-- ☐ Section 13 : scénarios A/B/C chiffrés (n patients, durée, coûts, réglementaire)
-- ☐ Section 14 : hypothèses positive/intermédiaire/négative
-- ☐ Section 15 : 3–5 articles (question, dataset, méthode, nouveauté, journal cible)
+- ☑ Section 13 : scénarios A/B/C chiffrés (n, durée, ressources, coûts, réglementaire, risques) → `docs/section_13_feasibility.md`
+- ☑ Section 14 : hypothèses positive/intermédiaire/négative + valeur méthodo transverse
+- ☑ Section 15 : 5 articles (question, dataset, méthode, nouveauté, journal cible)
+- ☐ Chiffres à réviser avec l'équipe partenaire au 1er échange (prévalence phénotype, coûts réels)
+
+## Phase 6bis — Executive summary & sections restantes  ◐
+
+- ☑ Section 1 (executive summary) → `docs/section_01_executive_summary.md`
+- ☑ Section 5 (décision méta-analyse / evidence synthesis) → `docs/section_05_meta_analysis.md`
+- ☑ Section 12 (validation biologique) → ajoutée à `docs/section_08_09_gap_method.md`
+- ☐ Sections 18-19 : intégrer les emails FR/EN dans le rapport final (déjà dans `outreach/`)
+- ☐ Section 2 (reformulation question) + Section 20 (références consolidées) — assemblage final
 
 ## Phase 7 — Application Streamlit  ☐
 
