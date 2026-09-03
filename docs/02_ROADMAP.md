@@ -52,12 +52,14 @@ Légende : ☐ à faire · ◐ en cours · ☑ fait
 - ☐ `data/french_teams_scoring.csv` : 6 axes /10 + total pondéré (poids dans SPEC §6)
 - ☐ Sections 7, 16, 17 + grille TOP 5 + recommandation « une seule équipe »
 
-## Phase 5 — Méthodologie IA / multi-omics / stats  ☐
+## Phase 5 — Méthodologie IA / multi-omics / stats  ◐ (v1 rédigée 2026-09-03)
 
-- ☐ Section 9 (Aims 1–3, familles de modèles, CV/nested CV/calibration/SHAP/robustesse)
-- ☐ Section 10 (comparaison 5 modèles, valeur ajoutée incrémentale)
-- ☐ Section 11 (endpoints, missing data, batch, confounders, imbalance, leakage, FDR, p>>n)
-- ☐ Section 12 (validation biologique par signature)
+- ☑ Section 8 (Gap Q1–Q10) → `docs/section_08_09_gap_method.md`
+- ☑ Section 9 (Aims 1–3, familles de modèles, nested CV/calibration/SHAP/robustesse, définition préspécifiée du phénotype)
+- ☑ Section 10 (comparaison M1→M5, gain incrémental, coût-information, net benefit)
+- ☑ Section 11 (endpoints, p≫n, leakage, batch, confounders, imbalance, FDR, missing data, puissance, TRIPOD+AI/PROBAST)
+- ☐ Relecture clinicien/immunologiste de la définition du phénotype « stabilité profonde »
+- ☐ Section 12 (validation biologique par signature) — à rédiger
 
 ## Phase 6 — Faisabilité, impact, publications  ☐
 
