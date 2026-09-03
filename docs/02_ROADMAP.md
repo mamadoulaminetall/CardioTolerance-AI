@@ -32,16 +32,19 @@ Légende : ☐ à faire · ◐ en cours · ☑ fait
 - ☐ Si non → note de justification + plan d'evidence synthesis structurée
 - ☐ Sections 4 & 5 rédigées
 
-## Phase 3 — Datasets réellement accessibles  ☐
+## Phase 3 — Datasets réellement accessibles  ◐
 
-- ☐ Recherche systématique repositories (liste brief §4) avec requêtes tracées
-- ☐ `data/datasets_registry.csv` : 1 ligne/dataset, champ `access` ∈ {Public, Controlled, Non public, À contacter}
-- ☐ Vérification manuelle de CHAQUE lien + publication associée
+- ◐ Recherche systématique repositories (liste brief §4) avec requêtes tracées — *1er balayage GEO/ImmPort fait*
+- ◐ `data/datasets_registry.csv` : v0 = 5 entrées seed (GSE124897, GSE2445, GSE2596, CTOT-03, JHLT-2022-EMB), champ `access` renseigné, colonnes marquées « à confirmer » là où non vérifié
+- ☐ Vérification manuelle de CHAQUE lien + publication associée (GEO/ImmPort/EGA)
+- ☐ Élargir : SRA, ArrayExpress, dbGaP, EGA, BioStudies, Zenodo, Figshare + single-cell / TCR-BCR / DSA
 - ☐ Section 6 rédigée + synthèse « ce qu'on peut faire dès aujourd'hui vs sous collaboration »
 
-## Phase 4 — Paysage français & scoring  ☐
+## Phase 4 — Paysage français & scoring  ◐
 
-- ☐ `data/french_teams.csv` depuis pages institutionnelles (AP-HP, Inserm, CNRS, CHU, EFS/HLA, plateformes génomique) + affiliations PubMed
+- ◐ `data/french_teams.csv` : v0 = 5 équipes seed vérifiées par recherche web
+      (PTG-PARCC / Loupy, PITIE-HTX / Coutance, CR2TI-NANTES / Brouard, CIRI-NOPAB-LYON / Thaunat, APHM-MARSEILLE à confirmer)
+- ☐ Compléter : Toulouse (HLA), EFS national, plateformes single-cell/génomique, autres CHU greffe cardiaque (Bordeaux, Lille, Strasbourg, Rennes, Montpellier)
 - ☐ Vérifier coordonnées publiques (site labo / annuaire institutionnel uniquement)
 - ☐ `data/french_teams_scoring.csv` : 6 axes /10 + total pondéré (poids dans SPEC §6)
 - ☐ Sections 7, 16, 17 + grille TOP 5 + recommandation « une seule équipe »
