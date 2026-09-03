@@ -77,12 +77,14 @@ Légende : ☐ à faire · ◐ en cours · ☑ fait
 - ☐ Sections 18-19 : intégrer les emails FR/EN dans le rapport final (déjà dans `outreach/`)
 - ☐ Section 2 (reformulation question) + Section 20 (références consolidées) — assemblage final
 
-## Phase 7 — Application Streamlit  ☐
+## Phase 7 — Application Streamlit  ◐
 
-- ☐ `scripts/04_build_app_data.py` : agrège `docs/` + `data/` + `meta-analysis/` pour l'app
-- ☐ Remplir les 10 pages avec le contenu validé
-- ☐ Figures → `figures/` via script
-- ☐ Test local `streamlit run app/app.py`
+- ☑ `scripts/04_build_app_data.py` : contrôle de présence des 17 livrables (15/17 OK ; manquent studies_registry + meta_estimates)
+- ☑ Les 10 pages chargent leur contenu (docs/ + data/) ; filtres datasets (accès) & équipes (ville) ; barres de scoring plotly page 9
+- ☑ Test local OK — `streamlit run app/app.py` démarre (HTTP 200), tous les chemins data-dépendants exercés sans erreur
+- ☐ Contenu pages 3 & 4 incomplet tant que `studies_registry.csv` / `meta_estimates.csv` absents (Phase 2)
+- ☐ Figures → `figures/` via `scripts/02_generate_figures.py` (PRISMA flow, HSROC, radar scoring)
+- ☐ Colonne courte `access_class` dans `datasets_registry.csv` pour des filtres plus lisibles
 - ☐ Déploiement : git + Streamlit Cloud + OVH `landing/cardiotolerance/` (skill `medflow-sync-deploy`)
 
 ## Phase 8 — Kit de prise de contact  ◐ (v1 rédigé 2026-09-03)

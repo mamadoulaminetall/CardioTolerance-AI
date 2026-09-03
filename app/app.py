@@ -2,10 +2,9 @@
 
 AI-driven discovery of immune tolerance signatures after heart transplantation.
 
-Squelette : 10 pages alignées sur docs/01_PROJECT_SPEC.md §7. Le contenu de chaque page
-est chargé depuis docs/ et data/ au fur et à mesure de leur remplissage
-(voir docs/02_ROADMAP.md). Tant qu'une source est absente, la page affiche un encart
-"section en cours de rédaction" — jamais de contenu inventé.
+10 pages alignées sur docs/01_PROJECT_SPEC.md §7. Chaque page charge son contenu depuis
+docs/ et data/. Tant qu'une source est absente, la page affiche un encart
+« section en cours de rédaction » — jamais de contenu inventé.
 
 Garde-fou : le projet ne suppose jamais l'arrêt de l'immunosuppression.
 """
@@ -15,6 +14,7 @@ from __future__ import annotations
 from pathlib import Path
 
 import pandas as pd
+import plotly.express as px
 import streamlit as st
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -81,13 +81,14 @@ def doc_or_wip(section: str, doc_name: str) -> None:
         wip(section, f"docs/{doc_name}")
 
 
-def table_or_wip(section: str, csv_name: str, **filters_note: str) -> None:
+def table_or_wip(section: str, csv_name: str) -> pd.DataFrame | None:
     df = load_csv(csv_name)
     if df is None or df.empty:
         wip(section, f"data/{csv_name}")
-        return
+        return None
     st.dataframe(df, use_container_width=True, hide_index=True)
     st.caption(f"{len(df)} lignes · source : `data/{csv_name}`")
+    return df
 
 
 # ----------------------------------------------------------------------------- #
@@ -113,9 +114,7 @@ with st.sidebar:
         label_visibility="collapsed",
     )
     st.divider()
-    st.markdown(
-        "<span class='ct-tag'>Non-dispositif médical</span>", unsafe_allow_html=True
-    )
+    st.markdown("<span class='ct-tag'>Non-dispositif médical</span>", unsafe_allow_html=True)
     st.caption(
         "Document de cadrage — pas un avis médical, pas un protocole déposé, "
         "pas un dispositif médical."
@@ -134,23 +133,7 @@ if page.startswith("1"):
         "supervision médicale.</div>",
         unsafe_allow_html=True,
     )
-    st.subheader("Question scientifique centrale")
-    st.markdown(
-        "Existe-t-il, chez certains receveurs de greffe cardiaque, une **signature "
-        "immunologique / moléculaire / cellulaire / multi-omique** associée à une tolérance "
-        "particulièrement élevée du greffon — et l'IA peut-elle :\n"
-        "1. identifier cette signature ;\n"
-        "2. séparer rejet vs stabilité durable ;\n"
-        "3. repérer des profils de tolérance immunologique exceptionnelle ;\n"
-        "4. prédire longitudinalement l'évolution du risque de rejet ;\n"
-        "5. à terme, aider à identifier des candidats à une **réduction contrôlée et "
-        "supervisée** de l'immunosuppression."
-    )
-    st.subheader("Boucle de collaboration visée")
-    st.markdown(
-        "`Clinical data` → `AI / Bioinformatics` → `candidate biomarker` → "
-        "`biological validation` → `clinical validation`"
-    )
+    st.write("")
     doc_or_wip("Executive summary", "section_01_executive_summary.md")
 
 elif page.startswith("2"):
@@ -171,31 +154,63 @@ elif page.startswith("4"):
 
 elif page.startswith("5"):
     st.title("Datasets réellement accessibles")
-    st.caption(
-        "Accès : Public · Controlled access · Non public (collaboration) · "
-        "Mentionné mais non disponible → à contacter"
-    )
-    table_or_wip("Registre des datasets", "datasets_registry.csv")
+    df = load_csv("datasets_registry.csv")
+    if df is None or df.empty:
+        wip("Registre des datasets", "data/datasets_registry.csv")
+    else:
+        if "access" in df.columns:
+            opts = sorted(df["access"].dropna().unique().tolist())
+            picked = st.multiselect("Filtrer par accès", opts, default=opts)
+            df = df[df["access"].isin(picked)]
+        st.dataframe(df, use_container_width=True, hide_index=True)
+        st.caption(f"{len(df)} datasets · source : `data/datasets_registry.csv`")
     doc_or_wip("Synthèse datasets", "section_06_datasets.md")
 
 elif page.startswith("6"):
     st.title("Paysage français — équipes & cohortes")
-    table_or_wip("Équipes françaises", "french_teams.csv")
+    df = load_csv("french_teams.csv")
+    if df is None or df.empty:
+        wip("Équipes françaises", "data/french_teams.csv")
+    else:
+        if "city" in df.columns:
+            cities = sorted(df["city"].dropna().unique().tolist())
+            picked = st.multiselect("Ville", cities, default=cities)
+            df = df[df["city"].isin(picked)]
+        st.dataframe(df, use_container_width=True, hide_index=True)
+        st.caption(f"{len(df)} équipes · source : `data/french_teams.csv`")
     doc_or_wip("Analyse du paysage français", "section_07_french_landscape.md")
 
 elif page.startswith("7"):
     st.title("Gap scientifique & méthodologie IA / multi-omics")
-    doc_or_wip("Gap (Q1–Q10) + Aims + plan statistique", "section_08_09_gap_method.md")
+    doc_or_wip("Gap (Q1–Q10) + Aims + plan statistique + validation", "section_08_09_gap_method.md")
 
 elif page.startswith("8"):
     st.title("Faisabilité — scénarios A / B / C")
-    doc_or_wip("Analyse de faisabilité", "section_13_feasibility.md")
+    doc_or_wip("Analyse de faisabilité, impact, publications", "section_13_feasibility.md")
 
 elif page.startswith("9"):
     st.title("Collaboration & classement TOP 5")
+    scoring = load_csv("french_teams_scoring.csv")
+    if scoring is not None and not scoring.empty and "total_pondere" in scoring.columns:
+        s = scoring.sort_values("total_pondere", ascending=False)
+        label_col = "team_label" if "team_label" in s.columns else "team_id"
+        fig = px.bar(
+            s, x="total_pondere", y=label_col, orientation="h",
+            range_x=[0, float(s["total_max"].max()) if "total_max" in s.columns else 70],
+            color_discrete_sequence=[ACCENT],
+        )
+        fig.update_layout(
+            height=340, margin=dict(l=10, r=10, t=10, b=10),
+            paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
+            font_color="#f4f4f7", yaxis_title="", xaxis_title="Score pondéré /70",
+            yaxis=dict(autorange="reversed"),
+        )
+        st.plotly_chart(fig, use_container_width=True)
+        st.dataframe(s, use_container_width=True, hide_index=True)
+        st.caption("source : `data/french_teams_scoring.csv`")
+    else:
+        wip("Grille de scoring (6 axes /10)", "data/french_teams_scoring.csv")
     doc_or_wip("Apports respectifs & recommandation", "section_15_16_17_collab.md")
-    st.subheader("Scoring des équipes candidates")
-    table_or_wip("Grille de scoring (6 axes /10)", "french_teams_scoring.csv")
 
 elif page.startswith("10"):
     st.title("Kit de prise de contact")
