@@ -16,21 +16,24 @@ Légende : ☐ à faire · ◐ en cours · ☑ fait
 - ☑ stubs `scripts/01..04`
 - ☐ `git init` + 1er commit (à la demande de l'utilisateur)
 
-## Phase 1 — Revue de littérature & état de l'art  ☐
+## Phase 1 — Revue de littérature & état de l'art  ◐ (v1 rédigée 2026-09-03)
 
-- ☐ Requêtes documentées (bases + blocs de mots-clés A/B/C/D du brief §2), avec dates
-- ☐ Corpus PubMed/EBI exporté → `meta-analysis/data/lit_corpus.csv`
+- ☑ 1er balayage bibliographique (recherche web) sur les blocs A/B/C/D — ~12 requêtes
+- ☑ Rédaction section 3 « State of the art » sourcée → `docs/section_03_state_of_the_art.md` (v1, ~42 réfs)
+- ☑ `docs/references.md` alimenté (R1–R42 + liste « à ajouter Phase 2 »)
+- ☐ Requêtes PubMed/Europe PMC formelles + journalisées → `meta-analysis/data/lit_corpus.csv`
+- ☐ Confirmer les identifiants marqués « [ref exacte à confirmer] » (Newell/Sagoo JCI 2010, iBox BMJ 2019, EHJ 2026 47(8):956, D-OAR, CTOT-03, JHLT 2022)
 - ☐ Screening titre/résumé → texte intégral, journal des exclusions (PRISMA)
-- ☐ Rédaction section 3 « State of the art » sourcée → `docs/section_03_state_of_the_art.md`
-- ☐ `docs/references.md` alimenté au fil de l'eau
 
-## Phase 2 — Revue systématique & méta-analyse  ☐
+## Phase 2 — Revue systématique & méta-analyse  ◐
 
+- ☑ Protocole revue systématique rédigé → `docs/section_04_systematic_review.md` (PICO, bases, mots-clés, éligibilité, QUADAS-2/PROBAST/NOS)
+- ☑ Évaluation préliminaire faisabilité méta-analyse : **quantitative ciblée** possible sur biomarqueurs non invasifs de rejet aigu (dd-cfDNA en priorité) ; pour la **tolérance** et l'**IA** → evidence synthesis structurée justifiée
 - ☐ Tableau d'extraction par étude → `data/studies_registry.csv` (colonnes = variables brief §3)
-- ☐ Décision : méta-analyse quantitative justifiable ? (critères : ≥ ~5 études comparables, mesure d'effet homogène, endpoints alignés)
-- ☐ Si oui → `scripts/03_meta_analysis.py` : effets aléatoires (DL/REML), I²/τ², forest, funnel, Egger, sensibilité leave-one-out, sous-groupes, méta-régression
-- ☐ Si non → note de justification + plan d'evidence synthesis structurée
-- ☐ Sections 4 & 5 rédigées
+- ☐ Décision finale méta-analyse vs evidence synthesis (après extraction)
+- ☐ Si méta-analyse → `scripts/03_meta_analysis.py` : modèle bivarié sens/spéc + HSROC (dd-cfDNA) ; sinon effets aléatoires DL/REML, I²/τ², forest, funnel, Egger, leave-one-out, sous-groupes, méta-régression
+- ☐ Risque de biais (QUADAS-2 / PROBAST / NOS) + diagramme PRISMA
+- ☐ Section 5 (méta-analyse / synthèse) rédigée
 
 ## Phase 3 — Datasets réellement accessibles  ◐
 
