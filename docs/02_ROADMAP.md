@@ -43,14 +43,15 @@ Légende : ☐ à faire · ◐ en cours · ☑ fait
 - ☐ Élargir : SRA, ArrayExpress, dbGaP, EGA, BioStudies, Zenodo, Figshare + single-cell / TCR-BCR / DSA
 - ☐ Section 6 rédigée + synthèse « ce qu'on peut faire dès aujourd'hui vs sous collaboration »
 
-## Phase 4 — Paysage français & scoring  ◐
+## Phase 4 — Paysage français & scoring  ◐ (v1 — cible n°1 arrêtée 2026-09-03)
 
-- ◐ `data/french_teams.csv` : v0 = 5 équipes seed vérifiées par recherche web
-      (PTG-PARCC / Loupy, PITIE-HTX / Coutance, CR2TI-NANTES / Brouard, CIRI-NOPAB-LYON / Thaunat, APHM-MARSEILLE à confirmer)
-- ☐ Compléter : Toulouse (HLA), EFS national, plateformes single-cell/génomique, autres CHU greffe cardiaque (Bordeaux, Lille, Strasbourg, Rennes, Montpellier)
-- ☐ Vérifier coordonnées publiques (site labo / annuaire institutionnel uniquement)
-- ☐ `data/french_teams_scoring.csv` : 6 axes /10 + total pondéré (poids dans SPEC §6)
-- ☐ Sections 7, 16, 17 + grille TOP 5 + recommandation « une seule équipe »
+- ☑ `data/french_teams.csv` : 5 équipes seed vérifiées ; contacts ramenés aux canaux institutionnels
+- ☑ `data/french_teams_scoring.csv` : 6 axes /10 + total pondéré /70
+- ☑ Section 7 (`section_07_french_landscape.md`), Sections 15-16-17 (`section_15_16_17_collab.md`) : grille TOP 5 + reco « une seule équipe »
+- ☑ **Cible n°1 = Paris Transplant Group / PITOR (PARCC)** — angle cœur via G. Coutance, sous l'égide d'A. Loupy — total 60,25/70. n°2 méthodo sans concurrence : CR2TI Nantes (Brouard).
+- ☐ Compléter le paysage : Rouen (Charles Nicolle), Bordeaux, Lille, Strasbourg, Rennes, Toulouse, Montpellier ; EFS/HLA national ; registre CRISTAL (Agence de la biomédecine) ; plateformes single-cell
+- ☐ Vérifier AP-HM Marseille (PI + unité de rattachement non confirmés)
+- ☐ Confirmer la voie de contact exacte du PTG (formulaire vs adresse générique PARCC)
 
 ## Phase 5 — Méthodologie IA / multi-omics / stats  ◐ (v1 rédigée 2026-09-03)
 
@@ -75,13 +76,15 @@ Légende : ☐ à faire · ◐ en cours · ☑ fait
 - ☐ Test local `streamlit run app/app.py`
 - ☐ Déploiement : git + Streamlit Cloud + OVH `landing/cardiotolerance/` (skill `medflow-sync-deploy`)
 
-## Phase 8 — Kit de prise de contact  ☐
+## Phase 8 — Kit de prise de contact  ◐ (v1 rédigé 2026-09-03)
 
-- ☐ `outreach/one_pager.md` finalisé (1 page, envoyable à un PI)
-- ☐ `outreach/email_fr.md` + `email_en.md` personnalisés pour l'équipe #1
-- ☐ Sections 1, 18, 19 du rapport
+- ☑ `outreach/one_pager.md` v1 (démarrage en 2 temps Scénario A puis B)
+- ☑ `outreach/email_fr.md` + `email_en.md` personnalisés pour la cible n°1 (G. Coutance / PTG-PARCC)
+- ☐ Sections 1 (executive summary), 18, 19 du rapport (reprennent les emails)
+- ☐ Confirmer avec Dr. Tall : cible nominative, périmètre de l'offre, voie d'envoi
+- ☐ Vérifier la voie de contact institutionnelle exacte avant envoi
 - ☐ Validation par Dr. Tall AVANT tout envoi réel
-- ☐ Envoi + suivi (relance J+10)
+- ☐ Envoi + suivi (relance J+10) ; contact méthodo Nantes (Brouard) en parallèle
 
 ---
 
