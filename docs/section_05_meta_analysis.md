@@ -50,7 +50,8 @@
     (60,7–96,3), spéc 76,9 % (71,1–82,7).
   - **Quantification absolue 2023** (Transplant Int), 52 patients / 557 échantillons,
     seuil 0,1 % → AUC 0,78 (0,68–0,88), sens 92 %, spéc 56 %.
-  - **FreeDNA-CAR 2024** (JHLT ; PubMed 39577511), prospective multicentrique **française
+  - **FreeDNA-CAR** (Jiménez-Blanco / Crespo-Leiro, *J Heart Lung Transplant*
+    2025;44:560–569 ; PubMed 39577511), prospective multicentrique **espagnole
     (12 centres)**, 206 patients / 1090 paires EMB–dd-cfDNA, seuil 0,10 % → **AUC 0,603**
     (0,513–0,692), sens 67 %, spéc 51 %, VPN 97 %, VPP 6,4 % — **performance modeste** ;
     à pondérer fortement dans la synthèse (design prospectif per-protocole rigoureux).

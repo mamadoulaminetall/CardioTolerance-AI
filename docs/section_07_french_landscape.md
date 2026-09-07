@@ -87,20 +87,23 @@ biopsie / omique** (cohorte 2006–2011, 137 biopsies / 109 patients, 4 centres)
 - **Pourquoi** : angle CAV/endothélium complémentaire ; **proximité de Montpellier**.
   Score prudent tant que PI/unité non confirmés.
 
-## 7.2bis Un réseau français multicentrique existe déjà (FreeDNA-CAR)
+## 7.2bis Modèle multicentrique de référence : FreeDNA-CAR (Espagne, pas France)
 
-L'étude **FreeDNA-CAR** (JHLT 2024, PubMed 39577511) a fédéré **12 centres français de
-transplantation cardiaque** pour un suivi **prospectif per-protocole** (7 biopsies
-endomyocardiques + dd-cfDNA la 1ʳᵉ année ; 206 patients ; 1090 paires ; inclusions
-2019–2021). Enseignements pour le montage :
-- il existe une **infrastructure multicentrique nationale mobilisable** et un savoir-faire
-  de collecte prospective harmonisée EMB + sang ;
-- la liste des 12 centres (à extraire de la publication) est une **cible secondaire
-  précieuse** pour un Scénario C ;
-- résultat scientifique du côté dd-cfDNA : **AUC 0,60** pour la détection du rejet aigu →
-  argument fort pour une approche **multi-omique / multimodale** plutôt que mono-marqueur.
-- Identifier le/les investigateur(s) coordinateur(s) FreeDNA-CAR (**à confirmer**) : point
-  d'entrée possible, potentiellement recoupant le Paris Transplant Group.
+⚠️ **Correction** : contrairement à une première lecture, **FreeDNA-CAR est une étude
+espagnole**, pas française — 12 centres espagnols, coordonnée par M. Jiménez-Blanco et
+M. G. Crespo-Leiro (*J Heart Lung Transplant* 2025;44:560–569 ; PubMed 39577511),
+prospective per-protocole (7 EMB + dd-cfDNA la 1ʳᵉ année ; 206 patients ; 1090 paires ;
+inclusions 2019–2023). Enseignements :
+- **modèle méthodologique** de collecte prospective harmonisée EMB + sang à l'échelle
+  nationale — utile comme référence de design pour un Scénario C français.
+- résultat scientifique : **AUC 0,60** pour le rejet aigu → argument fort pour une
+  approche **multi-omique / multimodale** plutôt que mono-marqueur.
+- le groupe de **M. G. Crespo-Leiro (A Coruña)** est un **collaborateur européen
+  potentiel** (hors France) pour une extension ou une validation externe — à garder en
+  réserve, pas en cible primaire.
+- **Côté français**, l'infrastructure multicentrique équivalente à mobiliser est celle du
+  **Paris Transplant Group** et des 4 centres historiques de la cohorte de rejet cardiaque
+  (HEGP + Pitié Paris, Laennec Nantes, Charles Nicolle Rouen).
 
 ## 7.3 À compléter (Phase 4 — suite)
 

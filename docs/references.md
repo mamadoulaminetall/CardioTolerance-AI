@@ -40,9 +40,16 @@ marqués « [ref exacte à confirmer] ». Ordre : par thème de la Section 3.
 - [R9] Incidental detection of operational tolerance in a kidney recipient lost to
   follow-up >10 years: case report + review. *PMC9948746.*
   https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9948746/ — [découverte fortuite]
-- [R10] Common gene signature across multiple studies — tolerance to renal allograft.
-  *PMC4424816.* https://ncbi.nlm.nih.gov/pmc/articles/PMC4424816 —
-  [Newell & Sagoo, JCI 2010 ; gènes B ; ITN/RISET — ref exacte JCI à confirmer]
+- [R10a] Newell KA, et al. Identification of a B cell signature associated with renal
+  transplant tolerance in humans. *J Clin Invest.* 2010;120(6):1836–47.
+  https://www.jci.org/articles/view/39933 — [signature sanguine B ; set de 3 gènes ;
+  ↑ CD20 dans le sédiment urinaire ; ↑ B naïfs/transitionnels]
+- [R10b] Sagoo P, et al. Development of a cross-platform biomarker signature to detect
+  renal transplant tolerance in humans. *J Clin Invest.* 2010;120(6):1848–61.
+  https://www.jci.org/articles/view/39922 — [signature cross-platform ; 170 gènes,
+  enrichis en gènes B]
+- [R10c] Common gene signature across multiple studies — tolerance to renal allograft.
+  *PMC4424816.* https://ncbi.nlm.nih.gov/pmc/articles/PMC4424816 — [ITN/RISET ; MS4A1, TCL1A]
 
 ## Minimisation de l'immunosuppression en transplantation cardiaque
 
@@ -173,11 +180,14 @@ marqués « [ref exacte à confirmer] ». Ordre : par thème de la Section 3.
   Patients After Heart Transplantation: a Prospective Study. *Transplant Int* 2023. PMC10641041 ;
   https://www.frontierspartnerships.org/journals/transplant-international/articles/10.3389/ti.2023.11260/full
   — [52 patients / 557 échantillons ; seuil 0,1 % ; AUC 0,78 (0,68–0,88), sens 92 %, spéc 56 %]
-- [R46] Donor-derived cell-free DNA as a new biomarker for cardiac allograft rejection: a
-  prospective study (**FreeDNA-CAR**). *J Heart Lung Transplant* 2024. PubMed 39577511 ;
-  https://www.jhltonline.org/article/S1053-2498(24)01953-3/fulltext — [**12 centres
-  français**, 206 patients, 1090 paires EMB/dd-cfDNA, Allonext/NGS ; seuil 0,10 % ;
-  **AUC 0,603** (0,513–0,692), sens 67 %, spéc 51 %, VPN 97 %, VPP 6,4 %]
+- [R46] Jiménez-Blanco M, Crespo-Leiro MG, et al. Donor-derived cell-free DNA as a new
+  biomarker for cardiac allograft rejection: a prospective study (**FreeDNA-CAR**).
+  *J Heart Lung Transplant* 2025;44:560–569. PubMed 39577511 ;
+  https://www.jhltonline.org/article/S1053-2498(24)01953-3/fulltext — [**étude espagnole,
+  12 centres** (Puerta de Hierro, 12 de Octubre, Gregorio Marañón, A Coruña, Bellvitge,
+  Clínic, Sant Pau, CU Navarra, HU Central Asturias, V. Arrixaca, V. Rocío, La Fe) ;
+  206 patients, 1090 paires EMB/dd-cfDNA, Allonext/NGS ; seuil 0,10 % ; **AUC 0,603**
+  (0,513–0,692), sens 67 %, spéc 51 %, VPN 97 %, VPP 6,4 % ; inclusions 2019–2023]
 - [R47] A two-threshold algorithm using donor-derived cell-free DNA fraction and quantity
   to detect acute rejection after heart transplantation. *Am J Transplant* 2025.
   https://www.amjtransplant.org/article/S1600-6135(25)00226-6/fulltext ; PMC12435761
@@ -188,9 +198,16 @@ marqués « [ref exacte à confirmer] ». Ordre : par thème de la Section 3.
 
 ## À ajouter en Phase 2 (identifiés, non encore intégrés)
 
-- Newell JW et al., *J Clin Invest* 2010 (signature B tolérance rénale) — ref exacte.
-- Sagoo P et al., *J Clin Invest* 2010 (170 gènes, tolérance rénale) — ref exacte.
-- iBox : Loupy A et al., *BMJ* 2019 — ref exacte.
-- CTOT-03 (RNA-seq BEM longitudinal, random forest) — publication + dépôt.
+- iBox : Loupy A et al., *BMJ* 2019 — ref exacte (titre : « Prediction system for risk of
+  allograft loss in patients receiving kidney transplants: international derivation and
+  validation study »).
+- CTOT-03 (RNA-seq BEM longitudinal, random forest) — publication + dépôt ImmPort (SDY).
 - JHLT 2022 « Whole transcriptome profiling of prospective endomyocardial biopsies »
   (S1053-2498(22)01394-8) — ref exacte + Data Availability.
+- MMDx-Heart 3230 biopsies — auteurs et n° exact du consortium (INTERHEART ?).
+
+## Corrections apportées
+
+- **FreeDNA-CAR [R46]** : identifié à tort comme « français » dans une 1ʳᵉ version →
+  **étude espagnole** (12 centres), Jiménez-Blanco / Crespo-Leiro, *JHLT* 2025;44:560–569.
+  Corrigé dans §5, §7, `studies_registry.csv` (S03).

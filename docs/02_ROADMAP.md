@@ -31,7 +31,7 @@ Légende : ☐ à faire · ◐ en cours · ☑ fait
 - ☑ Évaluation préliminaire faisabilité méta-analyse : **quantitative ciblée** possible sur biomarqueurs non invasifs de rejet aigu (dd-cfDNA en priorité) ; pour la **tolérance** et l'**IA** → evidence synthesis structurée justifiée
 - ☑ `data/studies_registry.csv` v0 = 11 études seed (S01–S11) — métadonnées d'abstracts, à confirmer sur texte intégral
 - ☑ `data/meta_estimates.csv` v0 = MA publiée dd-cfDNA (10 études ; sens 65 / spéc 79 / AUC 0,83 — **rapportée, non recalculée**) + ligne re-analyse + 2 comparateurs
-- ☑ Section 5 (méta-analyse / synthèse) rédigée + chiffres réels intégrés (dont FreeDNA-CAR AUC 0,60)
+- ☑ Section 5 (méta-analyse / synthèse) rédigée + chiffres réels intégrés (dont FreeDNA-CAR AUC 0,60 — **étude espagnole**, correction faite après une 1re lecture erronée « française »)
 - ☐ Requêtes PubMed/Europe PMC **formelles journalisées** + extraction 2×2 sur **texte intégral**
 - ☐ `scripts/03_meta_analysis.py` : bivarié sens/spéc + HSROC + test de Deeks (dd-cfDNA)
 - ☐ Risque de biais (QUADAS-2 / PROBAST / NOS) + diagramme PRISMA
