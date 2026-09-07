@@ -74,10 +74,13 @@ Légende : ☐ à faire · ◐ en cours · ☑ fait
 ## Phase 6bis — Executive summary & sections restantes  ◐
 
 - ☑ Section 1 (executive summary) → `docs/section_01_executive_summary.md`
+- ☑ Section 2 (question scientifique) → `docs/section_02_question.md`
 - ☑ Section 5 (décision méta-analyse / evidence synthesis) → `docs/section_05_meta_analysis.md`
 - ☑ Section 12 (validation biologique) → ajoutée à `docs/section_08_09_gap_method.md`
-- ☐ Sections 18-19 : intégrer les emails FR/EN dans le rapport final (déjà dans `outreach/`)
-- ☐ Section 2 (reformulation question) + Section 20 (références consolidées) — assemblage final
+- ☑ Section 20 (références) → `docs/references.md` (R1–R48)
+- ☑ **Assemblage** : `scripts/05_assemble_report.py` → `docs/RAPPORT_FINAL.md` (20 parties, ~1700 lignes)
+- ☑ Figures : `scripts/02_generate_figures.py` → `figures/` (radar + barres scoring, paysage dd-cfDNA, gabarit PRISMA)
+- ☐ Régénérer `RAPPORT_FINAL.md` + figures à chaque mise à jour de section (part du workflow sync)
 
 ## Phase 7 — Application Streamlit  ◐
 

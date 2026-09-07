@@ -143,14 +143,20 @@ elif page.startswith("2"):
 elif page.startswith("3"):
     st.title("Revue systématique")
     doc_or_wip("Stratégie de recherche & PRISMA", "section_04_systematic_review.md")
+    prisma = FIGURES / "fig_prisma_template.png"
+    if prisma.exists():
+        st.image(str(prisma), caption="Gabarit PRISMA (compteurs à remplir en Phase 2)", width=460)
     st.subheader("Registre des études incluses")
     table_or_wip("Tableau d'extraction par étude", "studies_registry.csv")
 
 elif page.startswith("4"):
     st.title("Méta-analyse")
     doc_or_wip("Méta-analyse / evidence synthesis", "section_05_meta_analysis.md")
+    land = FIGURES / "fig_ddcfdna_landscape.png"
+    if land.exists():
+        st.image(str(land), use_container_width=True)
     st.subheader("Estimations poolées")
-    table_or_wip("Estimations poolées (effets aléatoires)", "meta_estimates.csv")
+    table_or_wip("Estimations poolées / rapportées", "meta_estimates.csv")
 
 elif page.startswith("5"):
     st.title("Datasets réellement accessibles")
@@ -206,6 +212,9 @@ elif page.startswith("9"):
             yaxis=dict(autorange="reversed"),
         )
         st.plotly_chart(fig, use_container_width=True)
+        radar = FIGURES / "fig_scoring_radar.png"
+        if radar.exists():
+            st.image(str(radar), width=560)
         st.dataframe(s, use_container_width=True, hide_index=True)
         st.caption("source : `data/french_teams_scoring.csv`")
     else:
