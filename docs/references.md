@@ -157,6 +157,35 @@ marqués « [ref exacte à confirmer] ». Ordre : par thème de la Section 3.
   greffon (>85 paramètres). https://paristransplantgroup.com/current-team/alexandre-loupy/
   — [page institutionnelle ; publication princeps iBox (BMJ 2019) à ajouter]
 
+## Méta-analyse dd-cfDNA & études primaires (Phase 2 — intégrées v0)
+
+- [R43] Donor-derived cell-free DNA as a diagnostic biomarker for acute rejection in heart
+  transplantation: a systematic review and meta-analysis. *Transplantation Reviews* 2025.
+  PubMed 40132451 ; https://www.sciencedirect.com/science/article/abs/pii/S0955470X25000163
+  — [10 études ; sens poolée 65 % (61–68), spéc 79 % (78–80), AUC 0,83 ; recherche
+  jusqu'au 2024-08-01]
+- [R44] Khush KK et al. Noninvasive detection of graft injury after heart transplant using
+  donor-derived cell-free DNA: a prospective multicenter study (D-OAR). *Am J Transplant*
+  2019. PubMed 30835940 ;
+  https://www.amjtransplant.org/article/S1600-6135(22)09273-5/fulltext — [seuil ≥ 0,15 % ;
+  sens 78,5 % (60,7–96,3), spéc 76,9 % (71,1–82,7)]
+- [R45] Absolute Quantification of Donor-Derived Cell-Free DNA in Pediatric and Adult
+  Patients After Heart Transplantation: a Prospective Study. *Transplant Int* 2023. PMC10641041 ;
+  https://www.frontierspartnerships.org/journals/transplant-international/articles/10.3389/ti.2023.11260/full
+  — [52 patients / 557 échantillons ; seuil 0,1 % ; AUC 0,78 (0,68–0,88), sens 92 %, spéc 56 %]
+- [R46] Donor-derived cell-free DNA as a new biomarker for cardiac allograft rejection: a
+  prospective study (**FreeDNA-CAR**). *J Heart Lung Transplant* 2024. PubMed 39577511 ;
+  https://www.jhltonline.org/article/S1053-2498(24)01953-3/fulltext — [**12 centres
+  français**, 206 patients, 1090 paires EMB/dd-cfDNA, Allonext/NGS ; seuil 0,10 % ;
+  **AUC 0,603** (0,513–0,692), sens 67 %, spéc 51 %, VPN 97 %, VPP 6,4 %]
+- [R47] A two-threshold algorithm using donor-derived cell-free DNA fraction and quantity
+  to detect acute rejection after heart transplantation. *Am J Transplant* 2025.
+  https://www.amjtransplant.org/article/S1600-6135(25)00226-6/fulltext ; PMC12435761
+- [R48] Lack of Usefulness of Donor-Derived Cell-Free DNA as a Biomarker for Cardiac
+  Allograft Vasculopathy: a Prospective Study. *Front Cardiovasc Med* 2022.
+  https://www.frontiersin.org/journals/cardiovascular-medicine/articles/10.3389/fcvm.2022.856600/full
+  — [**résultat négatif** pour la CAV]
+
 ## À ajouter en Phase 2 (identifiés, non encore intégrés)
 
 - Newell JW et al., *J Clin Invest* 2010 (signature B tolérance rénale) — ref exacte.

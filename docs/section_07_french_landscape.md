@@ -87,6 +87,21 @@ biopsie / omique** (cohorte 2006–2011, 137 biopsies / 109 patients, 4 centres)
 - **Pourquoi** : angle CAV/endothélium complémentaire ; **proximité de Montpellier**.
   Score prudent tant que PI/unité non confirmés.
 
+## 7.2bis Un réseau français multicentrique existe déjà (FreeDNA-CAR)
+
+L'étude **FreeDNA-CAR** (JHLT 2024, PubMed 39577511) a fédéré **12 centres français de
+transplantation cardiaque** pour un suivi **prospectif per-protocole** (7 biopsies
+endomyocardiques + dd-cfDNA la 1ʳᵉ année ; 206 patients ; 1090 paires ; inclusions
+2019–2021). Enseignements pour le montage :
+- il existe une **infrastructure multicentrique nationale mobilisable** et un savoir-faire
+  de collecte prospective harmonisée EMB + sang ;
+- la liste des 12 centres (à extraire de la publication) est une **cible secondaire
+  précieuse** pour un Scénario C ;
+- résultat scientifique du côté dd-cfDNA : **AUC 0,60** pour la détection du rejet aigu →
+  argument fort pour une approche **multi-omique / multimodale** plutôt que mono-marqueur.
+- Identifier le/les investigateur(s) coordinateur(s) FreeDNA-CAR (**à confirmer**) : point
+  d'entrée possible, potentiellement recoupant le Paris Transplant Group.
+
 ## 7.3 À compléter (Phase 4 — suite)
 
 - CHU avec programme de greffe cardiaque non encore fichés : **Rouen (Charles Nicolle)**,

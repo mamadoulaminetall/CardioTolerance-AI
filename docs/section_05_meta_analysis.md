@@ -40,17 +40,37 @@
 
 ## 5.4 Méta-analyse ciblée réalisable : dd-cfDNA pour le rejet aigu cardiaque
 
-- **Base** : une méta-analyse existe déjà ([R31], PubMed 40132451, 2025) → **réplication /
-  mise à jour** avec recherche étendue et grille QUADAS-2.
+- **Base** : méta-analyse publiée — *Transplantation Reviews* 2025 ([R31], PubMed
+  40132451 ; recherche jusqu'au 2024-08-01) : **10 études**, **sensibilité poolée 65 %**
+  (IC95 61–68), **spécificité poolée 79 %** (IC95 78–80), **AUC 0,83**. → objectif :
+  **réplication / actualisation** (recherche étendue, QUADAS-2, études post-2024).
+- **Études primaires déjà identifiées** (extraites d'abstracts, à confirmer sur texte
+  intégral — voir [`../data/studies_registry.csv`](../data/studies_registry.csv) S01–S05) :
+  - **Khush 2019 (D-OAR)**, prospective multicentrique USA, seuil ≥ 0,15 % → sens 78,5 %
+    (60,7–96,3), spéc 76,9 % (71,1–82,7).
+  - **Quantification absolue 2023** (Transplant Int), 52 patients / 557 échantillons,
+    seuil 0,1 % → AUC 0,78 (0,68–0,88), sens 92 %, spéc 56 %.
+  - **FreeDNA-CAR 2024** (JHLT ; PubMed 39577511), prospective multicentrique **française
+    (12 centres)**, 206 patients / 1090 paires EMB–dd-cfDNA, seuil 0,10 % → **AUC 0,603**
+    (0,513–0,692), sens 67 %, spéc 51 %, VPN 97 %, VPP 6,4 % — **performance modeste** ;
+    à pondérer fortement dans la synthèse (design prospectif per-protocole rigoureux).
+  - **Algorithme à deux seuils 2025** (AJT) — fraction + quantité.
+  - **dd-cfDNA vs CAV 2022** (Front Cardiovasc Med) — **résultat négatif** (délimite le
+    périmètre : dd-cfDNA pour le rejet **aigu**, pas la vasculopathie).
 - **Modèle** : bivarié à effets aléatoires (Reitsma) ; courbe **HSROC** ; sensibilité,
   spécificité, DOR, LR+ / LR− poolés.
-- **Hétérogénéité** : I² adapté aux études diagnostiques ; exploration par **méta-régression**
-  (seuil de positivité, type de rejet, assay, délai post-greffe).
-- **Sous-groupes** : AMR vs TCMR ; seuil dd-cfDNA (0,15 % vs autres) ; adulte vs pédiatrie.
-- **Biais** : Deeks' funnel plot test ; analyse de sensibilité (études à faible risque de
-  biais uniquement).
+- **Hétérogénéité** : I² adapté aux études diagnostiques ; **méta-régression** (seuil de
+  positivité, type de rejet, assay, délai post-greffe, design prospectif per-protocole vs
+  cas-témoins).
+- **Sous-groupes** : AMR vs TCMR ; seuil dd-cfDNA (0,10 % vs 0,15 % vs 0,20 %) ; adulte vs
+  pédiatrie ; surveillance vs suspicion clinique.
+- **Biais** : test de Deeks ; sensibilité (études à faible risque de biais uniquement) ;
+  **attention à l'écart estimations rétrospectives vs prospectives** (l'AUC 0,60 de
+  FreeDNA-CAR suggère un optimisme des séries antérieures).
 - **Comparateurs non invasifs** (méta-analyses existantes, à citer, pas à recalculer) :
-  troponine ([R33], sensibilité 0,41 / spécificité 0,79) ; **IRM T2 mapping** ([R34]).
+  troponine ([R33], sensibilité 0,41 / spécificité 0,79) ; **IRM T2 mapping** ([R34],
+  sens ~85–90 % / spéc ~70–85 %). Consolidés dans
+  [`../data/meta_estimates.csv`](../data/meta_estimates.csv).
 
 ## 5.5 Livrables de la section
 
@@ -63,8 +83,13 @@
 ## 5.6 Statut
 
 - ☑ Décision de méthode (ce document)
-- ☐ Extraction `studies_registry.csv`
-- ☐ Exécution méta-analyse dd-cfDNA
-- ☐ Risque de biais + PRISMA
-- ☐ Rédaction finale (bascule possible si l'extraction révèle plus d'études exploitables
-  que prévu)
+- ◐ `data/studies_registry.csv` v0 = 11 études seed (S01–S11 : 5 dd-cfDNA, 2 MMDx, 2 IA,
+  2 comparateurs tolérance rénale) — métadonnées extraites d'abstracts, à confirmer sur
+  texte intégral
+- ◐ `data/meta_estimates.csv` v0 = MA publiée (dd-cfDNA : 10 études, sens 65 % / spéc
+  79 % / AUC 0,83, **rapportée, non recalculée**) + ligne « re-analyse prévue » + 2
+  comparateurs
+- ☐ Requêtes PubMed/Europe PMC formelles journalisées + extraction 2×2 sur texte intégral
+- ☐ Exécution `scripts/03_meta_analysis.py` (bivarié + HSROC + Deeks)
+- ☐ Risque de biais (QUADAS-2 / PROBAST) + diagramme PRISMA
+- ☐ Rédaction finale

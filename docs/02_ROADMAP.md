@@ -29,11 +29,13 @@ Légende : ☐ à faire · ◐ en cours · ☑ fait
 
 - ☑ Protocole revue systématique rédigé → `docs/section_04_systematic_review.md` (PICO, bases, mots-clés, éligibilité, QUADAS-2/PROBAST/NOS)
 - ☑ Évaluation préliminaire faisabilité méta-analyse : **quantitative ciblée** possible sur biomarqueurs non invasifs de rejet aigu (dd-cfDNA en priorité) ; pour la **tolérance** et l'**IA** → evidence synthesis structurée justifiée
-- ☐ Tableau d'extraction par étude → `data/studies_registry.csv` (colonnes = variables brief §3)
-- ☐ Décision finale méta-analyse vs evidence synthesis (après extraction)
-- ☐ Si méta-analyse → `scripts/03_meta_analysis.py` : modèle bivarié sens/spéc + HSROC (dd-cfDNA) ; sinon effets aléatoires DL/REML, I²/τ², forest, funnel, Egger, leave-one-out, sous-groupes, méta-régression
+- ☑ `data/studies_registry.csv` v0 = 11 études seed (S01–S11) — métadonnées d'abstracts, à confirmer sur texte intégral
+- ☑ `data/meta_estimates.csv` v0 = MA publiée dd-cfDNA (10 études ; sens 65 / spéc 79 / AUC 0,83 — **rapportée, non recalculée**) + ligne re-analyse + 2 comparateurs
+- ☑ Section 5 (méta-analyse / synthèse) rédigée + chiffres réels intégrés (dont FreeDNA-CAR AUC 0,60)
+- ☐ Requêtes PubMed/Europe PMC **formelles journalisées** + extraction 2×2 sur **texte intégral**
+- ☐ `scripts/03_meta_analysis.py` : bivarié sens/spéc + HSROC + test de Deeks (dd-cfDNA)
 - ☐ Risque de biais (QUADAS-2 / PROBAST / NOS) + diagramme PRISMA
-- ☐ Section 5 (méta-analyse / synthèse) rédigée
+- ☐ Décision finale confirmée après extraction complète
 
 ## Phase 3 — Datasets réellement accessibles  ◐
 
