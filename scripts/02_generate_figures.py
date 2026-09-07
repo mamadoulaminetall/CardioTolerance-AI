@@ -116,11 +116,21 @@ def ddcfdna_landscape(reg: pd.DataFrame, meta: pd.DataFrame) -> None:
 
 
 def prisma_template() -> None:
+    corpus = DATA.parent / "meta-analysis" / "data" / "lit_corpus.csv"
+    qlog = DATA.parent / "meta-analysis" / "data" / "query_log.csv"
+    n_dedup = n_ident = "à remplir"
+    if corpus.exists():
+        n_dedup = str(len(pd.read_csv(corpus)))
+    if qlog.exists():
+        ql = pd.read_csv(qlog)
+        ql = ql[ql["count"].astype(str).str.isdigit()]
+        n_ident = f"{int(ql['count'].astype(int).sum())} (8 requêtes PubMed, {ql['date'].iloc[0]})"
+
     fig, ax = plt.subplots(figsize=(6.5, 8))
     ax.axis("off")
     steps = [
-        ("Records identifiés\n(PubMed + Europe PMC + registres)", "n = à remplir"),
-        ("Après déduplication", "n = à remplir"),
+        ("Records identifiés\n(PubMed, 8 requêtes journalisées)", f"n = {n_ident}"),
+        ("Après déduplication (PMID)", f"n = {n_dedup}"),
         ("Screening titre/résumé", "exclus : n = à remplir"),
         ("Texte intégral évalué", "exclus : n = à remplir (motifs)"),
         ("Études incluses (synthèse)", "n = à remplir"),

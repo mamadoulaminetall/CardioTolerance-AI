@@ -46,6 +46,29 @@ Requêtes principales : **A∧B**, **A∧C**, **A∧D**, **A∧B∧C**, **A∧C�
 exécutée est journalisée (chaîne exacte, base, date, nombre de hits) pour la traçabilité
 PRISMA.
 
+### 4.3bis Premier passage PubMed (journalisé le 2026-09-07)
+
+Exécuté par [`../scripts/01_build_lit_corpus.py`](../scripts/01_build_lit_corpus.py) via
+E-utilities → [`../meta-analysis/data/query_log.csv`](../meta-analysis/data/query_log.csv)
+et [`../meta-analysis/data/lit_corpus.csv`](../meta-analysis/data/lit_corpus.csv).
+
+| Requête | Hits |
+|---|---|
+| Q1 — cœur ∧ tolérance | 437 |
+| Q2 — cœur ∧ tolérance ∧ signatures immunitaires | 86 |
+| Q3 — cœur ∧ tolérance ∧ multi-omics | 8 |
+| **Q4 — cœur ∧ tolérance ∧ IA/ML** | **0** |
+| Q5 — cœur ∧ omics ∧ IA ∧ rejet | 10 |
+| Q6 — cœur ∧ dd-cfDNA ∧ rejet | 149 |
+| Q7 — cœur ∧ signatures immunitaires ∧ omics ∧ rejet | 20 |
+| Q8 — cœur ∧ répertoire TCR/BCR / délétion clonale | 84 |
+| **Total dédoublonné (PMID)** | **670** (652 avec résumé) |
+
+**Résultat marquant** : **Q4 = 0** — aucun article PubMed n'associe *transplantation
+cardiaque* + *tolérance* + *IA/ML* dans le titre/résumé. Confirmation directe du gap
+(Section 8, Q3/Q10). À ce stade : PubMed uniquement ; Europe PMC, Cochrane, registres et
+preprints restent à ajouter pour le décompte PRISMA définitif.
+
 ## 4.4 Critères d'éligibilité
 
 **Inclusion** : population de transplantés cardiaques humains ; ≥ 1 mesure immunologique
@@ -101,6 +124,10 @@ extraction.
 
 - ☑ Protocole rédigé (ce document)
 - ☑ Blocs de mots-clés figés
+- ☑ 1er passage PubMed journalisé (8 requêtes → 670 PMID dédoublonnés,
+  `meta-analysis/data/{query_log,lit_corpus}.csv`) ; **Q4 = 0** (cœur ∧ tolérance ∧ IA)
+- ☐ Étendre : Europe PMC, Cochrane CENTRAL, ClinicalTrials.gov/EU-CTR, bioRxiv/medRxiv
+- ☐ Screening titre/résumé des 670 (2 relecteurs) → journal des exclusions
 - ◐ `data/studies_registry.csv` v0 = 12 études seed (S01–S12), métadonnées d'abstracts
   vérifiées ; **effectifs bruts (2×2) non extraits** — nécessite l'accès aux textes
   intégraux

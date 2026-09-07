@@ -143,10 +143,19 @@ elif page.startswith("2"):
 elif page.startswith("3"):
     st.title("Revue systématique")
     doc_or_wip("Stratégie de recherche & PRISMA", "section_04_systematic_review.md")
+    qlog = ROOT / "meta-analysis" / "data" / "query_log.csv"
+    corpus = ROOT / "meta-analysis" / "data" / "lit_corpus.csv"
+    if qlog.exists():
+        st.subheader("Journal des requêtes PubMed")
+        ql = pd.read_csv(qlog)
+        st.dataframe(ql[["query_id", "date", "count", "retrieved"]], use_container_width=True, hide_index=True)
+        if corpus.exists():
+            st.caption(f"Corpus dédoublonné : {len(pd.read_csv(corpus))} articles "
+                       f"(`meta-analysis/data/lit_corpus.csv`) · **Q4 (cœur ∧ tolérance ∧ IA) = 0**")
     prisma = FIGURES / "fig_prisma_template.png"
     if prisma.exists():
-        st.image(str(prisma), caption="Gabarit PRISMA (compteurs à remplir en Phase 2)", width=460)
-    st.subheader("Registre des études incluses")
+        st.image(str(prisma), caption="PRISMA — identifiés/dédoublonnés réels, étapes suivantes à remplir", width=460)
+    st.subheader("Registre des études incluses (seed)")
     table_or_wip("Tableau d'extraction par étude", "studies_registry.csv")
 
 elif page.startswith("4"):

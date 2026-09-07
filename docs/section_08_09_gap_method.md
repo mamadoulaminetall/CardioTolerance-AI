@@ -52,6 +52,10 @@
 
 ## Q3 — Qu'est-ce qui n'a pratiquement pas été étudié ?
 
+**Preuve bibliométrique directe** (PubMed, 2026-09-07 — cf. §4.3bis) : la requête
+*transplantation cardiaque* ∧ *tolérance* ∧ *IA/ML* renvoie **0 article** ;
+*cœur* ∧ *tolérance* ∧ *multi-omics* n'en renvoie que **8**.
+
 1. **Signature multi-omique de tolérance en transplantation cardiaque humaine** : absente.
 2. **Données -omiques longitudinales humaines orientées *tolérance*** (vs rejet) dans le
    cœur : quasi nulles ; **scRNA-seq du rejet cardiaque surtout murin** [R35, R36] ;
