@@ -29,12 +29,13 @@ Légende : ☐ à faire · ◐ en cours · ☑ fait
 
 - ☑ Protocole revue systématique rédigé → `docs/section_04_systematic_review.md` (PICO, bases, mots-clés, éligibilité, QUADAS-2/PROBAST/NOS)
 - ☑ Évaluation préliminaire faisabilité méta-analyse : **quantitative ciblée** possible sur biomarqueurs non invasifs de rejet aigu (dd-cfDNA en priorité) ; pour la **tolérance** et l'**IA** → evidence synthesis structurée justifiée
-- ☑ `data/studies_registry.csv` v0 = 11 études seed (S01–S11) — métadonnées d'abstracts, à confirmer sur texte intégral
+- ☑ `data/studies_registry.csv` v0 = 12 études seed (S01–S12) — métadonnées vérifiées (dont S12 Piening/CTOT-03, S07 MMDx-3230 archétypes)
 - ☑ `data/meta_estimates.csv` v0 = MA publiée dd-cfDNA (10 études ; sens 65 / spéc 79 / AUC 0,83 — **rapportée, non recalculée**) + ligne re-analyse + 2 comparateurs
-- ☑ Section 5 (méta-analyse / synthèse) rédigée + chiffres réels intégrés (dont FreeDNA-CAR AUC 0,60 — **étude espagnole**, correction faite après une 1re lecture erronée « française »)
-- ☐ Requêtes PubMed/Europe PMC **formelles journalisées** + extraction 2×2 sur **texte intégral**
-- ☐ `scripts/03_meta_analysis.py` : bivarié sens/spéc + HSROC + test de Deeks (dd-cfDNA)
-- ☐ Risque de biais (QUADAS-2 / PROBAST / NOS) + diagramme PRISMA
+- ☑ Section 5 rédigée + chiffres réels (FreeDNA-CAR AUC 0,60 — **étude espagnole**, corrigée)
+- ☑ `scripts/03_meta_analysis.py` **implémenté et runnable** (pooling DL logit sens/spéc + I² + IP + espace ROC + forest) ; s'arrête proprement en l'absence de `data/ddcfdna_2x2.csv`
+- ☐ **Extraction 2×2 (TP/FP/FN/TN) sur textes intégraux** → `data/ddcfdna_2x2.csv` *(bloquant : accès bibliothèque/institutionnel — pas un verrou méthodo)*
+- ☐ Requêtes PubMed/Europe PMC **formelles journalisées** → `lit_corpus.csv` + journal PRISMA
+- ☐ Risque de biais (QUADAS-2 / PROBAST / NOS)
 - ☐ Décision finale confirmée après extraction complète
 
 ## Phase 3 — Datasets réellement accessibles  ◐

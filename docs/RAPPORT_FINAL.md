@@ -532,11 +532,23 @@ extraction.
 
 - ☑ Protocole rédigé (ce document)
 - ☑ Blocs de mots-clés figés
-- ☐ Exécution des requêtes + `lit_corpus.csv`
-- ☐ Screening + `data/studies_registry.csv`
+- ◐ `data/studies_registry.csv` v0 = 12 études seed (S01–S12), métadonnées d'abstracts
+  vérifiées ; **effectifs bruts (2×2) non extraits** — nécessite l'accès aux textes
+  intégraux
+- ☑ `scripts/03_meta_analysis.py` **implémenté et exécutable** : attend
+  `data/ddcfdna_2x2.csv` (study_id, threshold, tp, fp, fn, tn) ; s'arrête proprement tant
+  que ce fichier n'existe pas ; produit ensuite pooling DL (logit) sens/spéc + I² +
+  intervalle de prédiction + espace ROC + forest plots
+- ☐ Extraction 2×2 sur textes intégraux → `data/ddcfdna_2x2.csv` *(bloquant : accès
+  bibliothèque / institutionnel requis)*
+- ☐ Exécution des requêtes formelles + `lit_corpus.csv` + journal PRISMA
 - ☐ Risque de biais (QUADAS-2 / PROBAST / NOS)
-- ☐ Diagramme PRISMA
 - ☐ Décision finale méta-analyse vs evidence synthesis
+
+**Ce qui bloque la méta-analyse quantitative aujourd'hui** : les abstracts donnent
+sensibilité/spécificité mais rarement les **effectifs par cellule** (TP/FP/FN/TN)
+nécessaires au modèle. C'est une tâche d'extraction sur PDF (Dr. Tall / partenaire /
+accès institutionnel), pas un verrou méthodologique. Le code est prêt.
 
 ---
 
@@ -656,9 +668,8 @@ mention « à confirmer ».*
 | Accès | Signification | Datasets (seed) |
 |---|---|---|
 | **Public — immédiat** | téléchargeable sans accord | GSE124897, GSE2445, GSE2596 (GEO) |
-| **Controlled access — demande** | accord d'usage / DUA | CTOT-03 (ImmPort, à confirmer) |
-| **Mentionné en publication, dépôt à localiser** | à retrouver / contacter les auteurs | JHLT-2022-EMB (whole transcriptome, biopsies prospectives) |
-| **Non public — collaboration nécessaire** | données de centre non déposées | cohorte rétrospective du partenaire (Scénario B) ; MMDx-Heart complet |
+| **Controlled access — demande** | accord d'usage / DUA | CTOT03-PIENING-2022 (dépôt exact à localiser) |
+| **Non public — collaboration nécessaire** | données de centre non déposées | INTERHEART-MMDX (ATAGC / Paris Transplant Group) ; cohorte rétrospective du partenaire (Scénario B) |
 
 ## 6.2 Fiches (résumé — détail dans le CSV)
 
@@ -671,14 +682,18 @@ mention « à confirmer ».*
   Intérêt : rare design **longitudinal** autour de l'épisode de rejet.
 - **GSE2596** (GEO, GPL1053) — 16 rejet aigu / 27 non-rejet, biopsies. **Public.**
   Souvent utilisé comme **cohorte de validation externe** dans les réanalyses.
-- **CTOT-03** — RNA-seq (bulk) sur biopsies endomyocardiques, ~125 biopsies, **26
-  receveurs** (jusqu'à 6 biopsies chacun, 12 premiers mois) → **longitudinal**. Dépôt
-  probable **ImmPort** (SDY à confirmer), accès probablement sous **DUA**. Design rare et
-  précieux ; effectif patient modeste.
-- **JHLT-2022-EMB** — *J Heart Lung Transplant* 2022, « Whole transcriptome profiling of
-  prospective endomyocardial biopsies… prognostic and diagnostic signatures of cardiac
-  allograft rejection ». Données brutes : **section Data Availability à vérifier** (GEO /
-  EGA / dbGaP).
+- **CTOT03-PIENING-2022** — Piening BD et al., *J Heart Lung Transplant* 2022;41(6):840–848
+  (PubMed 35317953). RNA-seq (whole transcriptome) sur **125 biopsies** endomyocardiques,
+  **26 receveurs** (jusqu'à 6 biopsies chacun, 12 premiers mois) → **longitudinal**.
+  Cohorte **CTOT-03** (NCT00531921). Random forest ; signature pronostique 0R/1R → prédit
+  la prochaine biopsie 2R/3R avec **~90 % de précision**. Accès probable sous **DUA** ;
+  **localisation exacte des données brutes à confirmer** (GEO / SRA / dbGaP).
+  *(Fusionne les ex-entrées « CTOT-03 » et « JHLT-2022-EMB » : c'était la même étude.)*
+- **INTERHEART-MMDX** — biopsies cardiaques du consortium **INTERHEART** (NCT02670408) +
+  biopsies de service, socle du système **MMDx-Heart** (Halloran ; 3230 biopsies dans
+  l'analyse 2024, *Am J Transplant* 2024;24(8), PubMed 38527588). **Non public** — accès
+  uniquement **via collaboration** (ATAGC U. Alberta / Paris Transplant Group). Plateforme
+  microarray propriétaire.
 
 ## 6.3 Ce qui manque dans les données publiques (et pourquoi la collaboration est nécessaire)
 
@@ -792,15 +807,21 @@ biopsie / omique** (cohorte 2006–2011, 137 biopsies / 109 patients, 4 centres)
 - **Pourquoi** : apport mécanistique B/anticorps + spatial, complémentaire d'une approche
   signature.
 
-### E. Immunogénétique de la transplantation / CAV — AP-HM (Marseille)
-- **PI / unité** : **Donnée non disponible / à confirmer** (noms cités dans la
-  littérature transplantation marseillaise : Pascale Paul, Christophe Picard — à
-  vérifier ; unité C2VN à confirmer).
-- **Expertise** : biomarqueurs non invasifs de lésion endothéliale immune ; **CAV** ;
-  immunogénétique HLA (EFS PACA). Étude NCT01569334.
-- **Contact** : AP-HM (Timone / Hôpital Nord), Aix-Marseille Université, EFS PACA.
-- **Pourquoi** : angle CAV/endothélium complémentaire ; **proximité de Montpellier**.
-  Score prudent tant que PI/unité non confirmés.
+### E. C2VN — Équipe 3 « Endothélium, cellules circulantes et pathologies vasculaires » (Marseille)
+- **PI / unité** : **Pascale Paul** (C2VN — Centre de recherche en CardioVasculaire et
+  Nutrition, INSERM 1263 / INRAE 1260, Aix-Marseille Université) ; **Christophe Picard**
+  (EFS PACA, HLA) — rôles exacts à préciser.
+- **Expertise** : **activation NK CD16-dépendante et risque de CAV** ([Paul et al.,
+  *Front Immunol* 2019;10:1208] — profilage génétique et fonctionnel identifiant les
+  patients à haut risque de vasculopathie du greffon) ; biomarqueurs non invasifs de
+  lésion / réparation endothéliale immune (étude NCT01569334) ; immunogénétique HLA (EFS).
+- **Contact** : page équipe C2VN
+  (`c2vn.univ-amu.fr/equipes/equipe-3-endothelium-cellules-circulantes-et-pathologies-vasculaires/`) ;
+  AP-HM (Timone / Hôpital Nord) ; EFS PACA.
+- **Pourquoi** : angle **NK / CAV / endothélium** original et complémentaire d'une
+  approche signature ; plateau HLA EFS ; **proximité de Montpellier**. Apport attendu =
+  **partenaire biologie / validation**, pas fournisseur de cohorte multi-omique
+  longitudinale (score 43,75/70).
 
 ## 7.2bis Modèle multicentrique de référence : FreeDNA-CAR (Espagne, pas France)
 
@@ -1336,7 +1357,7 @@ cardiaque ×1,25 ; potentiel collaboration ×1,25 ; sci., immuno., IA ×1,0).
 | 2 | **Pitié-Salpêtrière — programme greffe cardiaque** (Coutance, Varnous) | 8 | 8 | 10 | 7 | 7 | 8 | **56,50** |
 | 3 | **CR2TI Nantes** (Brouard, Danger) | 9 | 6 | 5 | 9 | 8 | 8 | **51,25** |
 | 4 | **CIRI Lyon — NOPAB** (Thaunat) | 8 | 6 | 5 | 9 | 6 | 7 | **47,00** |
-| 5 | **AP-HM Marseille — immunogénétique / CAV** (*PI à confirmer*) | 6 | 5 | 7 | 7 | 5 | 6 | **41,75** |
+| 5 | **C2VN Équipe 3 / immunogénétique — AP-HM Marseille** (Pascale Paul) | 7 | 5 | 7 | 8 | 5 | 6 | **43,75** |
 
 **Lecture** :
 - Le **duo parisien** (1 & 2, en partie la même personne côté recherche : G. Coutance)
@@ -1344,8 +1365,9 @@ cardiaque ×1,25 ; potentiel collaboration ×1,25 ; sci., immuno., IA ×1,0).
 - **Nantes** est n°3 malgré un accès cardiaque faible, parce que c'est l'équipe la plus
   alignée sur le **concept même de signature de tolérance** — précieuse en
   **co-encadrement méthodologique** même si elle n'apporte pas la cohorte cardiaque.
-- **Marseille** reste provisoire (PI/unité non confirmés) : score à revoir après
-  vérification.
+- **Marseille (C2VN Éq. 3, P. Paul)** : PI/unité confirmés ; angle NK CD16 / CAV
+  original mais rôle attendu = **partenaire biologie/validation**, pas fournisseur de
+  cohorte multi-omique longitudinale.
 
 ---
 
@@ -1589,8 +1611,16 @@ marqués « [ref exacte à confirmer] ». Ordre : par thème de la Section 3.
 - [R24] Molecular Microscope Diagnostic System: Assessment of Rejection and Injury in
   Heart Transplant Biopsies. *Transplantation.* 2022. PubMed 36508644.
   https://pubmed.ncbi.nlm.nih.gov/36508644/ — [453 RATs ; TCMR/AMR/injury/atrophy-fibrosis]
-- [R25] Redefining the molecular rejection states in 3230 heart transplant biopsies.
-  *Am J Transplant.* 2024. https://www.sciencedirect.com/science/article/pii/S1600613524002417
+- [R25] Halloran PF, et al. Redefining the molecular rejection states in 3230 heart
+  transplant biopsies: relationships to parenchymal injury and graft survival. *Am J
+  Transplant.* 2024;24(8). PubMed 38527588 ;
+  https://www.sciencedirect.com/science/article/pii/S1600613524002417 — [3230 biopsies =
+  1641 INTERHEART (NCT02670408) + 1589 de service ; 6 classifieurs, 7 archétypes : No
+  rejection 48 %, Minor 24 %, TCMR1 2,3 %, TCMR2 2,7 %, TCMR/mixte 2,7 %, ABMR précoce
+  3,9 %, ABMR établie 16 %]
+- [R25b] Molecular Diagnosis of Rejection Phenotypes in 889 Heart Transplant Biopsies:
+  The INTERHEART Study. ~2018.
+  https://www.researchgate.net/publication/324148015 — [étude princeps INTERHEART]
 - [R26] Building a tissue-based molecular diagnostic system in heart transplant
   rejection: the heart MMDx system. *J Heart Lung Transplant.*
   https://www.sciencedirect.com/science/article/abs/pii/S1053249817318302 —
@@ -1648,9 +1678,22 @@ marqués « [ref exacte à confirmer] ». Ordre : par thème de la Section 3.
   [AUC ~0,84]
 - [R41] Prediction of Acute Cardiac Rejection Based on Gene Expression Profiles. *J Pers
   Med.* 2024;14(4):410. https://doi.org/10.3390/jpm14040410
-- [R42] Paris Transplant Group — iBox / prédiction individuelle du risque de perte de
-  greffon (>85 paramètres). https://paristransplantgroup.com/current-team/alexandre-loupy/
-  — [page institutionnelle ; publication princeps iBox (BMJ 2019) à ajouter]
+- [R42] Loupy A, et al. Prediction system for risk of allograft loss in patients
+  receiving kidney transplants: international derivation and validation study (**iBox**).
+  *BMJ.* 2019;366:l4923. PubMed 31530561 — [dérivation 4000 receveurs (3 hôpitaux FR,
+  2005–2014) ; validation Europe 2129 + Amérique du Nord 1428 + 3 essais randomisés ;
+  C-index 0,81 / 0,81 / 0,80]
+- [R42b] Piening BD, et al. Whole transcriptome profiling of prospective endomyocardial
+  biopsies reveals prognostic and diagnostic signatures of cardiac allograft rejection.
+  *J Heart Lung Transplant.* 2022;41(6):840–848. PubMed 35317953 — [cohorte CTOT-03
+  (NCT00531921) ; 26 receveurs / 125 EMB ; RNA-seq + random forest ; signature
+  pronostique 0R/1R → prédit la prochaine biopsie 2R/3R avec ~90 % de précision ;
+  fusionne les ex-entrées « CTOT-03 » et « JHLT-2022-EMB » du registre datasets]
+- [R42c] Paul P, et al. Genetic and Functional Profiling of CD16-Dependent Natural Killer
+  Activation Identifies Patients at Higher Risk of Cardiac Allograft Vasculopathy.
+  *Front Immunol.* 2019;10:1208.
+  https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2019.01208/pdf —
+  [équipe C2VN, AP-HM Marseille ; NK CD16 / CAV]
 
 ## Méta-analyse dd-cfDNA & études primaires (Phase 2 — intégrées v0)
 
@@ -1686,13 +1729,10 @@ marqués « [ref exacte à confirmer] ». Ordre : par thème de la Section 3.
 
 ## À ajouter en Phase 2 (identifiés, non encore intégrés)
 
-- iBox : Loupy A et al., *BMJ* 2019 — ref exacte (titre : « Prediction system for risk of
-  allograft loss in patients receiving kidney transplants: international derivation and
-  validation study »).
-- CTOT-03 (RNA-seq BEM longitudinal, random forest) — publication + dépôt ImmPort (SDY).
-- JHLT 2022 « Whole transcriptome profiling of prospective endomyocardial biopsies »
-  (S1053-2498(22)01394-8) — ref exacte + Data Availability.
-- MMDx-Heart 3230 biopsies — auteurs et n° exact du consortium (INTERHEART ?).
+- Piening BD et al. 2022 — localiser le **dépôt des données brutes** (section Data
+  Availability : GEO / SRA / dbGaP ?).
+- INTERHEART 889 — référence exacte (auteurs, journal, année).
+- MMDx-Heart 3230 — n° de volume/pages exact (*Am J Transplant* 2024;24(8):xxxx).
 
 ## Corrections apportées
 

@@ -13,9 +13,8 @@ mention « à confirmer ».*
 | Accès | Signification | Datasets (seed) |
 |---|---|---|
 | **Public — immédiat** | téléchargeable sans accord | GSE124897, GSE2445, GSE2596 (GEO) |
-| **Controlled access — demande** | accord d'usage / DUA | CTOT-03 (ImmPort, à confirmer) |
-| **Mentionné en publication, dépôt à localiser** | à retrouver / contacter les auteurs | JHLT-2022-EMB (whole transcriptome, biopsies prospectives) |
-| **Non public — collaboration nécessaire** | données de centre non déposées | cohorte rétrospective du partenaire (Scénario B) ; MMDx-Heart complet |
+| **Controlled access — demande** | accord d'usage / DUA | CTOT03-PIENING-2022 (dépôt exact à localiser) |
+| **Non public — collaboration nécessaire** | données de centre non déposées | INTERHEART-MMDX (ATAGC / Paris Transplant Group) ; cohorte rétrospective du partenaire (Scénario B) |
 
 ## 6.2 Fiches (résumé — détail dans le CSV)
 
@@ -28,14 +27,18 @@ mention « à confirmer ».*
   Intérêt : rare design **longitudinal** autour de l'épisode de rejet.
 - **GSE2596** (GEO, GPL1053) — 16 rejet aigu / 27 non-rejet, biopsies. **Public.**
   Souvent utilisé comme **cohorte de validation externe** dans les réanalyses.
-- **CTOT-03** — RNA-seq (bulk) sur biopsies endomyocardiques, ~125 biopsies, **26
-  receveurs** (jusqu'à 6 biopsies chacun, 12 premiers mois) → **longitudinal**. Dépôt
-  probable **ImmPort** (SDY à confirmer), accès probablement sous **DUA**. Design rare et
-  précieux ; effectif patient modeste.
-- **JHLT-2022-EMB** — *J Heart Lung Transplant* 2022, « Whole transcriptome profiling of
-  prospective endomyocardial biopsies… prognostic and diagnostic signatures of cardiac
-  allograft rejection ». Données brutes : **section Data Availability à vérifier** (GEO /
-  EGA / dbGaP).
+- **CTOT03-PIENING-2022** — Piening BD et al., *J Heart Lung Transplant* 2022;41(6):840–848
+  (PubMed 35317953). RNA-seq (whole transcriptome) sur **125 biopsies** endomyocardiques,
+  **26 receveurs** (jusqu'à 6 biopsies chacun, 12 premiers mois) → **longitudinal**.
+  Cohorte **CTOT-03** (NCT00531921). Random forest ; signature pronostique 0R/1R → prédit
+  la prochaine biopsie 2R/3R avec **~90 % de précision**. Accès probable sous **DUA** ;
+  **localisation exacte des données brutes à confirmer** (GEO / SRA / dbGaP).
+  *(Fusionne les ex-entrées « CTOT-03 » et « JHLT-2022-EMB » : c'était la même étude.)*
+- **INTERHEART-MMDX** — biopsies cardiaques du consortium **INTERHEART** (NCT02670408) +
+  biopsies de service, socle du système **MMDx-Heart** (Halloran ; 3230 biopsies dans
+  l'analyse 2024, *Am J Transplant* 2024;24(8), PubMed 38527588). **Non public** — accès
+  uniquement **via collaboration** (ATAGC U. Alberta / Paris Transplant Group). Plateforme
+  microarray propriétaire.
 
 ## 6.3 Ce qui manque dans les données publiques (et pourquoi la collaboration est nécessaire)
 

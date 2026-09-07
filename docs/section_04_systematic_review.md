@@ -101,8 +101,20 @@ extraction.
 
 - ☑ Protocole rédigé (ce document)
 - ☑ Blocs de mots-clés figés
-- ☐ Exécution des requêtes + `lit_corpus.csv`
-- ☐ Screening + `data/studies_registry.csv`
+- ◐ `data/studies_registry.csv` v0 = 12 études seed (S01–S12), métadonnées d'abstracts
+  vérifiées ; **effectifs bruts (2×2) non extraits** — nécessite l'accès aux textes
+  intégraux
+- ☑ `scripts/03_meta_analysis.py` **implémenté et exécutable** : attend
+  `data/ddcfdna_2x2.csv` (study_id, threshold, tp, fp, fn, tn) ; s'arrête proprement tant
+  que ce fichier n'existe pas ; produit ensuite pooling DL (logit) sens/spéc + I² +
+  intervalle de prédiction + espace ROC + forest plots
+- ☐ Extraction 2×2 sur textes intégraux → `data/ddcfdna_2x2.csv` *(bloquant : accès
+  bibliothèque / institutionnel requis)*
+- ☐ Exécution des requêtes formelles + `lit_corpus.csv` + journal PRISMA
 - ☐ Risque de biais (QUADAS-2 / PROBAST / NOS)
-- ☐ Diagramme PRISMA
 - ☐ Décision finale méta-analyse vs evidence synthesis
+
+**Ce qui bloque la méta-analyse quantitative aujourd'hui** : les abstracts donnent
+sensibilité/spécificité mais rarement les **effectifs par cellule** (TP/FP/FN/TN)
+nécessaires au modèle. C'est une tâche d'extraction sur PDF (Dr. Tall / partenaire /
+accès institutionnel), pas un verrou méthodologique. Le code est prêt.

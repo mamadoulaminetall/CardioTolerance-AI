@@ -101,8 +101,16 @@ marqués « [ref exacte à confirmer] ». Ordre : par thème de la Section 3.
 - [R24] Molecular Microscope Diagnostic System: Assessment of Rejection and Injury in
   Heart Transplant Biopsies. *Transplantation.* 2022. PubMed 36508644.
   https://pubmed.ncbi.nlm.nih.gov/36508644/ — [453 RATs ; TCMR/AMR/injury/atrophy-fibrosis]
-- [R25] Redefining the molecular rejection states in 3230 heart transplant biopsies.
-  *Am J Transplant.* 2024. https://www.sciencedirect.com/science/article/pii/S1600613524002417
+- [R25] Halloran PF, et al. Redefining the molecular rejection states in 3230 heart
+  transplant biopsies: relationships to parenchymal injury and graft survival. *Am J
+  Transplant.* 2024;24(8). PubMed 38527588 ;
+  https://www.sciencedirect.com/science/article/pii/S1600613524002417 — [3230 biopsies =
+  1641 INTERHEART (NCT02670408) + 1589 de service ; 6 classifieurs, 7 archétypes : No
+  rejection 48 %, Minor 24 %, TCMR1 2,3 %, TCMR2 2,7 %, TCMR/mixte 2,7 %, ABMR précoce
+  3,9 %, ABMR établie 16 %]
+- [R25b] Molecular Diagnosis of Rejection Phenotypes in 889 Heart Transplant Biopsies:
+  The INTERHEART Study. ~2018.
+  https://www.researchgate.net/publication/324148015 — [étude princeps INTERHEART]
 - [R26] Building a tissue-based molecular diagnostic system in heart transplant
   rejection: the heart MMDx system. *J Heart Lung Transplant.*
   https://www.sciencedirect.com/science/article/abs/pii/S1053249817318302 —
@@ -160,9 +168,22 @@ marqués « [ref exacte à confirmer] ». Ordre : par thème de la Section 3.
   [AUC ~0,84]
 - [R41] Prediction of Acute Cardiac Rejection Based on Gene Expression Profiles. *J Pers
   Med.* 2024;14(4):410. https://doi.org/10.3390/jpm14040410
-- [R42] Paris Transplant Group — iBox / prédiction individuelle du risque de perte de
-  greffon (>85 paramètres). https://paristransplantgroup.com/current-team/alexandre-loupy/
-  — [page institutionnelle ; publication princeps iBox (BMJ 2019) à ajouter]
+- [R42] Loupy A, et al. Prediction system for risk of allograft loss in patients
+  receiving kidney transplants: international derivation and validation study (**iBox**).
+  *BMJ.* 2019;366:l4923. PubMed 31530561 — [dérivation 4000 receveurs (3 hôpitaux FR,
+  2005–2014) ; validation Europe 2129 + Amérique du Nord 1428 + 3 essais randomisés ;
+  C-index 0,81 / 0,81 / 0,80]
+- [R42b] Piening BD, et al. Whole transcriptome profiling of prospective endomyocardial
+  biopsies reveals prognostic and diagnostic signatures of cardiac allograft rejection.
+  *J Heart Lung Transplant.* 2022;41(6):840–848. PubMed 35317953 — [cohorte CTOT-03
+  (NCT00531921) ; 26 receveurs / 125 EMB ; RNA-seq + random forest ; signature
+  pronostique 0R/1R → prédit la prochaine biopsie 2R/3R avec ~90 % de précision ;
+  fusionne les ex-entrées « CTOT-03 » et « JHLT-2022-EMB » du registre datasets]
+- [R42c] Paul P, et al. Genetic and Functional Profiling of CD16-Dependent Natural Killer
+  Activation Identifies Patients at Higher Risk of Cardiac Allograft Vasculopathy.
+  *Front Immunol.* 2019;10:1208.
+  https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2019.01208/pdf —
+  [équipe C2VN, AP-HM Marseille ; NK CD16 / CAV]
 
 ## Méta-analyse dd-cfDNA & études primaires (Phase 2 — intégrées v0)
 
@@ -198,13 +219,10 @@ marqués « [ref exacte à confirmer] ». Ordre : par thème de la Section 3.
 
 ## À ajouter en Phase 2 (identifiés, non encore intégrés)
 
-- iBox : Loupy A et al., *BMJ* 2019 — ref exacte (titre : « Prediction system for risk of
-  allograft loss in patients receiving kidney transplants: international derivation and
-  validation study »).
-- CTOT-03 (RNA-seq BEM longitudinal, random forest) — publication + dépôt ImmPort (SDY).
-- JHLT 2022 « Whole transcriptome profiling of prospective endomyocardial biopsies »
-  (S1053-2498(22)01394-8) — ref exacte + Data Availability.
-- MMDx-Heart 3230 biopsies — auteurs et n° exact du consortium (INTERHEART ?).
+- Piening BD et al. 2022 — localiser le **dépôt des données brutes** (section Data
+  Availability : GEO / SRA / dbGaP ?).
+- INTERHEART 889 — référence exacte (auteurs, journal, année).
+- MMDx-Heart 3230 — n° de volume/pages exact (*Am J Transplant* 2024;24(8):xxxx).
 
 ## Corrections apportées
 

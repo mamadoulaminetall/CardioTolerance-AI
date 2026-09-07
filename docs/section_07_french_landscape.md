@@ -77,15 +77,21 @@ biopsie / omique** (cohorte 2006–2011, 137 biopsies / 109 patients, 4 centres)
 - **Pourquoi** : apport mécanistique B/anticorps + spatial, complémentaire d'une approche
   signature.
 
-### E. Immunogénétique de la transplantation / CAV — AP-HM (Marseille)
-- **PI / unité** : **Donnée non disponible / à confirmer** (noms cités dans la
-  littérature transplantation marseillaise : Pascale Paul, Christophe Picard — à
-  vérifier ; unité C2VN à confirmer).
-- **Expertise** : biomarqueurs non invasifs de lésion endothéliale immune ; **CAV** ;
-  immunogénétique HLA (EFS PACA). Étude NCT01569334.
-- **Contact** : AP-HM (Timone / Hôpital Nord), Aix-Marseille Université, EFS PACA.
-- **Pourquoi** : angle CAV/endothélium complémentaire ; **proximité de Montpellier**.
-  Score prudent tant que PI/unité non confirmés.
+### E. C2VN — Équipe 3 « Endothélium, cellules circulantes et pathologies vasculaires » (Marseille)
+- **PI / unité** : **Pascale Paul** (C2VN — Centre de recherche en CardioVasculaire et
+  Nutrition, INSERM 1263 / INRAE 1260, Aix-Marseille Université) ; **Christophe Picard**
+  (EFS PACA, HLA) — rôles exacts à préciser.
+- **Expertise** : **activation NK CD16-dépendante et risque de CAV** ([Paul et al.,
+  *Front Immunol* 2019;10:1208] — profilage génétique et fonctionnel identifiant les
+  patients à haut risque de vasculopathie du greffon) ; biomarqueurs non invasifs de
+  lésion / réparation endothéliale immune (étude NCT01569334) ; immunogénétique HLA (EFS).
+- **Contact** : page équipe C2VN
+  (`c2vn.univ-amu.fr/equipes/equipe-3-endothelium-cellules-circulantes-et-pathologies-vasculaires/`) ;
+  AP-HM (Timone / Hôpital Nord) ; EFS PACA.
+- **Pourquoi** : angle **NK / CAV / endothélium** original et complémentaire d'une
+  approche signature ; plateau HLA EFS ; **proximité de Montpellier**. Apport attendu =
+  **partenaire biologie / validation**, pas fournisseur de cohorte multi-omique
+  longitudinale (score 43,75/70).
 
 ## 7.2bis Modèle multicentrique de référence : FreeDNA-CAR (Espagne, pas France)
 

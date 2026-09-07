@@ -46,7 +46,7 @@ cardiaque ×1,25 ; potentiel collaboration ×1,25 ; sci., immuno., IA ×1,0).
 | 2 | **Pitié-Salpêtrière — programme greffe cardiaque** (Coutance, Varnous) | 8 | 8 | 10 | 7 | 7 | 8 | **56,50** |
 | 3 | **CR2TI Nantes** (Brouard, Danger) | 9 | 6 | 5 | 9 | 8 | 8 | **51,25** |
 | 4 | **CIRI Lyon — NOPAB** (Thaunat) | 8 | 6 | 5 | 9 | 6 | 7 | **47,00** |
-| 5 | **AP-HM Marseille — immunogénétique / CAV** (*PI à confirmer*) | 6 | 5 | 7 | 7 | 5 | 6 | **41,75** |
+| 5 | **C2VN Équipe 3 / immunogénétique — AP-HM Marseille** (Pascale Paul) | 7 | 5 | 7 | 8 | 5 | 6 | **43,75** |
 
 **Lecture** :
 - Le **duo parisien** (1 & 2, en partie la même personne côté recherche : G. Coutance)
@@ -54,8 +54,9 @@ cardiaque ×1,25 ; potentiel collaboration ×1,25 ; sci., immuno., IA ×1,0).
 - **Nantes** est n°3 malgré un accès cardiaque faible, parce que c'est l'équipe la plus
   alignée sur le **concept même de signature de tolérance** — précieuse en
   **co-encadrement méthodologique** même si elle n'apporte pas la cohorte cardiaque.
-- **Marseille** reste provisoire (PI/unité non confirmés) : score à revoir après
-  vérification.
+- **Marseille (C2VN Éq. 3, P. Paul)** : PI/unité confirmés ; angle NK CD16 / CAV
+  original mais rôle attendu = **partenaire biologie/validation**, pas fournisseur de
+  cohorte multi-omique longitudinale.
 
 ---
 
