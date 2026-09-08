@@ -35,7 +35,8 @@ your data.
 
 Would you be available for a 20–30 minute call to assess the relevance of this question
 and a possible collaboration? I can work around your availability over the coming weeks.
-A one-page summary is attached.
+A one-page summary is attached; the project is also outlined here:
+https://medflow-ai.fr/cardiotolerance-ai.html
 
 Best regards,
 

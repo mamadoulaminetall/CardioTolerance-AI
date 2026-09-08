@@ -37,7 +37,8 @@ de vos données.
 
 Seriez-vous disponible pour un échange de 20 à 30 minutes afin d'évaluer la pertinence de
 cette question et une éventuelle collaboration ? Je m'adapte à vos disponibilités dans les
-prochaines semaines. Un résumé d'une page est joint.
+prochaines semaines. Un résumé d'une page est joint ; le projet est également présenté
+ici : https://medflow-ai.fr/cardiotolerance-ai.html
 
 Bien cordialement,
 

@@ -1492,7 +1492,8 @@ de vos données.
 
 Seriez-vous disponible pour un échange de 20 à 30 minutes afin d'évaluer la pertinence de
 cette question et une éventuelle collaboration ? Je m'adapte à vos disponibilités dans les
-prochaines semaines. Un résumé d'une page est joint.
+prochaines semaines. Un résumé d'une page est joint ; le projet est également présenté
+ici : https://medflow-ai.fr/cardiotolerance-ai.html
 
 Bien cordialement,
 
@@ -1540,7 +1541,8 @@ your data.
 
 Would you be available for a 20–30 minute call to assess the relevance of this question
 and a possible collaboration? I can work around your availability over the coming weeks.
-A one-page summary is attached.
+A one-page summary is attached; the project is also outlined here:
+https://medflow-ai.fr/cardiotolerance-ai.html
 
 Best regards,
 

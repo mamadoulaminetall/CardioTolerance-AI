@@ -133,7 +133,8 @@ def inline(text: str) -> str:
     return text
 
 
-def parse(md: str, story: list, avail_w: float) -> None:
+def parse(md: str, story: list, avail_w: float, base_dir: Path = None) -> None:
+    base_dir = base_dir or SRC.parent
     lines = md.splitlines()
     i = 0
     first_h1 = True
@@ -156,7 +157,7 @@ def parse(md: str, story: list, avail_w: float) -> None:
         if mi:
             flush_bullets()
             alt, rel = mi.group(1), mi.group(2).strip()
-            p = (SRC.parent / rel).resolve()
+            p = (base_dir / rel).resolve()
             if p.exists():
                 try:
                     iw, ih = ImageReader(str(p)).getSize()
@@ -302,31 +303,42 @@ def parse(md: str, story: list, avail_w: float) -> None:
     flush_bullets()
 
 
-def footer(canvas, doc):
-    canvas.saveState()
-    canvas.setFont(F, 7)
-    canvas.setFillColor(GREY)
-    canvas.drawString(1.6 * cm, 1.0 * cm,
-                      "CardioTolerance-AI — MedFlow AI — document de travail v1")
-    canvas.drawRightString(A4[0] - 1.6 * cm, 1.0 * cm, f"p. {doc.page}")
-    canvas.restoreState()
+def _make_footer(text: str):
+    def footer(canvas, doc):
+        canvas.saveState()
+        canvas.setFont(F, 7)
+        canvas.setFillColor(GREY)
+        canvas.drawString(1.6 * cm, 1.0 * cm, text)
+        canvas.drawRightString(A4[0] - 1.6 * cm, 1.0 * cm, f"p. {doc.page}")
+        canvas.restoreState()
+    return footer
 
 
-def main() -> None:
-    if not SRC.exists():
-        raise SystemExit(f"{SRC} absent — lancer d'abord scripts/05_assemble_report.py")
+def build(src: Path, out: Path, title: str, footer_text: str) -> None:
+    if not src.exists():
+        raise SystemExit(f"{src} absent")
     doc = SimpleDocTemplate(
-        str(OUT), pagesize=A4,
+        str(out), pagesize=A4,
         leftMargin=1.6 * cm, rightMargin=1.6 * cm,
         topMargin=1.5 * cm, bottomMargin=1.6 * cm,
-        title="CardioTolerance-AI — Rapport de faisabilité",
-        author="MedFlow AI — Dr. M. L. Tall",
+        title=title, author="MedFlow AI — Dr. M. L. Tall",
     )
     avail_w = A4[0] - 3.2 * cm
     story: list = []
-    parse(SRC.read_text(encoding="utf-8"), story, avail_w)
-    doc.build(story, onFirstPage=footer, onLaterPages=footer)
-    print(f"Écrit : {OUT.relative_to(ROOT)}  ({OUT.stat().st_size // 1024} Ko)")
+    parse(src.read_text(encoding="utf-8"), story, avail_w, base_dir=src.parent)
+    f = _make_footer(footer_text)
+    doc.build(story, onFirstPage=f, onLaterPages=f)
+    print(f"Écrit : {out.relative_to(ROOT)}  ({out.stat().st_size // 1024} Ko)")
+
+
+def main() -> None:
+    build(SRC, OUT, "CardioTolerance-AI — Rapport de faisabilité",
+          "CardioTolerance-AI — MedFlow AI — document de travail v1")
+    op = ROOT / "outreach" / "one_pager.md"
+    if op.exists():
+        build(op, ROOT / "outreach" / "one_pager.pdf",
+              "CardioTolerance-AI — Projet en une page",
+              "CardioTolerance-AI — MedFlow AI · contact@medflow-ai.fr")
 
 
 if __name__ == "__main__":

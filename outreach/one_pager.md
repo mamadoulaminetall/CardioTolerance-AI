@@ -1,10 +1,4 @@
-# CardioTolerance-AI — Projet en une page  *(BROUILLON v1 — non validé)*
-
-> Destiné à un·e PI / directeur·rice de laboratoire. Les crochets `[...]` restent à
-> remplir avec des éléments **vérifiés** après le premier échange (prévalence du
-> phénotype, taille de cohorte, calendrier réglementaire).
-
----
+# CardioTolerance-AI — Projet en une page
 
 **Titre :** AI-driven discovery of immune tolerance signatures after heart transplantation
 **Porteur :** Dr. Mamadou Lamine Tall, PhD (Bioinformatique & Data Science) — MedFlow AI, Castelnau-le-Lez (Montpellier)
@@ -48,12 +42,13 @@ médicale et **validation biologique** (cytométrie, qPCR, IHC, single-cell).
 
 ### Démarrage proposé — en deux temps
 1. **Scénario A (dès maintenant, sans données du centre)** : réanalyse harmonisée de jeux
-   de biopsies cardiaques publics pour définir la classe « absence durable de signal
-   moléculaire de rejet » et poser la méthode → note méthodologique / proof-of-concept.
+   de biopsies cardiaques publics → note méthodologique / proof-of-concept.
 2. **Scénario B (avec le centre)** : datasets publics + **cohorte rétrospective** d'un
-   centre français → découverte et **validation clinique** de la signature, 1–2
-   publications méthodologiques.
+   centre français → découverte et **validation clinique** de la signature.
 
 ### Demande concrète
-Un échange de **20–30 minutes** pour évaluer ensemble la pertinence scientifique et la
-faisabilité d'un accès à une cohorte rétrospective.
+Un échange de **20–30 minutes** pour évaluer la pertinence scientifique et la faisabilité
+d'un accès à une cohorte rétrospective. Points à explorer : prévalence du phénotype
+« très stable », modalités -omiques disponibles, gouvernance des données, co-signature.
+
+*Dossier complet (revue systématique, méthodologie, plan de validation) sur demande — https://medflow-ai.fr/cardiotolerance-ai.html*
