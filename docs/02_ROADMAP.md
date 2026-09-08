@@ -92,7 +92,8 @@ Légende : ☐ à faire · ◐ en cours · ☑ fait
 - ☐ Contenu pages 3 & 4 incomplet tant que `studies_registry.csv` / `meta_estimates.csv` absents (Phase 2)
 - ☐ Figures → `figures/` via `scripts/02_generate_figures.py` (PRISMA flow, HSROC, radar scoring)
 - ☐ Colonne courte `access_class` dans `datasets_registry.csv` pour des filtres plus lisibles
-- ☑ **OVH** : page `landing/cardiotolerance-ai.html` déployée (SFTP) → https://medflow-ai.fr/cardiotolerance-ai.html (HTTP 200) + entrée `sitemap.xml`. Page recherche/collaboration autonome (pas dans la grille d'outils de l'accueil). Palette teal du site, garde-fous explicites, 5 réfs vérifiées, CTA « proposer une collaboration ».
+- ☑ **OVH** : page `landing/cardiotolerance-ai.html` déployée (SFTP) → https://medflow-ai.fr/cardiotolerance-ai.html (HTTP 200) + entrée `sitemap.xml`. Palette teal du site, garde-fous explicites, 5 réfs vérifiées, CTA « proposer une collaboration ».
+- ☑ **Accueil medflow-ai.fr** : section `#recherche` « Projets de recherche en cours » ajoutée (entre les outils et l'écosystème) + lien « Recherche » dans le menu → carte CardioTolerance-AI (statut « Cadrage »). Déployé, vérifié live.
 - ☑ **GitHub** : repo privé `github.com/mamadoulaminetall/CardioTolerance-AI` — `main` poussé (2026-09-08, 16 commits, 181 objets)
 - ☐ **Streamlit Cloud** : à connecter sur share.streamlit.io → New app → ce repo, branche `main`, **main file `app/app.py`** (autoriser l'accès au repo privé). Puis ajouter le bouton « Ouvrir l'app » sur `landing/cardiotolerance-ai.html`.
 - ☐ Option : entrée grille/JSON-LD sur l'accueil medflow-ai.fr si mise en avant souhaitée
