@@ -5,7 +5,7 @@
 MedFlow AI · Dr. Mamadou Lamine Tall, PhD (Bioinformatique & Data Science) — Montpellier
 · contact@medflow-ai.fr · https://medflow-ai.fr
 
-*Document assemblé automatiquement le 2026-09-07 par
+*Document assemblé automatiquement le 2026-09-08 par
 `scripts/05_assemble_report.py` à partir des sections de `docs/`. Ne pas éditer ici —
 éditer les sections sources puis relancer le script.*
 
