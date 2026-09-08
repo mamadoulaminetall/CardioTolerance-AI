@@ -73,6 +73,12 @@
   sens ~85–90 % / spéc ~70–85 %). Consolidés dans
   [`../data/meta_estimates.csv`](../data/meta_estimates.csv).
 
+![dd-cfDNA — précision diagnostique rapportée par étude (S01–S05) et méta-analyse publiée 2025](../figures/fig_ddcfdna_landscape.png)
+
+*Sensibilité / spécificité par étude (valeurs d'abstracts, à confirmer). FreeDNA-CAR
+(S03) : la seule mesure prospective per-protocole donne une AUC de 0,60 — d'où
+l'importance de pondérer les séries rétrospectives dans la synthèse.*
+
 ## 5.5 Livrables de la section
 
 - `data/studies_registry.csv` (toutes études) + sous-table `dd-cfDNA` pour la méta-analyse.

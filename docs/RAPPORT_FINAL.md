@@ -500,6 +500,8 @@ cardiaque* + *tolérance* + *IA/ML* dans le titre/résumé. Confirmation directe
 (Section 8, Q3/Q10). À ce stade : PubMed uniquement ; Europe PMC, Cochrane, registres et
 preprints restent à ajouter pour le décompte PRISMA définitif.
 
+![Diagramme PRISMA — compteurs réels (identifiés / dédoublonnés) et étapes à compléter en Phase 2](../figures/fig_prisma_template.png)
+
 ## 4.4 Critères d'éligibilité
 
 **Inclusion** : population de transplantés cardiaques humains ; ≥ 1 mesure immunologique
@@ -654,6 +656,12 @@ accès institutionnel), pas un verrou méthodologique. Le code est prêt.
   troponine ([R33], sensibilité 0,41 / spécificité 0,79) ; **IRM T2 mapping** ([R34],
   sens ~85–90 % / spéc ~70–85 %). Consolidés dans
   [`../data/meta_estimates.csv`](../data/meta_estimates.csv).
+
+![dd-cfDNA — précision diagnostique rapportée par étude (S01–S05) et méta-analyse publiée 2025](../figures/fig_ddcfdna_landscape.png)
+
+*Sensibilité / spécificité par étude (valeurs d'abstracts, à confirmer). FreeDNA-CAR
+(S03) : la seule mesure prospective per-protocole donne une AUC de 0,60 — d'où
+l'importance de pondérer les séries rétrospectives dans la synthèse.*
 
 ## 5.5 Livrables de la section
 
@@ -1389,6 +1397,10 @@ cardiaque ×1,25 ; potentiel collaboration ×1,25 ; sci., immuno., IA ×1,0).
 | 3 | **CR2TI Nantes** (Brouard, Danger) | 9 | 6 | 5 | 9 | 8 | 8 | **51,25** |
 | 4 | **CIRI Lyon — NOPAB** (Thaunat) | 8 | 6 | 5 | 9 | 6 | 7 | **47,00** |
 | 5 | **C2VN Équipe 3 / immunogénétique — AP-HM Marseille** (Pascale Paul) | 7 | 5 | 7 | 8 | 5 | 6 | **43,75** |
+
+![Scoring des 5 équipes françaises — total pondéré /70](../figures/fig_scoring_bars.png)
+
+![Radar des 5 équipes sur les 6 axes notés /10](../figures/fig_scoring_radar.png)
 
 **Lecture** :
 - Le **duo parisien** (1 & 2, en partie la même personne côté recherche : G. Coutance)

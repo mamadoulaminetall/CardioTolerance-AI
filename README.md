@@ -1,94 +1,177 @@
 # CardioTolerance-AI
 
-*AI-driven discovery of immune tolerance signatures after heart transplantation*
+**AI-driven discovery of immune tolerance signatures after heart transplantation**
 
-**Porteur :** MedFlow AI · Dr. Mamadou Lamine TALL, PhD Bioinformatique & Data Science
-**Localisation :** Castelnau-le-Lez, France (Montpellier) — collaborations académiques recherchées
-**Contact :** contact@medflow-ai.fr · https://medflow-ai.fr
-**Statut :** cadrage scientifique + montage de collaboration — **pas** un dispositif médical, **pas** un protocole PROSPERO déposé, **pas** un avis médical.
-**Créé :** 2026-09-03
+Projet de recherche translationnelle — MedFlow AI · Dr. Mamadou Lamine TALL, PhD
+(Bioinformatique & Data Science), Castelnau-le-Lez / Montpellier, France.
+Contact : contact@medflow-ai.fr · https://medflow-ai.fr ·
+page publique : https://medflow-ai.fr/cardiotolerance-ai.html
 
----
+| | |
+|---|---|
+| **Statut** | Cadrage scientifique + montage de collaboration — **document de travail v1** |
+| **Ce n'est pas** | un dispositif médical · un protocole PROSPERO déposé · un avis médical · un produit |
+| **Créé** | 2026-09-03 |
+| **Rapport** | [`docs/RAPPORT_FINAL.md`](docs/RAPPORT_FINAL.md) · [`docs/RAPPORT_FINAL.pdf`](docs/RAPPORT_FINAL.pdf) (58 p., figures incluses) |
 
-## Objet du dossier
-
-Ce dépôt porte deux livrables couplés :
-
-1. **L'application MedFlow AI `CardioTolerance-AI`** — un outil interactif (Streamlit) qui
-   présente la question scientifique, la synthèse de littérature, la cartographie des
-   datasets réellement accessibles, le paysage français des équipes, le gap et la
-   méthodologie IA/multi-omics proposée. Sert de support de discussion avec un centre
-   de transplantation cardiaque.
-2. **Le kit de prise de contact** (`outreach/`) — dossier 1 page + emails FR/EN
-   personnalisables, destinés au·à la responsable d'une équipe française pertinente, dans
-   le but d'obtenir l'accès à une cohorte rétrospective pour **entraîner et valider les
-   modèles**.
-
-> Garde-fou scientifique répété du brief : le projet **ne suppose jamais** qu'un patient
-> puisse arrêter son immunosuppression. L'objectif est d'identifier des **biomarqueurs et
-> des profils de tolérance** susceptibles d'être validés prospectivement, sous supervision
-> médicale.
+> **Garde-fou scientifique (non négociable).** Le projet **ne suppose jamais** qu'un
+> patient puisse arrêter ou réduire son immunosuppression. L'objectif est d'identifier des
+> **biomarqueurs et des profils de tolérance** susceptibles d'être validés
+> prospectivement, sous supervision médicale stricte.
 
 ---
 
-## Structure du dépôt
+## 1. La question
+
+Chez certains receveurs de greffe cardiaque très stables à long terme — sans rejet, sans
+DSA de novo, sans vasculopathie du greffon, sous immunosuppression minimale — existe-t-il
+une **signature immunologique / moléculaire / cellulaire / multi-omique reproductible** de
+tolérance, que l'IA peut identifier, distinguer des profils de rejet, et dont elle peut
+**prédire la trajectoire longitudinale** ?
+
+**Le gap, en une ligne :** la tolérance opérationnelle est biomarquée en transplantation
+hépatique et rénale, mais **aucune signature validée n'existe pour le cœur** — et une
+recherche PubMed « cœur + tolérance + IA » renvoie **0 article** (cf.
+[`docs/section_04_systematic_review.md`](docs/section_04_systematic_review.md) §4.3bis).
+
+---
+
+## 2. Ce que contient ce dépôt
+
+| Livrable | Où |
+|---|---|
+| **Dossier de faisabilité** (20 parties : état de l'art, revue systématique, méta-analyse, datasets, paysage FR, gap Q1–Q10, projet IA, multi-omics, stats, validation, faisabilité A/B/C, impact, publications, collaboration, 1er contact, emails) | `docs/section_*.md` → assemblé en `docs/RAPPORT_FINAL.{md,pdf}` |
+| **Application Streamlit** — support de discussion interactif (10 pages) | `app/app.py` |
+| **Données seed** — registres d'études, de datasets, d'équipes ; scoring pondéré ; corpus PubMed | `data/*.csv`, `meta-analysis/data/*.csv` |
+| **Figures** — radar & barres du scoring, paysage dd-cfDNA, diagramme PRISMA | `figures/*.png` |
+| **Kit de prise de contact** — one-pager + emails FR/EN personnalisés (cible n°1) | `outreach/` |
+
+---
+
+## 3. Arborescence
 
 ```
 CardioTolerance-AI/
-├── README.md                  ← ce fichier
-├── requirements.txt
-├── .streamlit/config.toml     ← thème sombre MedFlow AI
-├── docs/
-│   ├── 00_PROMPT_BRIEF.md     ← prompt fondateur, verbatim (cahier des charges)
-│   ├── 01_PROJECT_SPEC.md     ← spec structurée : plan du rapport en 20 sections, scénarios A/B/C, grille TOP 5
-│   └── 02_ROADMAP.md          ← plan de travail par étapes + état d'avancement
+├── README.md
+├── requirements.txt                  streamlit · pandas · numpy · plotly (+ matplotlib, reportlab, pypdf pour les scripts)
+├── .streamlit/config.toml            thème sombre
 ├── app/
-│   └── app.py                 ← application Streamlit (squelette + sections)
+│   └── app.py                        application Streamlit — 10 pages, filtres, graphes
+├── docs/
+│   ├── 00_PROMPT_BRIEF.md            prompt fondateur, verbatim (cahier des charges)
+│   ├── 01_PROJECT_SPEC.md            plan du rapport (20 sections), scénarios A/B/C, grille de scoring
+│   ├── 02_ROADMAP.md                 plan de travail en 8 phases + état d'avancement (☑ / ◐ / ☐)
+│   ├── 02_question.md .. 15_16_17_collab.md   les sections rédigées du dossier
+│   ├── references.md                 bibliographie vérifiée (R1–R48)
+│   ├── RAPPORT_FINAL.md              rapport assemblé (régénéré par scripts/05)
+│   └── RAPPORT_FINAL.pdf             export PDF (régénéré par scripts/06)
 ├── scripts/
-│   ├── 01_build_lit_corpus.py     ← collecte PubMed/EBI (stub)
-│   ├── 02_screen_and_extract.py   ← screening + extraction tableau d'études (stub)
-│   ├── 03_meta_analysis.py        ← pooling DL sens/spéc + I² + ROC-space + forest (attend data/ddcfdna_2x2.csv)
-│   ├── 04_build_app_data.py       ← contrôle de présence des livrables de l'app
-│   ├── 05_assemble_report.py      ← docs/RAPPORT_FINAL.md (20 parties)
-│   └── 06_report_pdf.py           ← docs/RAPPORT_FINAL.pdf (reportlab, police Unicode)
-├── data/                      ← CSV générés (registre d'études, datasets, équipes) — ne pas éditer à la main
-├── figures/                   ← figures générées pour l'app / le dossier
-├── meta-analysis/             ← pipeline revue systématique + méta-analyse
-│   ├── scripts/  data/  figures/  manuscript/
+│   ├── 01_build_lit_corpus.py        PubMed E-utilities → meta-analysis/data/{query_log,lit_corpus}.csv
+│   ├── 02_generate_figures.py        data/*.csv → figures/*.png
+│   ├── 03_meta_analysis.py           pooling DL sens/spéc + I² + ROC-space + forest (attend data/ddcfdna_2x2.csv)
+│   ├── 04_build_app_data.py          contrôle de présence des 17 livrables de l'app
+│   ├── 05_assemble_report.py         docs/section_*.md → docs/RAPPORT_FINAL.md
+│   └── 06_report_pdf.py              docs/RAPPORT_FINAL.md → docs/RAPPORT_FINAL.pdf (reportlab, police Unicode, figures embarquées)
+├── data/                             CSV — générés/curés, ne pas éditer à la main
+│   ├── studies_registry.csv          12 études seed (S01–S12) : dd-cfDNA, MMDx, IA, comparateurs tolérance
+│   ├── datasets_registry.csv         5 jeux de données (GEO public / CTOT-03 / INTERHEART collaboration)
+│   ├── french_teams.csv              5 équipes françaises vérifiées
+│   ├── french_teams_scoring.csv      6 axes /10, total pondéré /70
+│   └── meta_estimates.csv            méta-analyse dd-cfDNA publiée (rapportée) + ligne re-analyse + comparateurs
+├── figures/                          PNG générés par scripts/02
+├── meta-analysis/
+│   ├── data/query_log.csv            8 requêtes PubMed journalisées (2026-09-07)
+│   ├── data/lit_corpus.csv           670 références dédoublonnées (652 avec résumé)
+│   ├── figures/                      sorties de scripts/03 (quand data/ddcfdna_2x2.csv existe)
+│   └── scripts/  manuscript/
 └── outreach/
-    ├── one_pager.md           ← version 1 page du projet (PI / directeur de labo)
-    ├── email_fr.md            ← brouillon email français
-    └── email_en.md            ← brouillon email anglais
+    ├── one_pager.md                  projet en 1 page (PI / directeur de labo)
+    ├── email_fr.md  email_en.md      brouillons personnalisés — NON envoyés, à valider par Dr. Tall
 ```
 
 ---
 
-## Workflow de mise à jour (obligatoire)
-
-Cet outil vit sur **trois surfaces** qui dérivent si on les touche séparément :
-**git** (ce dépôt + éventuel `streamlit_app/`), **Streamlit** (app locale + déployée),
-**OVH** (`landing/cardiotolerance/` sur medflow-ai.fr).
-
-➡️ À chaque changement de chiffre / donnée / claim : suivre la skill **`medflow-sync-deploy`**
-et propager sur les trois surfaces dans le même passage. Ne jamais dire « corrigé » sans
-avoir vérifié les trois.
-
----
-
-## Lancer l'application
+## 4. Lancer l'application
 
 ```bash
-cd "Claude Code/MedFlowAI/tools/CardioTolerance-AI"
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 streamlit run app/app.py
 ```
 
+Pages : Résumé · État de l'art · Revue systématique (journal des requêtes + PRISMA) ·
+Méta-analyse · Datasets (filtre par accès) · Paysage français (filtre par ville) ·
+Gap & méthodologie · Faisabilité A/B/C · Collaboration & TOP 5 (radar + barres) ·
+Prise de contact.
+
 ---
 
-## Rigueur — rappel
+## 5. Régénérer les livrables
 
-Aucune donnée, cohorte, coordonnée, performance de modèle, DOI ou collaboration inventée.
-Toute affirmation importante est sourcée (PubMed / repositories officiels / pages
-institutionnelles). Information manquante → écrire explicitement
-**« Donnée non disponible / à confirmer auprès de l'équipe. »**
+Tout est reproductible depuis `scripts/` (ordre indicatif) :
+
+```bash
+python scripts/01_build_lit_corpus.py     # requêtes PubMed → corpus (nécessite curl + accès réseau)
+python scripts/02_generate_figures.py     # figures/*.png depuis data/*.csv
+python scripts/03_meta_analysis.py        # méta-analyse dd-cfDNA — s'arrête tant que data/ddcfdna_2x2.csv n'existe pas
+python scripts/04_build_app_data.py       # vérifie que les 17 livrables de l'app sont présents
+python scripts/05_assemble_report.py      # docs/RAPPORT_FINAL.md
+python scripts/06_report_pdf.py           # docs/RAPPORT_FINAL.pdf
+```
+
+Dépendances scripts (au-delà de `requirements.txt`) : `matplotlib`, `reportlab`, `pypdf`.
+
+---
+
+## 6. Données, provenance & règles de rigueur
+
+- Les CSV de `data/` sont **curés à la main à partir de sources vérifiées** (abstracts
+  PubMed, repositories officiels, pages institutionnelles) puis relus par script. Chaque
+  champ non confirmé porte la mention littérale **« nd / à confirmer »** ou
+  **« Donnée non disponible / à confirmer auprès de l'équipe. »**
+- `meta-analysis/data/` est **entièrement généré** par `scripts/01` (API NCBI, read-only).
+- **Rien n'est inventé** : ni donnée, ni dataset, ni DOI, ni coordonnée, ni performance de
+  modèle, ni collaboration. Les preprints sont étiquetés comme tels.
+- Statut connu à corriger : effectifs bruts (TP/FP/FN/TN) des études dd-cfDNA non extraits
+  (nécessite l'accès aux textes intégraux) → `scripts/03` est prêt, il attend
+  `data/ddcfdna_2x2.csv`.
+
+---
+
+## 7. Déploiement
+
+| Surface | État |
+|---|---|
+| **Git** | ce dépôt |
+| **OVH — page publique** | ✅ `landing/cardiotolerance-ai.html` en ligne : https://medflow-ai.fr/cardiotolerance-ai.html (page recherche/collaboration, hors grille d'outils) |
+| **Streamlit Cloud** | ☐ à connecter — `share.streamlit.io` → New app → ce repo, branche `main`, **main file `app/app.py`** |
+
+Workflow de mise à jour (chiffres / données / claims) : suivre la skill
+`medflow-sync-deploy` et propager git + Streamlit + OVH dans le même passage.
+
+---
+
+## 8. Avancement
+
+Voir [`docs/02_ROADMAP.md`](docs/02_ROADMAP.md). En bref : 20/20 sections rédigées (v1),
+app fonctionnelle, corpus PubMed réel (670 réf.), cible n°1 = **Paris Transplant Group /
+PITOR** (angle cœur via G. Coutance). Restent : screening des 670, extraction 2×2 pour la
+méta-analyse, tables QUADAS-2/PROBAST, connexion Streamlit Cloud, envoi de l'email
+(après validation de Dr. Tall).
+
+---
+
+## 9. Collaborer
+
+Ce projet cherche **un centre français de transplantation cardiaque** prêt à explorer,
+sur une cohorte rétrospective anonymisée, l'existence d'une signature de tolérance.
+Apports respectifs et boucle de valeur : `docs/section_15_16_17_collab.md`.
+Écrire à **contact@medflow-ai.fr**.
+
+---
+
+## 10. Licence & mentions
+
+© 2026 MedFlow AI · Dr. Mamadou Lamine TALL, PhD. Dépôt privé, usage interne et
+partage contrôlé avec des partenaires académiques. Non-dispositif médical, non-avis
+médical. Le contenu est un document de travail et peut évoluer.

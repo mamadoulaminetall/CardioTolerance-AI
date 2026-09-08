@@ -22,10 +22,11 @@ from reportlab.lib.enums import TA_LEFT
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import cm
+from reportlab.lib.utils import ImageReader
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import (
-    ListFlowable, ListItem, PageBreak, Paragraph, Preformatted, SimpleDocTemplate,
+    Image, ListFlowable, ListItem, PageBreak, Paragraph, Preformatted, SimpleDocTemplate,
     Spacer, Table, TableStyle, HRFlowable,
 )
 
@@ -71,20 +72,24 @@ H4 = ParagraphStyle("h4", parent=BODY, fontName=FBI, fontSize=9.6,
                     leading=13, spaceBefore=7, spaceAfter=3)
 QUOTE = ParagraphStyle("quote", parent=BODY, leftIndent=10, textColor=GREY,
                        borderColor=ACCENT, borderWidth=0, fontSize=8.8, leading=12)
+CAPT = ParagraphStyle("capt", parent=BODY, fontSize=7.6, leading=10, textColor=GREY,
+                      spaceBefore=2, spaceAfter=2, alignment=TA_LEFT)
 CELL = ParagraphStyle("cell", parent=BODY, fontSize=7.4, leading=9.5, spaceAfter=0)
 CELLH = ParagraphStyle("cellh", parent=CELL, fontName=FB, textColor=colors.white)
 CODE = ParagraphStyle("code", parent=BODY, fontName="Courier", fontSize=7.6, leading=9.5,
                       backColor=colors.HexColor("#f3f4f6"), borderPadding=4)
 
 INLINE_CODE = re.compile(r"`([^`]+)`")
-LINKRE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
+IMG = re.compile(r"^\s*!\[([^\]]*)\]\(([^)]+)\)\s*$")
+LINKRE = re.compile(r"(?<!\!)\[([^\]]+)\]\(([^)]+)\)")
 TRISTAR = re.compile(r"\*\*\*(.+?)\*\*\*")
 BOLD = re.compile(r"\*\*(.+?)\*\*")
 ITALIC = re.compile(r"\*(.+?)\*")
 
 
 _SUB = {"≫": ">>", "≪": "<<", "ʳᵉ": "re", "ᵉ": "e",
-        "ʳ": "r", "ᵈ": "d", "‑": "-"}
+        "ʳ": "r", "ᵈ": "d", "‑": "-",
+        "☑": "[x]", "☐": "[ ]", "◐": "[~]", "☒": "[x]"}
 
 
 def inline(text: str) -> str:
@@ -145,6 +150,28 @@ def parse(md: str, story: list, avail_w: float) -> None:
 
     while i < len(lines):
         ln = lines[i]
+
+        # --- image ![alt](path) sur sa propre ligne ---
+        mi = IMG.match(ln)
+        if mi:
+            flush_bullets()
+            alt, rel = mi.group(1), mi.group(2).strip()
+            p = (SRC.parent / rel).resolve()
+            if p.exists():
+                try:
+                    iw, ih = ImageReader(str(p)).getSize()
+                    w = min(avail_w, iw * 0.72)
+                    story.append(Spacer(1, 4))
+                    story.append(Image(str(p), width=w, height=w * ih / iw))
+                    if alt:
+                        story.append(Paragraph(inline(alt), CAPT))
+                    story.append(Spacer(1, 8))
+                except Exception:  # noqa: BLE001
+                    story.append(Paragraph(f"[figure : {html.escape(rel)}]", CAPT))
+            else:
+                story.append(Paragraph(f"[figure manquante : {html.escape(rel)}]", CAPT))
+            i += 1
+            continue
 
         # --- table (bloc de lignes commençant par |) ---
         if ln.lstrip().startswith("|") and "|" in ln[1:]:
@@ -264,7 +291,7 @@ def parse(md: str, story: list, avail_w: float) -> None:
         i += 1
         while (i < len(lines) and lines[i].strip()
                and not re.match(r"(#{1,4})\s", lines[i])
-               and not lines[i].lstrip().startswith(("|", ">", "- ", "* ", "```"))
+               and not lines[i].lstrip().startswith(("|", ">", "- ", "* ", "```", "!["))
                and not re.match(r"^\s*\d+\.\s", lines[i])
                and not re.match(r"^\s*([-*_])\1{2,}\s*$", lines[i])):
             para.append(lines[i].strip())

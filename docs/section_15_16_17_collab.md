@@ -48,6 +48,10 @@ cardiaque ×1,25 ; potentiel collaboration ×1,25 ; sci., immuno., IA ×1,0).
 | 4 | **CIRI Lyon — NOPAB** (Thaunat) | 8 | 6 | 5 | 9 | 6 | 7 | **47,00** |
 | 5 | **C2VN Équipe 3 / immunogénétique — AP-HM Marseille** (Pascale Paul) | 7 | 5 | 7 | 8 | 5 | 6 | **43,75** |
 
+![Scoring des 5 équipes françaises — total pondéré /70](../figures/fig_scoring_bars.png)
+
+![Radar des 5 équipes sur les 6 axes notés /10](../figures/fig_scoring_radar.png)
+
 **Lecture** :
 - Le **duo parisien** (1 & 2, en partie la même personne côté recherche : G. Coutance)
   domine sur *cœur + données + IA*.

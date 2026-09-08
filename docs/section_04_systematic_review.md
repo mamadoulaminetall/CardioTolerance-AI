@@ -69,6 +69,8 @@ cardiaque* + *tolérance* + *IA/ML* dans le titre/résumé. Confirmation directe
 (Section 8, Q3/Q10). À ce stade : PubMed uniquement ; Europe PMC, Cochrane, registres et
 preprints restent à ajouter pour le décompte PRISMA définitif.
 
+![Diagramme PRISMA — compteurs réels (identifiés / dédoublonnés) et étapes à compléter en Phase 2](../figures/fig_prisma_template.png)
+
 ## 4.4 Critères d'éligibilité
 
 **Inclusion** : population de transplantés cardiaques humains ; ≥ 1 mesure immunologique
