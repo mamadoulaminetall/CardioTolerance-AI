@@ -92,7 +92,9 @@ Légende : ☐ à faire · ◐ en cours · ☑ fait
 - ☐ Contenu pages 3 & 4 incomplet tant que `studies_registry.csv` / `meta_estimates.csv` absents (Phase 2)
 - ☐ Figures → `figures/` via `scripts/02_generate_figures.py` (PRISMA flow, HSROC, radar scoring)
 - ☐ Colonne courte `access_class` dans `datasets_registry.csv` pour des filtres plus lisibles
-- ☐ Déploiement : git + Streamlit Cloud + OVH `landing/cardiotolerance/` (skill `medflow-sync-deploy`)
+- ☑ **OVH** : page `landing/cardiotolerance-ai.html` déployée (SFTP) → https://medflow-ai.fr/cardiotolerance-ai.html (HTTP 200) + entrée `sitemap.xml`. Page recherche/collaboration autonome (pas dans la grille d'outils de l'accueil). Palette teal du site, garde-fous explicites, 5 réfs vérifiées, CTA « proposer une collaboration ».
+- ☐ Streamlit Cloud : app pas encore déployée (repo git prêt)
+- ☐ Si l'app est déployée : ajouter le bouton « Ouvrir » sur la page landing + entrée grille/JSON-LD accueil si tu veux la mettre en avant
 
 ## Phase 8 — Kit de prise de contact  ◐ (v1 rédigé 2026-09-03)
 
