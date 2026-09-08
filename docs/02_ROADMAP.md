@@ -80,8 +80,9 @@ Légende : ☐ à faire · ◐ en cours · ☑ fait
 - ☑ Section 12 (validation biologique) → ajoutée à `docs/section_08_09_gap_method.md`
 - ☑ Section 20 (références) → `docs/references.md` (R1–R48)
 - ☑ **Assemblage** : `scripts/05_assemble_report.py` → `docs/RAPPORT_FINAL.md` (20 parties, ~1700 lignes)
-- ☑ Figures : `scripts/02_generate_figures.py` → `figures/` (radar + barres scoring, paysage dd-cfDNA, gabarit PRISMA)
-- ☐ Régénérer `RAPPORT_FINAL.md` + figures à chaque mise à jour de section (part du workflow sync)
+- ☑ **Export PDF** : `scripts/06_report_pdf.py` → `docs/RAPPORT_FINAL.pdf` (reportlab, 54 pages, police Arial Unicode, tables/gras/italique/liens rendus, en-tête + pagination)
+- ☑ Figures : `scripts/02_generate_figures.py` → `figures/` — **mise en page corrigée** (zéro superposition de texte, légende dans le cadre, PRISMA aux compteurs réels), vérifiées visuellement
+- ☐ Régénérer `RAPPORT_FINAL.{md,pdf}` + figures à chaque mise à jour de section (part du workflow sync)
 
 ## Phase 7 — Application Streamlit  ◐
 

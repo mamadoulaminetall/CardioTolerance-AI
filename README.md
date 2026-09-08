@@ -47,8 +47,10 @@ CardioTolerance-AI/
 ├── scripts/
 │   ├── 01_build_lit_corpus.py     ← collecte PubMed/EBI (stub)
 │   ├── 02_screen_and_extract.py   ← screening + extraction tableau d'études (stub)
-│   ├── 03_meta_analysis.py        ← effets aléatoires, I², funnel (stub)
-│   └── 04_build_app_data.py       ← agrège docs/ + meta-analysis/ vers data/ pour l'app (stub)
+│   ├── 03_meta_analysis.py        ← pooling DL sens/spéc + I² + ROC-space + forest (attend data/ddcfdna_2x2.csv)
+│   ├── 04_build_app_data.py       ← contrôle de présence des livrables de l'app
+│   ├── 05_assemble_report.py      ← docs/RAPPORT_FINAL.md (20 parties)
+│   └── 06_report_pdf.py           ← docs/RAPPORT_FINAL.pdf (reportlab, police Unicode)
 ├── data/                      ← CSV générés (registre d'études, datasets, équipes) — ne pas éditer à la main
 ├── figures/                   ← figures générées pour l'app / le dossier
 ├── meta-analysis/             ← pipeline revue systématique + méta-analyse

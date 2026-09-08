@@ -287,7 +287,7 @@ Protocole de comparaison, **mêmes patients, mêmes splits, même métrique** :
 
 | Problème | Parade préspécifiée |
 |---|---|
-| **p ≫ n** (grande dimension, petit n) | filtrage a priori (variance, expression) ; réduction par couche (PCA/MOFA) ; modèles **pénalisés** en 1ʳᵉ intention ; **stability selection** ; pas de deep learning si n insuffisant (règle EPV/►taille min. préspécifiée) |
+| **p ≫ n** (grande dimension, petit n) | filtrage a priori (variance, expression) ; réduction par couche (PCA/MOFA) ; modèles **pénalisés** en 1ʳᵉ intention ; **stability selection** ; pas de deep learning si n insuffisant (règle EPV / taille minimale préspécifiée) |
 | **Data leakage** | splits **par patient** ; tout le préprocessing (imputation, sélection, batch) **dans la boucle CV** ; séparer histologie (définit le label) et features moléculaires |
 | **Batch effects** | plan d'analyse des lots ; ComBat / RUV / covariables de lot ; vérifier que le « centre » n'est pas prédicteur du label ; validation **cross-centre** |
 | **Confounders** | ajustement sur âge, délai post-greffe, régime d'IS, fonction rénale, indication ; analyses stratifiées ; g-computation exploratoire |
