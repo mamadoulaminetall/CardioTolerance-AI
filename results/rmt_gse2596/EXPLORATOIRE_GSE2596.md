@@ -4,7 +4,7 @@
 > (Morgun et al., *Circ Res* 2006). Généré par `scripts/rmt_gse2596_exploratory.py`.
 
 - Série GEO SHA-256 `1fc1edf40d29fd902dda4fa9b8e79fd0d233bb6823250eb21a8f067265771adf`.
-- Échantillons biologiques après fusion des 11 paires de réplicats et exclusion des infections : 42 (Non-rejet 28, Rejet aigu 12, Pré-rejet 2), dont 7 non-rejets prélevés avant une réactivation de Chagas ; 17 patients au total dans la série (non indépendants).
+- Échantillons biologiques après fusion des 11 paires de réplicats et exclusion des infections : 42 (Non-rejet 28, Rejet aigu 12, Pré-rejet 2), dont 7 non-rejets prélevés avant une réactivation de Chagas ; 30 patients distincts parmi eux (31 dans toute la série) : biopsies non indépendantes. Code patient lu par le nom du champ.
 - Choix non prévus au plan (valeurs manquantes, AUC) : voir l'en-tête du script.
 
 ## Résumé
@@ -41,4 +41,4 @@
 
 Tableau limité aux 10 premiers axes ; tous les axes sont dans `EXPLORATOIRE_GSE2596_axes.csv`.
 
-Lecture : AUC proche de 0,5 = l'axe ne sépare pas rejet et non-rejet ; proche de 0 ou de 1 = il les sépare (le signe d'un axe est arbitraire). Avec 12 rejets et 28 non-rejets de 17 patients, ces chiffres sont indicatifs.
+Lecture : AUC proche de 0,5 = l'axe ne sépare pas rejet et non-rejet ; proche de 0 ou de 1 = il les sépare (le signe d'un axe est arbitraire). Avec 12 rejets et 28 non-rejets, plusieurs par patient, ces chiffres sont indicatifs.

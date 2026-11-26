@@ -18,7 +18,7 @@ Choix NON prévus au plan (déclarés, exploratoires) :
   - lien avec le rejet : aire sous la courbe ROC (AUC) rejet vs non-rejet des coordonnées de chaque
     axe retenu, avec p de Mann-Whitney NON corrigée ; le signe d'un axe est arbitraire (AUC < 0,5
     = même séparation dans l'autre sens).
-Limites : 42 échantillons de 17 patients (non indépendants), puces bicolores anciennes.
+Limites : 42 échantillons, plusieurs par patient (non indépendants), puces bicolores anciennes.
 
 Usage : python -I scripts/rmt_gse2596_exploratory.py   (télécharge la série si absente)
 """
@@ -83,6 +83,15 @@ def load():
     ann["groupe"] = ann.gsm.map(lambda g: next((k for k in LABELS if g in groups[k]), "sans étiquette"))
     ann["pre_chagas"] = ann.gsm.isin(groups["pre-Chagas disease reactivation"])
     ann["lot"] = ann.gsm.map(lambda g: "summer" if g in groups['first subset ("summer")'] else "winter")
+    # patient : champ « Patient&sample ID » cherché PAR SON NOM (sa ligne varie selon les puces)
+    descs = meta["!Sample_description"]
+    pid = []
+    for j in range(len(ann)):
+        hit = [r[j] for r in descs if r[j].strip().startswith("Patient&sample ID")]
+        code = re.sub(r"\s+", " ", hit[0].split(":", 1)[1]).strip() if hit else ""
+        m = re.match(r"([A-Za-z]+)", code)
+        pid.append(m.group(1) if m else None)
+    ann["patient"] = pid
     table = pd.read_csv(SRC, sep="\t", skiprows=begin + 1, index_col=0, comment="!")
     table.index = table.index.astype(str)
     assert list(table.columns) == list(ann.gsm)
@@ -92,7 +101,8 @@ def load():
 def prepare(table, ann, min_present=0.8, impute=True):
     keep = ann[ann.groupe.isin(KEEP)]
     bio = keep.groupby("aRNA").agg(groupe=("groupe", "first"), lot=("lot", "first"),
-                                   pre_chagas=("pre_chagas", "max"), puces=("gsm", list))
+                                   pre_chagas=("pre_chagas", "max"), puces=("gsm", list),
+                                   patient=("patient", "first"))
     X = pd.DataFrame({a: table[g].mean(axis=1, skipna=True) for a, g in bio.puces.items()})  # spots × échantillons
     present = X.notna().mean(axis=1)
     X = X[present >= min_present] if impute else X[present == 1.0]
@@ -201,6 +211,9 @@ def main():
             figure(res, bio, Xs.index, info, OUT / "EXPLORATOIRE_GSE2596_fig.png")
             n_groups = bio.groupe.value_counts().to_dict()
             n_prech = int(bio.pre_chagas.sum())
+            n_pat = int(bio.patient.nunique())
+            n_pat_missing = int(bio.patient.isna().sum())
+            n_pat_series = int(ann.patient.nunique())
     tab = pd.concat(out_tables)
     tab.to_csv(OUT / "EXPLORATOIRE_GSE2596_axes.csv", index=False, float_format="%.6f")
     L = ["# GSE2596 — analyse EXPLORATOIRE (section 7 du préenregistrement https://osf.io/6htjn)", "",
@@ -209,7 +222,9 @@ def main():
          f"- Série GEO SHA-256 `{sha}`.",
          f"- Échantillons biologiques après fusion des 11 paires de réplicats et exclusion des infections : "
          f"{sum(n_groups.values())} ({', '.join(f'{FR[g]} {c}' for g, c in n_groups.items())}), dont {n_prech} "
-         "non-rejets prélevés avant une réactivation de Chagas ; 17 patients au total dans la série (non indépendants).",
+         f"non-rejets prélevés avant une réactivation de Chagas ; {n_pat} patients distincts parmi eux"
+         + (f" ({n_pat_missing} sans code patient)" if n_pat_missing else "")
+         + f" ({n_pat_series} dans toute la série) : biopsies non indépendantes. Code patient lu par le nom du champ.",
          "- Choix non prévus au plan (valeurs manquantes, AUC) : voir l'en-tête du script.", "",
          "## Résumé", "", "| analyse | n | spots | γ | σ² | axes RMT | bord MP (σ² = 1) | permutations |",
          "|---|---|---|---|---|---|---|---|"]
@@ -229,8 +244,8 @@ def main():
     L.append("")
     L.append("Tableau limité aux 10 premiers axes ; tous les axes sont dans `EXPLORATOIRE_GSE2596_axes.csv`.")
     L += ["", "Lecture : AUC proche de 0,5 = l'axe ne sépare pas rejet et non-rejet ; proche de 0 ou de 1 = il les "
-          "sépare (le signe d'un axe est arbitraire). Avec 12 rejets et 28 non-rejets de 17 patients, ces chiffres "
-          "sont indicatifs.", ""]
+          "sépare (le signe d'un axe est arbitraire). Avec 12 rejets et 28 non-rejets, plusieurs par patient, ces "
+          "chiffres sont indicatifs.", ""]
     (OUT / "EXPLORATOIRE_GSE2596.md").write_text("\n".join(L), encoding="utf-8")
     print("\n".join(L))
 
