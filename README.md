@@ -102,7 +102,11 @@ Rédaction selon TRIPOD+AI, code ouvert. L'usage de l'IA sera déclaré dans les
 3. Préenregistrement : texte v1 prêt, [`docs/rmt_preregistration.md`](docs/rmt_preregistration.md)
    (code figé à l'étiquette `prereg-v1`). ✅ **Enregistré et public sur OSF : https://osf.io/6htjn**
    (Secondary Data Preregistration, 26/11/2026 12:32 UTC, après le sceau de la 558 posé à 11:08 UTC).
-4. Analyse principale.
+4. ✅ Analyse préenregistrée faite le 26/11/2026 (RMA par cohorte, sceau vérifié avant ouverture de la 558) :
+   [`results/rmt_gse124897/RESULTATS.md`](results/rmt_gse124897/RESULTATS.md). **H1 non soutenue** (RMT > ACP-10 à n = 20 et 40
+   seulement), **H2 soutenue** (1 à 5 % de faux axes sur données permutées), **H3 : fiabilité des axes surestimée**.
+   Sur ces données réelles, la réestimation de la variance du bruit fait retenir trop d'axes ; au-delà de 80 biopsies,
+   les permutations et le bord MP seul (σ² = 1) donnent le meilleur accord avec la cohorte 558.
 5. Manuscrit et prépublication.
 6. Mail à PITOR, après validation.
 

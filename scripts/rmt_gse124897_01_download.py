@@ -35,6 +35,8 @@ FILES = {
     "GPL15207_table.txt":
         "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL15207&targ=self&form=text&view=data",
 }
+CEL_TAR = {"GSE124897_RAW.tar":
+           "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE124nnn/GSE124897/suppl/GSE124897_RAW.tar"}
 USER_AGENT = "geo-download-script"
 
 
@@ -57,12 +59,15 @@ def download(url: str, dest: Path) -> None:
 def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--force", action="store_true", help="retélécharger même si présent")
+    ap.add_argument("--with-cel", action="store_true",
+                    help="télécharger aussi l'archive des 889 fichiers CEL (1,7 Go, décision D1)")
     args = ap.parse_args()
     RAW.mkdir(parents=True, exist_ok=True)
     MANIFEST.parent.mkdir(parents=True, exist_ok=True)
     old = json.loads(MANIFEST.read_text()) if MANIFEST.exists() else {}
-    entries = {}
-    for name, url in FILES.items():
+    entries = dict(old.get("fichiers", {}))
+    wanted = {**FILES, **(CEL_TAR if args.with_cel else {})}
+    for name, url in wanted.items():
         dest = RAW / name
         if args.force or not dest.exists():
             print(f"téléchargement : {name}", flush=True)
