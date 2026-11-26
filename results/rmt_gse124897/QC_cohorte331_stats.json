@@ -1,0 +1,26 @@
+{
+  "n_puces": 331,
+  "n_sondes": 49395,
+  "valeurs_manquantes": 0,
+  "min": 1.336775015,
+  "max": 14.90619961,
+  "sondes_controle_AFFX": 102,
+  "ecart_max_entre_distributions": 0.61638566,
+  "seuil_distance": 0.3914446121964133,
+  "doublons_r_sup_0999": 0,
+  "sd_sondes_quantiles": {
+    "5": 0.15105802739131766,
+    "25": 0.1942461524837873,
+    "50": 0.24218405118860065,
+    "75": 0.3373247824986906,
+    "95": 0.6219492300170112
+  },
+  "sondes_sd_inf_0_1": 28,
+  "sondes_sd_inf_0_2": 14092,
+  "moyenne_sondes_quantiles": {
+    "5": 2.7455079405045306,
+    "50": 5.549986750175226,
+    "95": 9.433824377762537
+  },
+  "doublons": []
+}

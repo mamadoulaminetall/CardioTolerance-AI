@@ -1,0 +1,18 @@
+{
+  "jeu": "GSE124897 (GEO, public)",
+  "note": "Fichiers dans data/geo/GSE124897/raw/ (local, non versionné).",
+  "fichiers": {
+    "GSE124897_series_matrix.txt.gz": {
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE124nnn/GSE124897/matrix/GSE124897_series_matrix.txt.gz",
+      "telecharge_le": "2026-11-26T11:05:16Z",
+      "octets": 233167594,
+      "sha256": "50b9bb17700b31e77db597d01d59220bb8eb7c44ffd2c6d829fc45e24ada3b6c"
+    },
+    "GPL15207_table.txt": {
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL15207&targ=self&form=text&view=data",
+      "telecharge_le": "2026-11-26T11:06:27Z",
+      "octets": 311433607,
+      "sha256": "fb203f7699e619530a3a1473d8b41ed384301bf99518a66c4cab6c2ae40e7d9a"
+    }
+  }
+}

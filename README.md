@@ -38,8 +38,9 @@ recherche PubMed « cœur + tolérance + IA » renvoie **0 article** (cf.
 
 ## 1bis. Volet A en cours : séparer le signal du bruit (matrices aléatoires)
 
-**Statut (26/11/2026) : étape 1 faite (registre corrigé, module `scripts/rmt_denoise.py`,
-simulation étiquetée). Analyse des données réelles non commencée : aucun résultat réel.**
+**Statut (26/11/2026) : étapes 1 et 2 faites (registre corrigé, module `scripts/rmt_denoise.py`,
+simulation étiquetée ; GSE124897 téléchargé, cohorte 558 scellée, contrôle qualité de la 331).
+Analyse principale non commencée : aucun résultat réel.**
 Cerveau du volet : coffre Obsidian `RMT-Transplant/` (`/cerveau rmt`).
 
 **Le problème.** Une cohorte de greffés cardiaques compte quelques dizaines à quelques centaines
@@ -94,7 +95,10 @@ Rédaction selon TRIPOD+AI, code ouvert. L'usage de l'IA sera déclaré dans les
 
 **Feuille de route.**
 1. ✅ Correction du registre, `rmt_denoise.py`, simulation (étiquetée comme telle), 26/11/2026.
-2. Téléchargement et contrôle qualité de GSE124897.
+2. ✅ Téléchargement et contrôle qualité de GSE124897, 26/11/2026 : cohorte 558 **scellée** (empreinte SHA-256,
+   aucune analyse avant OSF : [`results/rmt_gse124897/SCELLE_cohorte558.md`](results/rmt_gse124897/SCELLE_cohorte558.md)) ;
+   cohorte 331 : 26 puces sur 331 signalées, aucune exclue, surtout dans les groupes 4AA 2 et 4
+   ([`results/rmt_gse124897/QC_cohorte331.md`](results/rmt_gse124897/QC_cohorte331.md)). Les données restent en local (`data/geo/`, non versionné).
 3. Préenregistrement OSF, à déposer par Dr Tall.
 4. Analyse principale.
 5. Manuscrit et prépublication.
@@ -144,11 +148,14 @@ CardioTolerance-AI/
 │   ├── 05_assemble_report.py         docs/section_*.md → docs/RAPPORT_FINAL.md
 │   ├── 06_report_pdf.py              docs/RAPPORT_FINAL.md → docs/RAPPORT_FINAL.pdf (reportlab, police Unicode, figures embarquées)
 │   ├── rmt_denoise.py                volet A : signal / bruit par matrices aléatoires (module + ligne de commande)
-│   └── rmt_simulation.py             volet A : SIMULATION sur données synthétiques → results/rmt_simulation/
+│   ├── rmt_simulation.py             volet A : SIMULATION sur données synthétiques → results/rmt_simulation/
+│   ├── rmt_gse124897_01_download.py  volet A : téléchargement GEO + provenance SHA-256
+│   └── rmt_gse124897_02_split_qc.py  volet A : cohortes 331/558, sceau de la 558, contrôle qualité de la 331
 ├── tests/
 │   └── test_rmt_denoise.py           16 tests (Tracy-Widom vs table publiée, Marchenko-Pastur, bruit pur, signal caché)
 ├── results/
-│   └── rmt_simulation/               SIMULATION_*.csv / *.png + LISEZMOI.md (données synthétiques uniquement)
+│   ├── rmt_simulation/               SIMULATION_*.csv / *.png + LISEZMOI.md (données synthétiques uniquement)
+│   └── rmt_gse124897/                provenance, sceau de la cohorte 558, contrôle qualité de la 331 (aucune donnée brute)
 ├── data/                             CSV — générés/curés, ne pas éditer à la main
 │   ├── studies_registry.csv          12 études seed (S01–S12) : dd-cfDNA, MMDx, IA, comparateurs tolérance
 │   ├── datasets_registry.csv         5 jeux de données (GEO public / CTOT-03 / INTERHEART collaboration)
@@ -196,6 +203,8 @@ python scripts/05_assemble_report.py      # docs/RAPPORT_FINAL.md
 python scripts/06_report_pdf.py           # docs/RAPPORT_FINAL.pdf
 python -m pytest tests/ -q                # tests du module rmt_denoise (~5 s)
 python scripts/rmt_simulation.py          # SIMULATION volet A (~3 min) → results/rmt_simulation/
+python -I scripts/rmt_gse124897_01_download.py   # GEO → data/geo/GSE124897/raw/ (545 Mo, local)
+python -I scripts/rmt_gse124897_02_split_qc.py   # sceau 558 (vérifié si déjà posé) + CQ 331 (~10 s)
 python scripts/rmt_denoise.py --input matrice.csv --genes-in-rows --out axes.csv   # sur une vraie matrice (en local)
 ```
 

@@ -1,0 +1,24 @@
+{
+  "cohorte": 558,
+  "scelle_le": "2026-11-26T11:08:12Z",
+  "regle": "Aucune analyse avant le dépôt du préenregistrement sur OSF.",
+  "n_echantillons": 558,
+  "n_sondes": 49395,
+  "effectifs_groupes_metadonnees_GEO": {
+    "3aa group (1,2,3)": {
+      "1": 424,
+      "2": 39,
+      "3": 95
+    },
+    "4aa group (1,2,3,4)": {
+      "1": 427,
+      "2": 25,
+      "3": 75,
+      "4": 31
+    }
+  },
+  "sha256_contenu": "5a44ac4ac80dda22c083b921941161410935bf26a25b21d7728b15e249ab5a0f",
+  "methode_empreinte": "sha256( 'GSE124897 cohorte 558 (sondes x echantillons)\\n' + échantillons joints par \\n + '\\n' + sondes jointes par \\n + '\\n' + valeurs float64 petit-boutiste, ordre C, sondes en lignes )",
+  "sha256_fichier_source": "50b9bb17700b31e77db597d01d59220bb8eb7c44ffd2c6d829fc45e24ada3b6c",
+  "fichiers_locaux": "data/geo/GSE124897/sealed/ (lecture seule, non versionnés)"
+}
