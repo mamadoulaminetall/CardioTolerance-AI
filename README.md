@@ -36,6 +36,57 @@ recherche PubMed « cœur + tolérance + IA » renvoie **0 article** (cf.
 
 ---
 
+## 1bis. Volet A en cours : séparer le signal du bruit (matrices aléatoires)
+
+**Statut (26/11/2026) : cadrage terminé, analyse non commencée, aucun résultat.**
+Cerveau du volet : coffre Obsidian `RMT-Transplant/` (`/cerveau rmt`).
+
+**Le problème.** Une cohorte de greffés cardiaques compte quelques dizaines à quelques centaines
+de patients pour des milliers de gènes. Dans ce cas, le bruit seul fabrique de fausses
+« signatures ». La théorie des matrices aléatoires fixe la limite que le bruit ne peut pas
+dépasser : la loi de **Marchenko-Pastur** (λ₊ = (1 + √(p/n))² pour des données standardisées).
+Seul ce qui la dépasse est retenu, puis doit se reproduire sur une cohorte indépendante.
+
+**L'algorithme (module prévu : `scripts/rmt_denoise.py`)**
+1. Préparation : normalisation, correction des effets de lot, standardisation par gène.
+2. Spectre : valeurs propres de la matrice de corrélation gène × gène.
+3. Seuil de Marchenko-Pastur, test de Tracy-Widom près du seuil.
+4. Nettoyage : seuls les axes au-dessus du seuil sont gardés, et la matrice de corrélation est nettoyée (Bun, Bouchaud & Potters, *Phys Rep* 2017).
+5. Validation : plan préenregistré (OSF), découverte sur une cohorte, validation sur l'autre, comparaison aux méthodes classiques.
+
+**Données publiques vérifiées dans GEO le 26/11/2026**
+| Jeu | Contenu réel | Remarque |
+|---|---|---|
+| GSE124897 | 889 biopsies endomyocardiques, 2 cohortes (331 et 558), puce GPL15207 | Étiquettes = archétypes **moléculaires** 3AA/4AA, pas d'histologie, donc aucune prétention diagnostique (source : Parkes et al., *JHLT* 2019;38:636-646) |
+| GSE2596 | 63 échantillons, puces bicolores, étiquettes R / N / pré-R | Validation externe exploratoire |
+| GSE2445 | 285 échantillons de **sang (PBMC)**, 3 plateformes | Ce ne sont pas des biopsies |
+
+⚠ `data/datasets_registry.csv` contient deux erreurs (GSE2596 noté 43 ; GSE2445 décrit comme des biopsies). Correction prévue à l'étape 1.
+
+**Originalité, formulation validée :** « À notre connaissance, la théorie des matrices aléatoires
+n'a pas encore été appliquée à des données transcriptomiques de transplantation d'organe
+(recherche PubMed et Europe PMC, texte intégral et prépublications, 26 novembre 2026). »
+Ne jamais écrire « premier », *first* ou *novel* seuls, et refaire la recherche avant soumission.
+
+**Article visé.** Prépublication bioRxiv, puis le JHLT (avec un coauteur clinicien) ou
+Transplant International (en solo). Le module en ligne pourra faire l'objet d'un article dans JOSS.
+Rédaction selon TRIPOD+AI, code ouvert. L'usage de l'IA sera déclaré dans les méthodes.
+
+**Feuille de route.**
+1. Correction du registre, `rmt_denoise.py`, simulation (étiquetée comme telle).
+2. Téléchargement et contrôle qualité de GSE124897.
+3. Préenregistrement OSF, à déposer par Dr Tall.
+4. Analyse principale.
+5. Manuscrit et prépublication.
+6. Mail à PITOR, après validation.
+
+**Garde-fous.** Ce volet porte sur la méthode et le rejet, pas sur la tolérance (aucun jeu public de greffés
+cardiaques tolérants). Aucune donnée de patient en ligne. Jamais d'hypothèse d'arrêt de
+l'immunosuppression. Riemann n'est **pas** utilisé : on peut le citer comme inspiration
+(les zéros de zêta suivent les statistiques des matrices aléatoires), jamais comme base technique.
+
+---
+
 ## 2. Ce que contient ce dépôt
 
 | Livrable | Où |
@@ -143,7 +194,7 @@ Dépendances scripts (au-delà de `requirements.txt`) : `matplotlib`, `reportlab
 | Surface | État |
 |---|---|
 | **Git** | ce dépôt |
-| **OVH — page publique** | ✅ `landing/cardiotolerance-ai.html` en ligne : https://medflow-ai.fr/cardiotolerance-ai.html (page recherche/collaboration, hors grille d'outils) |
+| **OVH — page publique** | ✅ `landing/cardiotolerance-ai.html` en ligne : https://medflow-ai.fr/cardiotolerance-ai.html (page recherche/collaboration, hors grille d'outils). Section **Algorithme (volet A)** ajoutée le 26/11/2026 : `#algorithme` |
 | **Streamlit Cloud** | ☐ à connecter — `share.streamlit.io` → New app → ce repo, branche `main`, **main file `app/app.py`** |
 
 Workflow de mise à jour (chiffres / données / claims) : suivre la skill
@@ -158,6 +209,9 @@ app fonctionnelle, corpus PubMed réel (670 réf.), cible n°1 = **Paris Transpl
 PITOR** (angle cœur via G. Coutance). Restent : screening des 670, extraction 2×2 pour la
 méta-analyse, tables QUADAS-2/PROBAST, connexion Streamlit Cloud, envoi de l'email
 (après validation de Dr. Tall).
+
+**Depuis le 26/11/2026 :** le volet A (matrices aléatoires, données publiques) est cadré, voir §1bis.
+Prochaine action : étape 1 (registre, `rmt_denoise.py`, simulation).
 
 ---
 
