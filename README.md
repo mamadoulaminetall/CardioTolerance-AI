@@ -99,7 +99,8 @@ Rédaction selon TRIPOD+AI, code ouvert. L'usage de l'IA sera déclaré dans les
    aucune analyse avant OSF : [`results/rmt_gse124897/SCELLE_cohorte558.md`](results/rmt_gse124897/SCELLE_cohorte558.md)) ;
    cohorte 331 : 26 puces sur 331 signalées, aucune exclue, surtout dans les groupes 4AA 2 et 4
    ([`results/rmt_gse124897/QC_cohorte331.md`](results/rmt_gse124897/QC_cohorte331.md)). Les données restent en local (`data/geo/`, non versionné).
-3. Préenregistrement OSF, à déposer par Dr Tall.
+3. Préenregistrement : texte v1 prêt, [`docs/rmt_preregistration.md`](docs/rmt_preregistration.md)
+   (code figé à l'étiquette `prereg-v1`). **Dépôt sur OSF par Dr Tall**, avant toute ouverture de la cohorte 558.
 4. Analyse principale.
 5. Manuscrit et prépublication.
 6. Mail à PITOR, après validation.
