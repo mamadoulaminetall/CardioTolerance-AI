@@ -107,6 +107,9 @@ Rédaction selon TRIPOD+AI, code ouvert. L'usage de l'IA sera déclaré dans les
    seulement), **H2 soutenue** (1 à 5 % de faux axes sur données permutées), **H3 : fiabilité des axes surestimée**.
    Sur ces données réelles, la réestimation de la variance du bruit fait retenir trop d'axes ; au-delà de 80 biopsies,
    les permutations et le bord MP seul (σ² = 1) donnent le meilleur accord avec la cohorte 558.
+   Exploratoire GSE2596 (section 7 du plan, sans hypothèse) : [`results/rmt_gse2596/EXPLORATOIRE_GSE2596.md`](results/rmt_gse2596/EXPLORATOIRE_GSE2596.md) —
+   42 biopsies ; l'axe 1 sépare rejet aigu et non-rejet (AUC 0,05, soit 0,95 dans l'autre sens ; p = 1e-05 non corrigé) ;
+   RMT retient 34 axes contre 10 avec σ² = 1 ou les permutations (même problème de réestimation du bruit).
 5. Manuscrit et prépublication.
 6. Mail à PITOR, après validation.
 

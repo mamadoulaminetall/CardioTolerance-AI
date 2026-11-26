@@ -1,0 +1,64 @@
+analyse,axe,retenu_RMT,valeur_propre,pct_variance,p_tracy_widom,p_permutation,AUC_rejet_vs_non_rejet,p_mann_whitney_non_corrigee
+"principale (spots ≥ 80 % présents, manques = 0)",1,True,668.237779,15.708457,-0.000000,0.005000,0.053571,0.000010
+"principale (spots ≥ 80 % présents, manques = 0)",2,True,375.942718,8.837393,-0.000000,0.005000,0.270833,0.023957
+"principale (spots ≥ 80 % présents, manques = 0)",3,True,299.260159,7.034795,-0.000000,0.005000,0.440476,0.564937
+"principale (spots ≥ 80 % présents, manques = 0)",4,True,250.836210,5.896479,-0.000000,0.005000,0.571429,0.487945
+"principale (spots ≥ 80 % présents, manques = 0)",5,True,235.223309,5.529462,-0.000000,0.005000,0.449405,0.626271
+"principale (spots ≥ 80 % présents, manques = 0)",6,True,186.859598,4.392562,-0.000000,0.005000,0.610119,0.281363
+"principale (spots ≥ 80 % présents, manques = 0)",7,True,172.043716,4.044281,-0.000000,0.005000,0.505952,0.964688
+"principale (spots ≥ 80 % présents, manques = 0)",8,True,151.832799,3.569177,-0.000000,0.005000,0.660714,0.114335
+"principale (spots ≥ 80 % présents, manques = 0)",9,True,146.700751,3.448537,-0.000000,0.005000,0.461310,0.712183
+"principale (spots ≥ 80 % présents, manques = 0)",10,True,130.751081,3.073603,-0.000000,0.005000,0.607143,0.294754
+"principale (spots ≥ 80 % présents, manques = 0)",11,True,117.141807,2.753686,-0.000000,1.000000,0.464286,0.734300
+"principale (spots ≥ 80 % présents, manques = 0)",12,True,104.930265,2.466626,-0.000000,1.000000,0.452381,0.647335
+"principale (spots ≥ 80 % présents, manques = 0)",13,True,99.146006,2.330654,-0.000000,1.000000,0.500000,1.000000
+"principale (spots ≥ 80 % présents, manques = 0)",14,True,93.816644,2.205375,-0.000000,1.000000,0.601190,0.322800
+"principale (spots ≥ 80 % présents, manques = 0)",15,True,85.053749,1.999383,-0.000000,1.000000,0.541667,0.690306
+"principale (spots ≥ 80 % présents, manques = 0)",16,True,83.201863,1.955850,-0.000000,1.000000,0.422619,0.451685
+"principale (spots ≥ 80 % présents, manques = 0)",17,True,74.934212,1.761500,-0.000000,1.000000,0.651786,0.136103
+"principale (spots ≥ 80 % présents, manques = 0)",18,True,70.961357,1.668109,-0.000000,1.000000,0.568452,0.506648
+"principale (spots ≥ 80 % présents, manques = 0)",19,True,66.801602,1.570324,-0.000000,1.000000,0.407738,0.368025
+"principale (spots ≥ 80 % présents, manques = 0)",20,True,63.875657,1.501543,-0.000000,1.000000,0.583333,0.417000
+"principale (spots ≥ 80 % présents, manques = 0)",21,True,62.548521,1.470346,-0.000000,1.000000,0.562500,0.545154
+"principale (spots ≥ 80 % présents, manques = 0)",22,True,57.593670,1.353871,-0.000000,1.000000,0.380952,0.243693
+"principale (spots ≥ 80 % présents, manques = 0)",23,True,54.197059,1.274026,-0.000000,1.000000,0.482143,0.871048
+"principale (spots ≥ 80 % présents, manques = 0)",24,True,53.465505,1.256829,-0.000000,1.000000,0.473214,0.801915
+"principale (spots ≥ 80 % présents, manques = 0)",25,True,52.714926,1.239185,-0.000000,1.000000,0.541667,0.690306
+"principale (spots ≥ 80 % présents, manques = 0)",26,True,47.525221,1.117189,0.000000,1.000000,0.514881,0.894341
+"principale (spots ≥ 80 % présents, manques = 0)",27,True,45.432654,1.067998,0.000000,1.000000,0.485119,0.894341
+"principale (spots ≥ 80 % présents, manques = 0)",28,True,44.833116,1.053905,0.000000,1.000000,0.452381,0.647335
+"principale (spots ≥ 80 % présents, manques = 0)",29,True,41.401181,0.973229,0.000000,1.000000,0.473214,0.801915
+"principale (spots ≥ 80 % présents, manques = 0)",30,True,38.410606,0.902929,0.000000,1.000000,0.517857,0.871048
+"principale (spots ≥ 80 % présents, manques = 0)",31,True,36.096259,0.848525,0.000000,1.000000,0.574405,0.469622
+"principale (spots ≥ 80 % présents, manques = 0)",32,True,34.003344,0.799326,0.000000,1.000000,0.380952,0.243693
+"principale (spots ≥ 80 % présents, manques = 0)",33,True,31.308487,0.735978,0.000000,1.000000,0.464286,0.734300
+"principale (spots ≥ 80 % présents, manques = 0)",34,True,31.087980,0.730794,0.000000,1.000000,0.488095,0.917725
+"vérification (spots complets, sans remplacement)",1,True,258.203254,17.446166,-0.000000,0.005000,0.083333,0.000038
+"vérification (spots complets, sans remplacement)",2,True,164.076456,11.086247,-0.000000,0.005000,0.788690,0.004398
+"vérification (spots complets, sans remplacement)",3,True,121.745051,8.226017,-0.000000,0.005000,0.598214,0.337454
+"vérification (spots complets, sans remplacement)",4,True,105.980591,7.160851,-0.000000,0.005000,0.386905,0.268390
+"vérification (spots complets, sans remplacement)",5,True,86.309494,5.831723,-0.000000,0.005000,0.491071,0.941181
+"vérification (spots complets, sans remplacement)",6,True,66.198040,4.472841,-0.000000,0.005000,0.470238,0.779183
+"vérification (spots complets, sans remplacement)",7,True,58.158484,3.929627,-0.000000,0.005000,0.654762,0.128517
+"vérification (spots complets, sans remplacement)",8,True,51.974786,3.511810,-0.000000,0.005000,0.583333,0.417000
+"vérification (spots complets, sans remplacement)",9,True,46.835012,3.164528,-0.000000,0.965000,0.532738,0.756639
+"vérification (spots complets, sans remplacement)",10,True,41.159406,2.781041,-0.000000,1.000000,0.425595,0.469622
+"vérification (spots complets, sans remplacement)",11,True,36.468205,2.464068,-0.000000,1.000000,0.556548,0.585059
+"vérification (spots complets, sans remplacement)",12,True,33.938236,2.293124,-0.000000,1.000000,0.544643,0.668685
+"vérification (spots complets, sans remplacement)",13,True,31.961260,2.159545,-0.000000,1.000000,0.514881,0.894341
+"vérification (spots complets, sans remplacement)",14,True,30.119215,2.035082,-0.000000,1.000000,0.663690,0.107722
+"vérification (spots complets, sans remplacement)",15,True,27.617720,1.866062,-0.000000,1.000000,0.505952,0.964688
+"vérification (spots complets, sans remplacement)",16,True,22.858479,1.544492,0.000000,1.000000,0.654762,0.128517
+"vérification (spots complets, sans remplacement)",17,True,22.117622,1.494434,0.000000,1.000000,0.523810,0.824816
+"vérification (spots complets, sans remplacement)",18,True,21.502228,1.452853,0.000000,1.000000,0.684524,0.069506
+"vérification (spots complets, sans remplacement)",19,True,19.902795,1.344783,0.000000,1.000000,0.520833,0.847866
+"vérification (spots complets, sans remplacement)",20,True,18.609713,1.257413,0.000000,1.000000,0.514881,0.894341
+"vérification (spots complets, sans remplacement)",21,True,17.857928,1.206617,0.000000,1.000000,0.574405,0.469622
+"vérification (spots complets, sans remplacement)",22,True,17.232721,1.164373,0.000000,1.000000,0.505952,0.964688
+"vérification (spots complets, sans remplacement)",23,True,16.494944,1.114523,0.000000,1.000000,0.562500,0.545154
+"vérification (spots complets, sans remplacement)",24,True,15.235620,1.029434,0.000000,1.000000,0.511905,0.917725
+"vérification (spots complets, sans remplacement)",25,True,14.422042,0.974462,0.000000,1.000000,0.461310,0.712183
+"vérification (spots complets, sans remplacement)",26,True,13.433843,0.907692,0.000000,1.000000,0.505952,0.964688
+"vérification (spots complets, sans remplacement)",27,True,13.021049,0.879801,0.000000,1.000000,0.491071,0.941181
+"vérification (spots complets, sans remplacement)",28,True,11.587665,0.782950,0.000000,1.000000,0.491071,0.941181
+"vérification (spots complets, sans remplacement)",29,True,11.190259,0.756099,0.000337,1.000000,0.470238,0.779183
