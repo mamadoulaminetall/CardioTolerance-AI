@@ -122,7 +122,7 @@ immunologique profonde » non encore caractérisé — c'est l'hypothèse du pro
 ## Q8 — Les études existantes sont-elles suffisamment grandes pour développer de l'IA ?
 
 - **Pour le *rejet* (biopsie) : oui.** MMDx-Heart et cohortes associées = milliers de
-  biopsies ; datasets GEO publics (GSE124897 ~800+ biopsies) [R25 ; registre datasets].
+  biopsies ; datasets GEO publics (GSE124897 : 889 biopsies) [R25 ; registre datasets].
 - **Pour la *tolérance* cardiaque : non.** Pas de cohorte dédiée ; le phénotype n'est même
   pas défini. Les études de tolérance rénale portent sur des **dizaines** de patients
   tolérants au total [R5].
@@ -178,10 +178,10 @@ transplantés cardiaques, en maximisant les couches disponibles.
 | Couche | Source (par scénario) | Harmonisation |
 |---|---|---|
 | Clinique longitudinale | centre partenaire (rétrospectif) ; registres | modèle de données commun (OMOP-like), dictionnaire de variables |
-| Biopsies (histologie ISHLT + moléculaire) | centre ; MMDx si accessible ; **GEO GSE124897 / GSE2445 / GSE2596** | remap vers grades ISHLT harmonisés ; batch correction |
+| Biopsies (histologie ISHLT + moléculaire) | centre ; MMDx si accessible ; **GEO GSE124897 / GSE2596** | remap vers grades ISHLT harmonisés ; batch correction |
 | HLA + mismatch moléculaire | typage centre → **eplets (HLA-EMMA), PIRCHE-II** | recalcul uniforme des scores |
 | DSA (présence, MFI, spécificité, C1q si dispo) | labo HLA du centre / EFS | seuils harmonisés |
-| Transcriptome (biopsie et/ou sang) | centre ; **CTOT-03** (RNA-seq longitudinal) ; datasets publics | normalisation, correction de lot (ComBat / RUV), contrôle qualité |
+| Transcriptome (biopsie et/ou sang) | centre ; **CTOT-03** (RNA-seq longitudinal) ; datasets publics (dont **GSE2445**, sang PBMC) | normalisation, correction de lot (ComBat / RUV), contrôle qualité |
 | Profil cellulaire (cytométrie / CyTOF) | centre si disponible | gating harmonisé / réanalyse |
 | scRNA-seq / snRNA-seq | sous-échantillon prospectif (Scénario C) ; réanalyse publique | intégration (Harmony/scVI), annotation commune |
 | TCR/BCR | sous-échantillon (Scénario B/C) | pipeline commun (MiXCR/Immcantation), métriques de diversité/clonalité |

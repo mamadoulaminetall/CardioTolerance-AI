@@ -38,7 +38,8 @@ recherche PubMed « cœur + tolérance + IA » renvoie **0 article** (cf.
 
 ## 1bis. Volet A en cours : séparer le signal du bruit (matrices aléatoires)
 
-**Statut (26/11/2026) : cadrage terminé, analyse non commencée, aucun résultat.**
+**Statut (26/11/2026) : étape 1 faite (registre corrigé, module `scripts/rmt_denoise.py`,
+simulation étiquetée). Analyse des données réelles non commencée : aucun résultat réel.**
 Cerveau du volet : coffre Obsidian `RMT-Transplant/` (`/cerveau rmt`).
 
 **Le problème.** Une cohorte de greffés cardiaques compte quelques dizaines à quelques centaines
@@ -47,21 +48,40 @@ de patients pour des milliers de gènes. Dans ce cas, le bruit seul fabrique de 
 dépasser : la loi de **Marchenko-Pastur** (λ₊ = (1 + √(p/n))² pour des données standardisées).
 Seul ce qui la dépasse est retenu, puis doit se reproduire sur une cohorte indépendante.
 
-**L'algorithme (module prévu : `scripts/rmt_denoise.py`)**
+**L'algorithme (module : `scripts/rmt_denoise.py` ; tests : `tests/test_rmt_denoise.py`)**
 1. Préparation : normalisation, correction des effets de lot, standardisation par gène.
 2. Spectre : valeurs propres de la matrice de corrélation gène × gène.
 3. Seuil de Marchenko-Pastur, test de Tracy-Widom près du seuil.
 4. Nettoyage : seuls les axes au-dessus du seuil sont gardés, et la matrice de corrélation est nettoyée (Bun, Bouchaud & Potters, *Phys Rep* 2017).
 5. Validation : plan préenregistré (OSF), découverte sur une cohorte, validation sur l'autre, comparaison aux méthodes classiques.
 
+Le module donne aussi, pour chaque axe retenu, sa taille réelle estimée et la **fiabilité attendue
+de sa liste de gènes** (cos² entre l'axe estimé et le vrai, modèle « spiked » : Baik, Ben Arous &
+Péché 2005 ; Paul 2007). Tests : la loi de Tracy-Widom calculée retrouve les quantiles publiés
+(Johnstone 2001 : 0,45 / 0,98 / 2,02 pour 90 / 95 / 99 %).
+
+**Simulation (étape 0) — DONNÉES SYNTHÉTIQUES, aucune donnée de patient.**
+`scripts/rmt_simulation.py` → [`results/rmt_simulation/LISEZMOI.md`](results/rmt_simulation/LISEZMOI.md).
+5 000 gènes, 20 à 160 échantillons, 3 signatures cachées, 200 tirages par cas :
+- Les règles classiques retiennent des axes de pur bruit : en moyenne 7 à 8 (10 axes fixes), 13 à 115
+  (80 % de variance) et 17 à 156 (Kaiser). RMT : au plus 0,01.
+- Sur bruit pur, RMT retient au moins un faux axe dans 1 à 4 % des tirages (niveau visé 5 %) ;
+  le bord de Marchenko-Pastur seul monte à 10 %, d'où le test de Tracy-Widom.
+- La fiabilité prédite des listes de gènes colle à la réalité (écart moyen 0,015 sur 1 315 axes).
+  Message pour l'article : à 20 échantillons, même la signature la plus forte n'a que 41 % de vrais
+  gènes parmi ses gènes les plus chargés (99 % à 160 échantillons).
+- Limite : bruit idéal (gaussien, homogène). Ces chiffres valident l'outil, pas un résultat sur le rejet.
+
 **Données publiques vérifiées dans GEO le 26/11/2026**
 | Jeu | Contenu réel | Remarque |
 |---|---|---|
 | GSE124897 | 889 biopsies endomyocardiques, 2 cohortes (331 et 558), puce GPL15207 | Étiquettes = archétypes **moléculaires** 3AA/4AA, pas d'histologie, donc aucune prétention diagnostique (source : Parkes et al., *JHLT* 2019;38:636-646) |
-| GSE2596 | 63 échantillons, puces bicolores, étiquettes R / N / pré-R | Validation externe exploratoire |
-| GSE2445 | 285 échantillons de **sang (PBMC)**, 3 plateformes | Ce ne sont pas des biopsies |
+| GSE2596 | 63 puces bicolores = 52 échantillons biologiques + 11 réplicats ; étiquettes R (16) / N (34) / pré-R (3), plus des infections (Chagas 8, toxoplasmose 1) ; 2 lots | Validation externe exploratoire (source : Morgun et al., *Circ Res* 2006) |
+| GSE2445 | 285 échantillons de **sang (PBMC)**, 3 plateformes ; étiquette = grade de la biopsie concomitante | Ce ne sont pas des biopsies (source : Deng et al., *Am J Transplant* 2006, étude CARGO) |
 
-⚠ `data/datasets_registry.csv` contient deux erreurs (GSE2596 noté 43 ; GSE2445 décrit comme des biopsies). Correction prévue à l'étape 1.
+✅ `data/datasets_registry.csv` corrigé le 26/11/2026 d'après les fiches GEO (série et échantillons) :
+GSE2596 = 63 puces (et non 43), GSE2445 = sang PBMC (et non des biopsies), GSE124897 = 889 biopsies
+à étiquettes moléculaires (l'ancien « ~841 » oubliait le groupe 4AA n° 4).
 
 **Originalité, formulation validée :** « À notre connaissance, la théorie des matrices aléatoires
 n'a pas encore été appliquée à des données transcriptomiques de transplantation d'organe
@@ -73,7 +93,7 @@ Transplant International (en solo). Le module en ligne pourra faire l'objet d'un
 Rédaction selon TRIPOD+AI, code ouvert. L'usage de l'IA sera déclaré dans les méthodes.
 
 **Feuille de route.**
-1. Correction du registre, `rmt_denoise.py`, simulation (étiquetée comme telle).
+1. ✅ Correction du registre, `rmt_denoise.py`, simulation (étiquetée comme telle), 26/11/2026.
 2. Téléchargement et contrôle qualité de GSE124897.
 3. Préenregistrement OSF, à déposer par Dr Tall.
 4. Analyse principale.
@@ -122,7 +142,13 @@ CardioTolerance-AI/
 │   ├── 03_meta_analysis.py           pooling DL sens/spéc + I² + ROC-space + forest (attend data/ddcfdna_2x2.csv)
 │   ├── 04_build_app_data.py          contrôle de présence des 17 livrables de l'app
 │   ├── 05_assemble_report.py         docs/section_*.md → docs/RAPPORT_FINAL.md
-│   └── 06_report_pdf.py              docs/RAPPORT_FINAL.md → docs/RAPPORT_FINAL.pdf (reportlab, police Unicode, figures embarquées)
+│   ├── 06_report_pdf.py              docs/RAPPORT_FINAL.md → docs/RAPPORT_FINAL.pdf (reportlab, police Unicode, figures embarquées)
+│   ├── rmt_denoise.py                volet A : signal / bruit par matrices aléatoires (module + ligne de commande)
+│   └── rmt_simulation.py             volet A : SIMULATION sur données synthétiques → results/rmt_simulation/
+├── tests/
+│   └── test_rmt_denoise.py           16 tests (Tracy-Widom vs table publiée, Marchenko-Pastur, bruit pur, signal caché)
+├── results/
+│   └── rmt_simulation/               SIMULATION_*.csv / *.png + LISEZMOI.md (données synthétiques uniquement)
 ├── data/                             CSV — générés/curés, ne pas éditer à la main
 │   ├── studies_registry.csv          12 études seed (S01–S12) : dd-cfDNA, MMDx, IA, comparateurs tolérance
 │   ├── datasets_registry.csv         5 jeux de données (GEO public / CTOT-03 / INTERHEART collaboration)
@@ -168,9 +194,12 @@ python scripts/03_meta_analysis.py        # méta-analyse dd-cfDNA — s'arrête
 python scripts/04_build_app_data.py       # vérifie que les 17 livrables de l'app sont présents
 python scripts/05_assemble_report.py      # docs/RAPPORT_FINAL.md
 python scripts/06_report_pdf.py           # docs/RAPPORT_FINAL.pdf
+python -m pytest tests/ -q                # tests du module rmt_denoise (~5 s)
+python scripts/rmt_simulation.py          # SIMULATION volet A (~3 min) → results/rmt_simulation/
+python scripts/rmt_denoise.py --input matrice.csv --genes-in-rows --out axes.csv   # sur une vraie matrice (en local)
 ```
 
-Dépendances scripts (au-delà de `requirements.txt`) : `matplotlib`, `reportlab`, `pypdf`.
+Dépendances scripts (au-delà de `requirements.txt`) : `matplotlib`, `reportlab`, `pypdf`, `scipy`, `pytest`.
 
 ---
 

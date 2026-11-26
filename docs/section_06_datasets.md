@@ -18,15 +18,28 @@ mention « à confirmer ».*
 
 ## 6.2 Fiches (résumé — détail dans le CSV)
 
-- **GSE124897** (GEO, *H. sapiens*) — microarray, **biopsies endomyocardiques**, ~841
-  échantillons (≈ 645 stable / 52 TCMR / 144 ABMR — **à confirmer**). Associé aux travaux
-  type MMDx-Heart. **Public.** Limites : phénotype histologique (variabilité
-  inter-observateur), transversal, métadonnées cliniques limitées dans GEO.
-- **GSE2445** (GEO) — microarray, biopsies **avant / pendant / après** rejet ; 14 patients
-  (3 en microarray). **Public.** Limites : très petit effectif, plateforme ancienne.
-  Intérêt : rare design **longitudinal** autour de l'épisode de rejet.
-- **GSE2596** (GEO, GPL1053) — 16 rejet aigu / 27 non-rejet, biopsies. **Public.**
-  Souvent utilisé comme **cohorte de validation externe** dans les réanalyses.
+- **GSE124897** (GEO, *H. sapiens*) — microarray GPL15207 (Affymetrix PrimeView),
+  **889 biopsies endomyocardiques** de 454 receveurs (8 centres), en deux cohortes
+  (331 et 558). Parkes MD et al., *J Heart Lung Transplant* 2019;38(6):636-646
+  (PMID 30795962). **Public.** Étiquettes **moléculaires** seulement (archétypes non
+  supervisés 3AA/4AA ; groupes 4AA = 645 / 52 / 144 / 48), pas d'histologie dans GEO :
+  aucune prétention diagnostique. Limites : plusieurs biopsies par patient sans
+  identifiant patient, métadonnées cliniques absentes de GEO. *(Vérifié sur GEO le
+  26/11/2026 ; l'ancien chiffre « ~841 » oubliait le groupe 4AA n° 4.)*
+- **GSE2445** (GEO) — **sang (PBMC), pas des biopsies** : 285 échantillons, puces
+  bicolores sur 3 plateformes (59 / 99 / 127). Deng MC et al., *Am J Transplant*
+  2006;6(1):150-160 (PMID 16433769), étude CARGO. **Public.** Étiquette = grade de la
+  biopsie faite au même moment (0 : 140 ; 1A : 63 ; 1B : 31 ; 3A : 25 ; non renseigné : 26).
+  Limites : 3 plateformes (effet de lot), puces anciennes. Prélèvements répétés par
+  patient probables (à confirmer). *(Vérifié sur GEO le 26/11/2026 ; l'ancienne fiche
+  décrivait à tort des biopsies.)*
+- **GSE2596** (GEO, GPL1053) — biopsies endomyocardiques, puces bicolores : **63 puces =
+  52 échantillons biologiques + 11 réplicats**. Morgun A et al., *Circ Res*
+  2006;98(12):e74-83 (PMID 16794196). **Public.** Étiquettes : rejet aigu 16, non-rejet 34,
+  pré-rejet 3 ; la série contient aussi des infections (réactivation de Chagas 8,
+  toxoplasmose 1) et deux lots (« summer » 32 / « winter » 31). Souvent utilisé comme
+  **cohorte de validation externe** dans les réanalyses. *(Vérifié sur GEO le 26/11/2026 ;
+  l'ancien chiffre 43 était faux.)*
 - **CTOT03-PIENING-2022** — Piening BD et al., *J Heart Lung Transplant* 2022;41(6):840–848
   (PubMed 35317953). RNA-seq (whole transcriptome) sur **125 biopsies** endomyocardiques,
   **26 receveurs** (jusqu'à 6 biopsies chacun, 12 premiers mois) → **longitudinal**.
@@ -46,7 +59,8 @@ mention « à confirmer ».*
   **rejet**. On peut définir la classe « absence durable de signal moléculaire de rejet »
   comme **proxy**, mais pas un phénotype clinique de stabilité profonde (IS minimale,
   absence de DSA de novo, recul long) → **métadonnées cliniques absentes**.
-- **Peu de longitudinalité** (exceptions : GSE2445, CTOT-03).
+- **Peu de longitudinalité** (exception : CTOT-03 ; GSE2445 = prélèvements de sang
+  probablement répétés, à confirmer).
 - **Single-cell / snRNA-seq humain de biopsie cardiaque** : très rare (surtout murin) —
   voir Section 3.5.3.
 - **Répertoire TCR/BCR de transplanté cardiaque** : non identifié en public.
@@ -54,7 +68,8 @@ mention « à confirmer ».*
 
 ## 6.4 Ce qui est faisable dès aujourd'hui (Scénario A)
 
-Réanalyse harmonisée de **GSE124897 + GSE2596 + GSE2445** (± CTOT-03 si DUA obtenu) :
+Réanalyse harmonisée des biopsies **GSE124897 + GSE2596** (± CTOT-03 si DUA obtenu),
+**GSE2445 (sang) analysé à part** :
 - pipeline de normalisation + correction de lot inter-dataset ;
 - définition et caractérisation de la classe « no molecular rejection over time » ;
 - test de transférabilité inter-dataset d'une signature de « quiescence » ;
@@ -62,7 +77,8 @@ Réanalyse harmonisée de **GSE124897 + GSE2596 + GSE2445** (± CTOT-03 si DUA o
 
 ## 6.5 À faire (Phase 3 — suite)
 
-- Vérifier **chaque** identifiant, effectif et publication sur GEO/ImmPort/EGA.
+- Vérifier **chaque** identifiant, effectif et publication sur GEO/ImmPort/EGA
+  (fait pour les 3 jeux GEO le 26/11/2026).
 - Élargir la recherche : **ArrayExpress, SRA, dbGaP, EGA, BioStudies, Zenodo, Figshare**,
   mots-clés `cardiac allograft` + `single-cell` / `TCR` / `spatial` / `proteomics`.
 - Chercher les jeux de **tolérance rénale/hépatique** (ITN, RISET, Nantes) réutilisables
