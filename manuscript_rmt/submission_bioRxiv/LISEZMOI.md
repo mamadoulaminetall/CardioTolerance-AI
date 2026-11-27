@@ -37,8 +37,4 @@ Aucun fichier de ce dossier n'est sur GitHub, sauf ce LISEZMOI et les métadonn�
 
 ## Statut
 
-**Déposé le 27/11/2026** (MS ID BIORXIV/2026/769628), mail de confirmation reçu ; vérification bioRxiv en cours (24 à 72 h).
-Fichiers déposés : manuscrit principal + `RMT_Supplementary_Figures_S1-S2.pdf` (Supplementary Material).
-Contact affiché sur bioRxiv : l'adresse du compte de dépôt (bioRxiv exige que l'e-mail de la fiche auteur soit celui du compte
-pour activer « Approve Manuscript ») ; le PDF garde contact@medflow-ai.fr.
-
+Déposé le 27/11/2026 (MS ID BIORXIV/2026/769628), puis **refusé par bioRxiv le 27/11/2026** : la plateforme exige que les auteurs soient affiliés à un organisme de recherche (pour trancher d'éventuels litiges éthiques). Le contenu n'a pas été jugé. Les fichiers restent valables pour un autre serveur ou une revue.
