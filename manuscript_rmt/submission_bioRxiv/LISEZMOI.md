@@ -22,7 +22,7 @@ Aucun fichier de ce dossier n'est sur GitHub, sauf ce LISEZMOI et les métadonn�
 - [x] Funding : « This work received no specific funding. » · Competing interests : « The author leads the MedFlow AI project and declares no other competing interests. » (27/11/2026)
 - [x] Référence Paul 2007 : Statistica Sinica 17(4):1617–1642, vérifié le 27/11/2026 sur le site de la revue. Mention « [Pages to confirm.] » retirée.
 - [x] Manuscrit mis à jour dans Claude Docs, réexporté → `RMT_manuscript_bioRxiv.pdf` ; brouillons `A_COMPLETER` supprimés.
-- [ ] Relecture finale du PDF par Dr Tall.
+- [x] Relecture finale et approbation par Dr Tall (« Approve Manuscript »), 27/11/2026.
 
 ## Dépôt
 
@@ -34,3 +34,11 @@ Aucun fichier de ce dossier n'est sur GitHub, sauf ce LISEZMOI et les métadonn�
 ## Après le dépôt
 
 - Noter le DOI bioRxiv dans le README, le coffre Obsidian et sur la registration OSF (lien vers la prépublication).
+
+## Statut
+
+**Déposé le 27/11/2026** (MS ID BIORXIV/2026/769628), mail de confirmation reçu ; vérification bioRxiv en cours (24 à 72 h).
+Fichiers déposés : manuscrit principal + `RMT_Supplementary_Figures_S1-S2.pdf` (Supplementary Material).
+Contact affiché sur bioRxiv : l'adresse du compte de dépôt (bioRxiv exige que l'e-mail de la fiche auteur soit celui du compte
+pour activer « Approve Manuscript ») ; le PDF garde contact@medflow-ai.fr.
+
