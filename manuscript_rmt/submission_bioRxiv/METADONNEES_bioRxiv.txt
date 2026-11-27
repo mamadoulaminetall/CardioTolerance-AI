@@ -18,7 +18,7 @@ AUTEUR (un seul)
   Affiliation ....... Independent researcher, MedFlow AI project, Castelnau-le-Lez, France
   Auteur correspondant : oui
   E-mail de contact . contact@medflow-ai.fr   (le même que dans le manuscrit)
-  ORCID ............. celui du compte ORCID de l'auteur (le relier, ne pas le recopier à la main)
+  ORCID ............. 0000-0002-8949-104X (https://orcid.org/0000-0002-8949-104X ; vérifié sur pub.orcid.org le 27/11/2026)
 
 RÉSUMÉ (texte exact du manuscrit, 2715 caractères)
 Background. Heart-transplant biopsy transcriptomic cohorts contain tens to hundreds of samples for about 20,000 genes, a regime in which noise alone produces spurious principal components. Random matrix theory (RMT) describes the spectrum of pure noise (Marčenko–Pastur law), the fluctuations of its edge (Tracy–Widom law) and the expected reliability of signal components. We evaluated an RMT procedure for choosing components in a preregistered reanalysis.
