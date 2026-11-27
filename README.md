@@ -110,8 +110,9 @@ Rédaction selon TRIPOD+AI, code ouvert. L'usage de l'IA sera déclaré dans les
    Exploratoire GSE2596 (section 7 du plan, sans hypothèse) : [`results/rmt_gse2596/EXPLORATOIRE_GSE2596.md`](results/rmt_gse2596/EXPLORATOIRE_GSE2596.md) —
    42 biopsies ; l'axe 1 sépare rejet aigu et non-rejet (AUC 0,05, soit 0,95 dans l'autre sens ; p = 1e-05 non corrigé) ;
    RMT retient 34 axes contre 10 avec σ² = 1 ou les permutations (même problème de réestimation du bruit).
-5. Manuscrit (anglais) prêt. Prépublication : **refusée par bioRxiv le 27/11/2026** (MS ID BIORXIV/2026/769628) car bioRxiv
-   exige une affiliation à un organisme de recherche ; aucun jugement sur le contenu. Autre serveur ou revue : en cours de décision.
+5. ✅ **Prépublication en ligne sur Zenodo le 27/11/2026 : https://doi.org/10.5281/zenodo.24585437** (Preprint, CC BY 4.0, ORCID lié ;
+   manuscrit + figures S1–S2). bioRxiv avait refusé le dépôt (affiliation à un organisme de recherche exigée, contenu non jugé).
+   Prochaine étape : soumission à une revue lue par les cliniciens (JHLT Open ou Transplant International, à décider).
    Fichiers déposés et métadonnées : [`manuscript_rmt/submission_bioRxiv/`](manuscript_rmt/submission_bioRxiv/LISEZMOI.md).
 6. Mail à PITOR, après validation.
 

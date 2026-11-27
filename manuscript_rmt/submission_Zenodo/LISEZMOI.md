@@ -12,3 +12,7 @@ bioRxiv a refusé le dépôt le 27/11/2026 (affiliation à un organisme de reche
 
 Étapes : coller la consigne dans Chrome, joindre les deux PDF, Claude remplit et s'arrête avant « Publish » ; Dr Tall relit et publie.
 Après : noter le DOI (README, coffre, OSF, mail PITOR).
+
+## Statut
+
+**Publié le 27/11/2026 : https://doi.org/10.5281/zenodo.24585437** (vérifié via l'API Zenodo : statut « published », fichiers identiques aux PDF locaux, md5 30263cd8… et 6b3a44c6…).
