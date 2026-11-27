@@ -10,3 +10,8 @@ data/geo/
 manuscript_rmt/submission_bioRxiv/*
 !manuscript_rmt/submission_bioRxiv/LISEZMOI.md
 !manuscript_rmt/submission_bioRxiv/METADONNEES_bioRxiv.txt
+
+# Dossier de dépôt Zenodo : seuls LISEZMOI et METADONNEES sont versionnés (la consigne contient les adresses de connexion).
+manuscript_rmt/submission_Zenodo/*
+!manuscript_rmt/submission_Zenodo/LISEZMOI.md
+!manuscript_rmt/submission_Zenodo/METADONNEES_Zenodo.txt

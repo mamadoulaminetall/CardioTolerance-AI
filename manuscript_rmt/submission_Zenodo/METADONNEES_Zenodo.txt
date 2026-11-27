@@ -1,0 +1,26 @@
+MÉTADONNÉES DU DÉPÔT ZENODO — prépublication RMT-Transplant
+
+Type de ressource .. Publication > Preprint
+Titre .............. Random matrix theory to separate signal from noise in small heart-transplant biopsy transcriptomic cohorts: a preregistered evaluation
+Auteur ............. Tall, Mamadou Lamine · ORCID 0000-0002-8949-104X
+Affiliation ........ Independent researcher, MedFlow AI project, Castelnau-le-Lez, France
+Date de publication  2026-11-27
+Langue ............. English
+Licence ............ Creative Commons Attribution 4.0 International (CC BY 4.0)
+Version ............ v1
+Accès .............. Public (fichiers et notice)
+Financement ........ aucun
+Fichiers ........... Tall_2026_RMT_heart_transplant_preprint.pdf (principal, 16 p.)
+                     Tall_2026_RMT_Supplementary_Figures_S1-S2.pdf (2 p.)
+Mots-clés .......... heart transplantation · endomyocardial biopsy · transcriptomics · random matrix theory · Marčenko–Pastur · Tracy–Widom · principal component analysis · preregistration
+Liens (Related works)
+  https://osf.io/6htjn ........................................ Is documented by (préenregistrement)
+  https://github.com/mamadoulaminetall/CardioTolerance-AI ..... Is supplemented by (code)
+
+DESCRIPTION
+Background. Heart-transplant biopsy transcriptomic cohorts contain tens to hundreds of samples for about 20,000 genes, a regime in which noise alone produces spurious principal components. Random matrix theory (RMT) describes the spectrum of pure noise (Marčenko–Pastur law), the fluctuations of its edge (Tracy–Widom law) and the expected reliability of signal components. We evaluated an RMT procedure for choosing components in a preregistered reanalysis.
+Methods. The analysis plan was registered on OSF before the validation cohort was opened. We used GEO GSE124897 (889 endomyocardial biopsies): cohort 331 for discovery and cohort 558 for validation, sealed with a SHA-256 hash before registration. Each cohort was RMA-normalised separately (18,836 genes). From cohort 331 we drew 200 random subsamples of 20, 40, 80 and 160 biopsies. RMT (Marčenko–Pastur edge with a sequential Tracy–Widom test and re-estimated noise variance) was compared with principal component analysis (PCA) with 10 components, the Kaiser rule, 80% cumulative variance, the Marčenko–Pastur edge alone and permutation parallel analysis. The primary outcome was the agreement D between the retained components and the principal subspace of cohort 558 (37 components by parallel analysis). A simulation with known truth and an exploratory analysis of GSE2596 (42 biopsies with histological labels) complemented the study.
+Results. In simulation, RMT retained at most 0.01 spurious component on average, against 7 to 156 for classical rules, and predicted loading reliability accurately (mean absolute error 0.015). On real data, the primary hypothesis was not supported. RMT exceeded PCA-10 in 100% and 94.5% of paired subsamples at n = 20 and 40 (median gain in D below 0.01), but in only 2.5% at n = 80 and 0% at n = 160. On permuted data, RMT retained a component in 1–5% of subsamples, against up to 12.5% for the Marčenko–Pastur edge alone. Re-estimated noise variance fell to 0.22–0.29: RMT retained 145 components in the full discovery cohort, against 25 by permutation. Predicted component reliability was overestimated (components 1–10: predicted 0.96, observed 0.36). In GSE2596, the first component separated acute rejection from non-rejection (AUC 0.95), while RMT again retained 34 components against 10.
+Conclusions. Tracy–Widom-tested Marčenko–Pastur thresholds protect against pure noise. However, noise re-estimation under an isotropic spiked model over-retains components in real biopsy transcriptomes, and per-component reliability predictions are optimistic. In small transplant cohorts, permutation-based selection should be preferred, and results interpreted at the level of subspaces rather than single components.
+
+Preregistration: https://osf.io/6htjn (OSF, 26 November 2026). Code: https://github.com/mamadoulaminetall/CardioTolerance-AI (method frozen at tag prereg-v1). Data: GEO GSE124897 and GSE2596 (public). Supplementary Figures S1–S2 are also included at the end of the main PDF.
