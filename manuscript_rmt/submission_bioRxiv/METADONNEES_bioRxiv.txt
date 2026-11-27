@@ -6,8 +6,9 @@ TYPE D'ARTICLE ..... New Results
 DOMAINE ............ Bioinformatics
 LICENCE ............ CC BY 4.0
 ESSAI CLINIQUE ..... Non (réanalyse de données publiques anonymisées)
-FICHIER PRINCIPAL .. RMT_manuscript_bioRxiv.pdf (figures incluses dans le PDF)
-FICHIERS SUPPL. .... aucun requis
+FICHIER PRINCIPAL .. 1_MANUSCRIT_PRINCIPAL/RMT_manuscript_bioRxiv.pdf (toutes les figures incluses)
+FICHIERS SUPPL. .... optionnel : 3_SUPPLEMENTARY/RMT_Supplementary_Figures_S1-S2.pdf (Figures S1–S2)
+FIGURES SÉPARÉES ... 2_FIGURES_PRINCIPALES/ (Fig 1–4), seulement si le formulaire les demande
 
 TITRE
 Random matrix theory to separate signal from noise in small heart-transplant biopsy transcriptomic cohorts: a preregistered evaluation
