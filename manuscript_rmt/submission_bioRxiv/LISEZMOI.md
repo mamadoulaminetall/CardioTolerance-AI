@@ -7,8 +7,7 @@ Préenregistrement : https://osf.io/6htjn · Code : tag `prereg-v1`.
 
 | Fichier | Rôle | Sur GitHub |
 |---|---|---|
-| `RMT_manuscript_v1_A_COMPLETER.pdf` / `.docx` | Brouillon (Funding et Competing interests encore vides) | non |
-| `RMT_manuscript_bioRxiv.pdf` | Version finale à déposer (créée après les deux réponses de Dr Tall) | non |
+| `RMT_manuscript_bioRxiv.pdf` / `.docx` | Version finale à déposer (Claude Docs rév. 23, 16 pages, 27/11/2026) | non |
 | `figures/` | Copie des figures (Fig1–4, FigS1–S2, PNG 300 dpi + PDF) ; l'original est dans `manuscript_rmt/figures/` | non |
 | `METADONNEES_bioRxiv.txt` | Tout ce qu'il faut saisir sur bioRxiv : titre, résumé exact, auteur, mots-clés, licence, liens | oui |
 | `CONSIGNE_CLAUDE_CHROME.txt` | Texte à coller dans le panneau Claude de Chrome. **Privé** : contient les adresses de connexion | non |
@@ -17,9 +16,9 @@ Les figures sont déjà dans le PDF ; bioRxiv n'en demande pas d'autres.
 
 ## Avant le dépôt
 
-- [ ] Dr Tall donne le texte de **Funding** et de **Competing interests**.
-- [x] Référence Paul 2007 : Statistica Sinica 17(4):1617–1642, vérifié le 27/11/2026 sur le site de la revue. À retirer : la mention « [Pages to confirm.] ».
-- [ ] Mettre à jour le manuscrit dans Claude Docs, réexporter → `RMT_manuscript_bioRxiv.pdf`, supprimer les fichiers `A_COMPLETER`.
+- [x] Funding : « This work received no specific funding. » · Competing interests : « The author leads the MedFlow AI project and declares no other competing interests. » (27/11/2026)
+- [x] Référence Paul 2007 : Statistica Sinica 17(4):1617–1642, vérifié le 27/11/2026 sur le site de la revue. Mention « [Pages to confirm.] » retirée.
+- [x] Manuscrit mis à jour dans Claude Docs, réexporté → `RMT_manuscript_bioRxiv.pdf` ; brouillons `A_COMPLETER` supprimés.
 - [ ] Relecture finale du PDF par Dr Tall.
 
 ## Dépôt

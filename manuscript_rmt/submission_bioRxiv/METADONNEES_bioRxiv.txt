@@ -38,5 +38,5 @@ DÉCLARATIONS (texte du manuscrit)
   Data availability. All data are public in GEO: GSE124897 and GSE2596. No new patient data were collected.
   Ethics. Reanalysis of de-identified public data; no ethics approval was required.
   Use of artificial intelligence. An AI assistant (Claude, Anthropic) was used to write code and draft text. All scientific decisions, checks and conclusions are the author's, who takes full responsibility for the content.
-  Funding. [À COMPLÉTER PAR DR TALL avant le dépôt]
-  Competing interests. [À COMPLÉTER PAR DR TALL avant le dépôt]
+  Funding. This work received no specific funding.
+  Competing interests. The author leads the MedFlow AI project and declares no other competing interests.
