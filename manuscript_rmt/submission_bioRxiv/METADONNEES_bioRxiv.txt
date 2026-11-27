@@ -1,0 +1,42 @@
+MÉTADONNÉES DU DÉPÔT bioRxiv — article RMT-Transplant
+(à recopier dans le formulaire bioRxiv ; tout est déjà dans le manuscrit)
+
+SERVEUR ............ bioRxiv (pas medRxiv)
+TYPE D'ARTICLE ..... New Results
+DOMAINE ............ Bioinformatics
+LICENCE ............ CC BY 4.0
+ESSAI CLINIQUE ..... Non (réanalyse de données publiques anonymisées)
+FICHIER PRINCIPAL .. RMT_manuscript_bioRxiv.pdf (figures incluses dans le PDF)
+FICHIERS SUPPL. .... aucun requis
+
+TITRE
+Random matrix theory to separate signal from noise in small heart-transplant biopsy transcriptomic cohorts: a preregistered evaluation
+
+AUTEUR (un seul)
+  Nom ............... Mamadou Lamine Tall
+  Diplôme ........... PhD
+  Affiliation ....... Independent researcher, MedFlow AI project, Castelnau-le-Lez, France
+  Auteur correspondant : oui
+  E-mail de contact . contact@medflow-ai.fr   (le même que dans le manuscrit)
+  ORCID ............. celui du compte ORCID de l'auteur (le relier, ne pas le recopier à la main)
+
+RÉSUMÉ (texte exact du manuscrit, 2715 caractères)
+Background. Heart-transplant biopsy transcriptomic cohorts contain tens to hundreds of samples for about 20,000 genes, a regime in which noise alone produces spurious principal components. Random matrix theory (RMT) describes the spectrum of pure noise (Marčenko–Pastur law), the fluctuations of its edge (Tracy–Widom law) and the expected reliability of signal components. We evaluated an RMT procedure for choosing components in a preregistered reanalysis.
+Methods. The analysis plan was registered on OSF before the validation cohort was opened. We used GEO GSE124897 (889 endomyocardial biopsies): cohort 331 for discovery and cohort 558 for validation, sealed with a SHA-256 hash before registration. Each cohort was RMA-normalised separately (18,836 genes). From cohort 331 we drew 200 random subsamples of 20, 40, 80 and 160 biopsies. RMT (Marčenko–Pastur edge with a sequential Tracy–Widom test and re-estimated noise variance) was compared with principal component analysis (PCA) with 10 components, the Kaiser rule, 80% cumulative variance, the Marčenko–Pastur edge alone and permutation parallel analysis. The primary outcome was the agreement D between the retained components and the principal subspace of cohort 558 (37 components by parallel analysis). A simulation with known truth and an exploratory analysis of GSE2596 (42 biopsies with histological labels) complemented the study.
+Results. In simulation, RMT retained at most 0.01 spurious component on average, against 7 to 156 for classical rules, and predicted loading reliability accurately (mean absolute error 0.015). On real data, the primary hypothesis was not supported. RMT exceeded PCA-10 in 100% and 94.5% of paired subsamples at n = 20 and 40 (median gain in D below 0.01), but in only 2.5% at n = 80 and 0% at n = 160. On permuted data, RMT retained a component in 1–5% of subsamples, against up to 12.5% for the Marčenko–Pastur edge alone. Re-estimated noise variance fell to 0.22–0.29: RMT retained 145 components in the full discovery cohort, against 25 by permutation. Predicted component reliability was overestimated (components 1–10: predicted 0.96, observed 0.36). In GSE2596, the first component separated acute rejection from non-rejection (AUC 0.95), while RMT again retained 34 components against 10.
+Conclusions. Tracy–Widom-tested Marčenko–Pastur thresholds protect against pure noise. However, noise re-estimation under an isotropic spiked model over-retains components in real biopsy transcriptomes, and per-component reliability predictions are optimistic. In small transplant cohorts, permutation-based selection should be preferred, and results interpreted at the level of subspaces rather than single components.
+
+MOTS-CLÉS
+heart transplantation; endomyocardial biopsy; transcriptomics; random matrix theory; Marčenko–Pastur; Tracy–Widom; principal component analysis; preregistration
+
+LIENS
+  Préenregistrement  https://osf.io/6htjn
+  Code               https://github.com/mamadoulaminetall/CardioTolerance-AI (tag prereg-v1)
+  Données            GEO GSE124897 et GSE2596 (publiques)
+
+DÉCLARATIONS (texte du manuscrit)
+  Data availability. All data are public in GEO: GSE124897 and GSE2596. No new patient data were collected.
+  Ethics. Reanalysis of de-identified public data; no ethics approval was required.
+  Use of artificial intelligence. An AI assistant (Claude, Anthropic) was used to write code and draft text. All scientific decisions, checks and conclusions are the author's, who takes full responsibility for the content.
+  Funding. [À COMPLÉTER PAR DR TALL avant le dépôt]
+  Competing interests. [À COMPLÉTER PAR DR TALL avant le dépôt]

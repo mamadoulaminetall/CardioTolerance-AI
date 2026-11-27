@@ -4,3 +4,9 @@ __pycache__/
 .env
 .venv/
 data/geo/
+
+# Dossier de dépôt bioRxiv : seuls LISEZMOI et METADONNEES sont versionnés.
+# La consigne Chrome contient les adresses de connexion (privée) ; PDF/DOCX/figures sont des copies locales.
+manuscript_rmt/submission_bioRxiv/*
+!manuscript_rmt/submission_bioRxiv/LISEZMOI.md
+!manuscript_rmt/submission_bioRxiv/METADONNEES_bioRxiv.txt
